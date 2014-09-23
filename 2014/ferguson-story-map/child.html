@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ferguson Story Map</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
+    <link rel="stylesheet" href="slides.css">
+    <link rel="stylesheet" href="player.css">
+	
+
+    <!-- Fonts -->
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Titillium+Web:400,700,200:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
+	  
+    
+    <style type="text/css">
+        /* base styles */
+        html { -webkit-text-size-adjust: none; }
+        body {
+            margin: 0;
+            padding: 0;
+            font: 14px/1.4 "Titillium Web", Helvetica, sans-serif;
+            color: #333;
+        }
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 12px;
+            margin: 0 0 22px 0;
+        }
+        .footnotes { margin-bottom: 20px; }
+        .footnotes h4 {
+            margin: 2px 0 7px 0;
+            color: #666;
+            font-size: 11px;
+        }
+        .footnotes p,
+        .footer p {
+            margin: 2px 0 0 0;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #808080;
+        }
+        a, a:link, a:visited {
+            color: #4774CC;
+            text-decoration: none;
+        }
+        a:hover, a:active { opacity: 0.7; }
+    </style>
+
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100%;"></div>
+
+  <div id="slides_container" style="display:block;">
+    <ul id="navButtons">
+      <li><a class="prev"></a></li>
+      <li><a class="next"></a></li>
+    </ul>
+<div id="slides">
+	
+	<div class="slide">
+		<h1><span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/leahyintro.mp3" data-start="0" data-end="34000">What's going on in Ferguson?</span></h1>
+		<p>On Saturday, Aug. 9, an unarmed 18-year-old black man named Michael Brown was shot and killed by Ferguson Police Officer Darren Wilson. Since then, the movement seeking justice for his death has grown, as has the police response. First the County took over, then the State Highway Patrol. A curfew has been instituted and dropped. The National Guard has been called in, as has the Department of Justice. What's going on in Ferguson now extends beyond its borders. But let's start there.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Where is Ferguson?</h1>
+		<p>Ferguson is a suburb of St. Louis, located in St. Louis County. The metropolitan area has around 2.8 million people. St. Louis County is home to about 1 million. Ferguson has about 21,000 people.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>About Ferguson</h1>
+		<p>Census data show that Ferguson is younger than the St. Louis County average: Ferguson's median age is around 34 years old, while St. Louis County's is nearly 40. African Americans make up about two-thirds of Ferguson's population, while only about one-quarter of St. Louis County's population is black. <a href="http://news.stlpublicradio.org/post/ferguson-numbers">Read more about the basics of Ferguson and St. Louis County&#8217;s population.</a></p>
+	</div>
+	
+	<div class="slide">
+		<h1>August 9: Darren Wilson's path</h1>
+		<p>According to police reports, at around 11:50 a.m. on Saturday, Aug. 9, an officer responded to a sick case on Glenark Drive in Ferguson. The unit was cleared and the event was closed at seven seconds after noon, according to the reports. At a press conference on Friday, Aug. 15, Ferguson Police Chief Thomas Jackson said Officer Darren Wilson responded to a sick case shortly before the confrontation leading to Brown's death.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>August 9: Michael Brown's path</h1>
+		<p>Ferguson police at the Friday news conference also produced a police report and security camera video showing a person appearing to be Michael Brown involved in what they called "strong-arm robbery." According to the report, witnesses at the scene told responding officers that Brown and another man walked north on West Florissant after leaving the store. The report said the incident lasted from 11:52:58 a.m. to 11:54 according to timestamps on the security camera video.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>August 9: The shooting</h1>
+		<p>Details are scant on the shooting (including this approximate location). Both police and witnesses say Wilson initially contacted Brown because he was walking in the street. From there, accounts diverge. Witnesses say Brown was surrendering with his hands up when he was shot. Police say he assaulted Wilson. Preliminary autopsy results show Brown was shot at least six times, including twice in the head. According to police, the shooting scene became difficult to manage, with reports of more shots being fired from nearby.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Sunday, Aug. 10</h1>
+		<p>On Sunday, more people started <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/dayafterprotester810.mp3" data-start="0" data-end="11000">taking notice</span>. Jon Belmar, the County police chief, <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/belmardayafter810.mp3" data-start="0" data-end="18000">held a press conference</span>. Peaceful protests are held at the site of the shooting and at the Ferguson Police Department on Sunday. But Sunday night would take a different turn.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Sunday night, Aug. 10</h1>
+		<p>As night fell, protesters march from the shooting site to West Florissant. There, they meet a line of police. Some of the protesters reportedly begin throwing rocks and bottles at the police. A QuikTrip gas station and convenience store on West Florissant is looted and later burned. Through the night, the looting spreads. Looting is reported at Zisser's Tire, AutoZone, Wal-Mart, Clocktower Place, Hibbett Sports, Sam's Meat Market, Red BBQ Man, Northland Chop Suey and Family Dollar.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 11</h1>
+		<p>Protests spread Monday, including to 501 Plaza, as well as the local NAACP. The city of Normandy closed Natural Bridge Road between Lucas & Hunt and Hanley Roads.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 11</h1>
+		<p>The city of Normandy closes Natural Bridge Road between Lucas & Hunt and Hanley Roads.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday, Aug. 12</h1>
+		<p>On Tuesday, <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/sharpton812.mp3" data-start="0" data-end="17000">Al Sharpton arrives</span>, speaking first at the Old Courthouse in Downtown St. Louis, then at a service at St. Mark's Family Church.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday night, Aug. 12</h1>
+		<p>Protests near the shooting site continue and police use tear gas and rubber bullets, attempting to maintain control. Overnight, two people are shot: Police shot a person who they say pointed a gun at them. And a woman was injured in what police called a drive-by shooting.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Wednesday, Aug. 13</h1>
+		<p>During a Wednesday press conference, Police Chief Thomas Jackson insists Mayor James Knowles' call for protests only during daylight hours was not a curfew but "just a 'please'."</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Wednesday night, Aug. 13</h1>
+		<p>On Wednesday evening, journalists from the Huffington Post and the Washington Post are arrested as they worked in a McDonald’s near the protest site, as police clear the restaurant. St. Louis Alderman Antonio French is also arrested while at the protest.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Thursday, Aug. 14</h1>
+		<p>On Thursday, Gov. Jay Nixon holds a press conference at the University of Missouri-St. Louis and announces he is <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/nixonintroducesjohnson814.mp3" data-start="0" data-end="15000">placing Capt. Ronald Johnson</span> of the Highway Patrol in charge of the situation in Ferguson. On Thursday evening, Johnson walks with protesters as Nixon calls for a "different tone," and the technique yields a quieter night.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Friday morning, Aug. 15</h1>
+		<p>On Friday morning, Ferguson Police Chief Tom Jackson holds a press conference at which he releases the name of the officer who killed Michael Brown: <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/jackson815.mp3" data-start="0" data-end="14000">Darren Wilson</span>. At the same time, he releases details about a "strong-armed" robbery police say Brown had committed just before the shooting.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Friday, Aug. 15</h1>
+		<p>Brown's family holds a press conference Friday at the Ferguson Police Department where their attorney says they are "incensed" by the "assassination of character" of Brown by the <span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/parks815.mp3" data-start="0" data-end="12000">release of information</span> about the robbery. Ferguson Chief Tom Jackson holds another press conference Friday afternoon at Forestwood Park in Ferguson to clarify Wilson did not know about the robbery when he first encountered Brown.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Friday night, Aug. 15</h1>
+		<p>Friday night's protests begin peacefully, but end with more violence and looting. People break into Feel Beauty Supply, Sam's Meat Market and the Ferguson Market & Liquor, the store police say Brown robbed before he was shot and killed. Other protesters then form groups in front of the stores to stop people from looting them further.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Saturday, Aug. 16</h1>
+		<p>One week after Michael Brown was shot and killed, protesters march peacefully from the shooting site to St. Mark's Family Church. Later, Gov. Jay Nixon holds a 
+<span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/nixon816.mp3" data-start="0" data-end="32000">press conference</span> with Capt. Ron Johnson at the church. Nixon declares a state of emergency and places Ferguson under a curfew from midnight to 5 a.m., to last indefinitely.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Saturday night, Aug. 16</h1>
+		<p>Most of the protesters disperse by midnight. Police said media who wish to stay past the curfew would be confined to a staging area at West Florissant and Ferguson. A man is shot near the QuikTrip and transported to the hospital in a protester's vehicle, according to police.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Sunday, Aug. 17</h1>
+		<p>A unity rally at Greater Grace Church in Ferguson draws a full house and an overflow crowd of hundreds. Jesse Jackson, Al Sharpton, Martin Luther King III, U.S. Rep. Lacy Clay family attorney Benjamin Crump and 
+<span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/johnsonrally817.mp3" data-start="0" data-end="19000">Capt. Ron Johnson</span> all speak at the rally. A group 
+<span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/wilsonsupportrally817.mp3" data-start="0" data-end="15000">supporting Officer Darren Wilson</span> also holds a rally in Downtown St. Louis outside the offices of NBC affiliate KSDK, which had broadcast footage of the officer's home.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Sunday night, Aug. 17</h1>
+		<p>A woman is grazed by a bullet near West Florissant and Canfield early in the evening. Later in the evening, with police firing tear gas into the crowd, some protesters smash windows at the McDonald’s and take refuge there. A fire and looting is reported at Dellwood Market. Looting is also reported at Rehoboth Pharmacy. According to police, a group of protesters also tries to overrun the command center police set up in the parking lot of a shopping center.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 18</h1>
+		<p>Early Monday morning, Gov. Jay Nixon signs an order calling in the National Guard. It is to be used in a limited role, to protect the command center. The Highway Patrol announces it would be closing West Florissant between Woodstock and Chambers until further notice. The curfew is also removed.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 18</h1>
+		<p>Brown family attorneys hold a press conference at Greater St. Mark's Family Church to discuss preliminary autopsy results that indicate Brown was shot 
+<span class="soundcite" data-url="http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/audio/autopsy818.mp3" data-start="0" data-end="41000">at least six times</span>.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 18</h1>
+		<p>From rally at Kiener Plaza in Downtown St. Louis people march to Gov. Jay Nixon's office in the Wainwright Building. Eight people are arrested for failure to disperse.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday, Aug. 18</h1>
+		<p>Police attempt to set up a protest zone at West Florissant and Ferguson, as well as another media zone across the street, but this is largely ignored. Police allow marchers on West Florissant, as long as they keep moving.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Monday night, Aug. 18</h1>
+		<p>Police and protesters clash again. Although no curfew was in place, police clear the street just before midnight. According to police, 31 people are arrested and two people shot, but MSNBC later reported 78 people arrested. Police say they didn't fire any shots. They warn media to leave the staging area because of shots fired near Canfield.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday, Aug. 19</h1>
+		<p>The QuikTrip that was looted and burned more than a week ago and used as a gathering point is fenced off and gas is removed from the underground tanks.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday, Aug. 19</h1>
+		<p>On Tuesday afternoon, St. Louis City police officers shoot and kill a man suspected of stealing from a market who was acting erratically and confronted them with a knife when they arrived on scene. Police see no relation to Ferguson, but Chief Sam Dotson and St. Louis Mayor Francis Slay are quick to hold press conferences and reach out to the media to explain the incident.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday, Aug. 19</h1>
+		<p>Protesters arrive at the St. Louis County Justice Center in Clayton to demand that County Prosecutor Robert McCulloch recuse himself.</p>
+	</div>
+	
+	<div class="slide">
+		<h1>Tuesday, Aug. 19</h1>
+		<p>The Highway Patrol releases a statement saying it will establish an "approved assembly zone for protesters" at an old Ford dealership and a new media staging area at the Public Storage lot, both on West Florissant.</p>
+	</div>
+	
+</div>
+  </div>
+  <div id="credits">
+ <span class="author"><strong id="author">By <a href="http://www.stlpublicradio.org">St. Louis Public Radio</a> using</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
+  </span></span></div>
+
+  <script src="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/cartodb.js"></script>
+  <script src="odyssey.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="stl_ferg_stlco.js"></script>
+
+  <script>
+    var resizePID;
+
+    function clearResize() {
+      clearTimeout(resizePID);
+      resizePID = setTimeout(function() { adjustSlides(); }, 100);
+    }
+
+    if (!window.addEventListener) {
+      window.attachEvent("resize", function load(event) {
+        clearResize();
+      });
+    } else {
+      window.addEventListener("resize", function load(event) {
+        clearResize();
+      });
+    }
+
+    function adjustSlides() {
+      var container = document.getElementById("slides_container"),
+          slides = document.getElementById("slides");
+		  slide = slides.getElementsByClassName("selected")[0];
+
+          var h = container.offsetHeight;
+          slide.style.height = 150+"px";
+          slide.classList.add("scrolled");
+      }
+
+    var resizeAction = O.Action(function() {
+		adjustSlides();
+    });
+
+	function click(el) {
+	  var element = O.Core.getElement(el);
+	  var t = O.Trigger();
+	  element.onclick = function() {
+	    t.trigger();
+	  }
+	  return t;
+	}
+	
+	function showHideAction(el) {
+    return O.Action({
+      enter: function() {
+        el.show()
+		console.log(alert("tick"))
+      },
+      exit: function() {
+        el.hide()
+				console.log(alert("tick"))
+      }
+    });
+  }
+  
+
+	var map = L.map('map').setView([38.738025,-90.272073], 4);
+	var geojson;
+	
+	function style(feature) {
+		return {
+			weight: 1,
+			opacity: .4,
+			color: '#eee',
+			fillOpacity: 0.1,
+			fillColor: '#aa0000',
+			className: 'area'
+			};
+	}
+	    //L.tileLayer('https://2.maps.nlp.nokia.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?lg=eng&token=A7tBPacePg9Mj_zghvKt9Q&app_id=KuYppsdXZznpffJsKT24', { attribution: 'data OSM - map CartoDB' }).addTo(map);
+
+L.tileLayer('https://{s}.tiles.mapbox.com/v3/stlpr.j9ijk64f/{z}/{x}/{y}.png', { attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'}).addTo(map);
+
+		
+		geojson = L.geoJson(stl, {
+			style: style
+		}).addTo(map);
+		
+		var redIcon = L.icon({
+			iconUrl: 'http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/img/icon-red.png',
+			iconSize: [45,65],
+			iconAnchor: [22,60]
+		});
+		
+		var blueIcon = L.icon({
+			iconUrl: 'http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/img/icon-light-blue.png',
+			iconSize: [45,65],
+			iconAnchor: [22,60]
+		});
+		
+		var greenIcon = L.icon({
+			iconUrl: 'http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/img/icon-mint.png',
+			iconSize: [45,65],
+			iconAnchor: [22,60]
+		});
+		
+		var yellowIcon = L.icon({
+			iconUrl: 'http://s3.amazonaws.com/stlpr-assets/dailygraphics/ferguson-story-map/img/icon-yellow.png',
+			iconSize: [45,65],
+			iconAnchor: [22,60]
+		});
+
+		var shooting = new L.LatLng(38.738126,-90.273274);
+		var sick = new L.LatLng(38.738285,-90.266075);
+		var robbery = new L.LatLng(38.735117,-90.278185);
+		var police_station = new L.LatLng(38.740855,-90.30354);
+		var quiktrip = new L.LatLng(38.739102,-90.27805);
+		
+		
+		
+		
+		//looting
+		var autozoneMarker = L.marker([38.747883,-90.279718], {icon: blueIcon}).bindPopup("AutoZone");
+		var clocktowerMarker = L.marker([38.773943,-90.278714], {icon: blueIcon}).bindPopup("Clocktower shopping center");
+		var dellwoodmktMarker = L.marker([38.749116 , -90.275022], {icon: blueIcon}).bindPopup("Dellwood Market");
+		var feelbeautyMarker = L.marker([38.735005,-90277160], {icon: blueIcon}).bindPopup("Feel Beauty Supply");
+		var hibbettMarker = L.marker([38.771255,-90.267387], {icon: blueIcon}).bindPopup("Hibbett Sports");
+		var homedepotMarker = L.marker([38.770129,-90.262256], {icon: blueIcon}).bindPopup("Home Depot");
+		var kmartMarker = L.marker([38.772715,-90.282158], {icon: blueIcon}).bindPopup("KMart");
+		var mcdonaldsMarker = L.marker([38.735557, -90.278521], {icon: blueIcon}).bindPopup("McDonalds");
+		var quiktripMarker = L.marker(quiktrip, {icon: blueIcon}).bindPopup("QuikTrip");
+		var redbbqmanMarker = L.marker([38.738486,-90.277731], {icon: blueIcon}).bindPopup("Red BBQ Man");
+		var rehobothMarker = L.marker([38.748033 , -90.279203], {icon: blueIcon}).bindPopup("Rehoboth Pharmacy");
+		var robberyMarker = L.marker(robbery, {icon: blueIcon}).bindPopup("Ferguson Market & Liquor");
+		var samsMarker = L.marker([38.737197,-90.279024], {icon: blueIcon}).bindPopup("Sam's Meat Market");
+		var walmartMarker = L.marker([38.765766,-90.283636], {icon: blueIcon}).bindPopup("Wal-Mart");
+		var zisserMarker = L.marker([38.748648,-90.279272], {icon: blueIcon}).bindPopup("Zisser's Tire");
+		
+		//protest/meeting
+		var fiveohoneMarker = L.marker([38.737716,-90.302725], {icon: greenIcon}).bindPopup("501 Plaza");
+		var forestwoodMarker = L.marker([38.736929,-90.285602], {icon: greenIcon}).bindPopup("Forestwood Park");
+		var greatergraceMarker = L.marker([38.770848,-90.299571], {icon: greenIcon}).bindPopup("Greater Grace Church");
+		var kienerMarker = L.marker([38.626117 , -90.190918], {icon: greenIcon}).bindPopup("Kiener Plaza");
+		var ksdkMarker = L.marker([38.626792 , -90.195622], {icon: greenIcon}).bindPopup("KSDK — site of protest in support of Officer Darren Wilson");
+		var mcullochMarker = L.marker([38.648541 , -90.337679], {icon: greenIcon}).bindPopup("St. Louis County Justice Center");
+		var naacpMarker = L.marker([38.706699,-90.302403], {icon: greenIcon}).bindPopup("Protest organized by NAACP");
+		var oldcourthouseMarker = L.marker([38.625454,-90.189278], {icon: greenIcon}).bindPopup("Old Courthouse");
+		var police_stationMarker = L.marker(police_station, {icon: greenIcon}).bindPopup("Ferguson Police Station");
+		var stmarksMarker = L.marker([38.748479,-90.268286], {icon: greenIcon}).bindPopup("Greater St. Mark Family Church");
+		var umslMarker = L.marker([38.709039,-90.310138], {icon: greenIcon}).bindPopup("University of Missouri-St. Louis");
+		var wainwrightMarker = L.marker([38.627372 , -90.192135], {icon: greenIcon}).bindPopup("Wainwright Building");
+
+
+		//logistic
+		var mediastagingMarker = L.marker([38.734603,-90.278242], {icon: yellowIcon}).bindPopup("Media staging area");
+		var naturalbridge1Marker = L.marker([38.701539,-90.292679], {icon: yellowIcon}).bindPopup("Road closure");
+		var naturalbridge2Marker = L.marker([38.70708,-90.30574], {icon: yellowIcon}).bindPopup("Road closure");
+		var policecommandMarker = L.marker([38.730184 , -90.276911], {icon: yellowIcon}).bindPopup("Police command post");
+		var sickMarker = L.marker(sick, {icon: yellowIcon}).bindPopup("Approximate location of sick call responded to by Darren Wilson");
+		var wflorchambersMarker = L.marker([38.749398 , -90.279894], {icon: yellowIcon});
+		var wflorwoodstockMarker = L.marker([38.728845 , -90.277684], {icon: yellowIcon});
+		var tueprotestMarker = L.marker([38.734180 , -90.277019], {icon: yellowIcon}).bindPopup("Protest zone");
+		var tuemediaMarker = L.marker([38.737451 , -90.279243], {icon: yellowIcon}).bindPopup("Media staging area");
+
+		//shots
+		var shootingMarker = L.marker(shooting, {icon: redIcon}).bindPopup("Michael Brown shooting");
+		var wedshootingmanMarker = L.marker([38.749381,-90.280044], {icon: redIcon}).bindPopup("Police shoot a man who they say pointed a gun at them.");
+		var wedshootingwomanMarker = L.marker([38.743088,-90.282147], {icon: redIcon}).bindPopup("Police say a woman was injured in a drive-by shooting.");
+		var wflorcanfieldMarker = L.marker([38.738017,-90.278327], {icon: redIcon}).bindPopup("Shots fired at West Florissant and Canfield.");
+		var stlshootingMarker = L.marker([38.716121 , -90.241356], {icon: redIcon}).bindPopup("St. Louis City police respond to reports of a man who just stole from a store and was acting erratically with a knife. When he approaches, saying \"Shoot me!\" and refuses commands to drop his knife, the officers open fire, killing him.");
+		var satshootingMarker = L.marker(quiktrip, {icon: redIcon}).bindPopup("A man is shot near QuikTrip.");
+		
+
+// var progress = O.UI.DotProgress('dots').count(31);
+
+
+		
+		function pathOn(feature) {
+			return {
+				weight: 1,
+				opacity: .6,
+				color: '#eee'
+			}
+		};
+		
+		function pathOff(feature) {
+			return {
+				weight: 1,
+				opacity: 0,
+				color: '#eee'
+			}
+		};
+
+
+	  var seq = O.Sequential();
+
+	  // enanle keys to move
+	  O.Triggers.Keys().left().then(seq.prev, seq)
+	  O.Triggers.Keys().right().then(seq.next, seq)
+	  click(document.getElementsByClassName('next')).then(seq.next, seq)
+      click(document.getElementsByClassName('prev')).then(seq.prev, seq)
+
+	  var slides = O.Actions.Slides('slides');
+	  
+	  
+	  var step0 = 		  O.Step(
+			  O.Location.changeHash('0'),
+			  slides.activate(0),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.removeMarker(map),
+map.actions.setZoom(10),
+map.actions.panTo(shooting, {duration: 2})
+			  
+		  )
+		  step0.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step1 = 		  O.Step(
+			  O.Location.changeHash('1'),
+			  slides.activate(1),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.removeMarker(map),
+map.actions.setZoom(10),
+map.actions.panTo(shooting, {duration: 2})
+			  
+		  )
+		  step1.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step2 = 		  O.Step(
+			  O.Location.changeHash('2'),
+			  slides.activate(2),
+  			  resizeAction
+			  
+			  ,
+			  map.actions.setView(shooting,13)
+			  
+		  )
+		  step2.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step3 = 		  O.Step(
+			  O.Location.changeHash('3'),
+			  slides.activate(3),
+  			  resizeAction
+			  
+			  ,
+			  map.actions.setView(sick,15),
+sickMarker.actions.addRemove(map),
+                        O.Sleep(1000),
+                        map.actions.panTo(shooting, {duration: 2}),
+shootingMarker.actions.addTo(map)
+			  
+		  )
+		  step3.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step4 = 		  O.Step(
+			  O.Location.changeHash('4'),
+			  slides.activate(4),
+  			  resizeAction
+			  
+			  ,
+			  sickMarker.actions.addRemove(map),
+shootingMarker.actions.addRemove(map),
+map.actions.panTo(robbery),
+robberyMarker.actions.addRemove(map),
+                        O.Sleep(1000),
+                        map.actions.panTo(shooting, {duration: 2})
+			  
+		  )
+		  step4.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step5 = 		  O.Step(
+			  O.Location.changeHash('5'),
+			  slides.activate(5),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+                map.actions.setZoom(18)
+			  
+		  )
+		  step5.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step6 = 		  O.Step(
+			  O.Location.changeHash('6'),
+			  slides.activate(6),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setView([38.737683 , -90.285816], 14),
+robberyMarker.actions.removeMarker(map),
+sickMarker.actions.removeMarker(map),
+police_stationMarker.actions.addRemove(map)
+			  
+		  )
+		  step6.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step7 = 		  O.Step(
+			  O.Location.changeHash('7'),
+			  slides.activate(7),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setView(quiktrip, 16),
+quiktripMarker.actions.addRemove(map),
+O.Sleep(400),
+zisserMarker.actions.addRemove(map),
+O.Sleep(400),
+samsMarker.actions.addRemove(map),
+O.Sleep(400),
+redbbqmanMarker.actions.addRemove(map),
+O.Sleep(1000),
+map.actions.setView([38.750736 , -90.280666],13),
+O.Sleep(1000),
+autozoneMarker.actions.addRemove(map),
+O.Sleep(400),
+walmartMarker.actions.addRemove(map),
+O.Sleep(400),
+clocktowerMarker.actions.addRemove(map),
+O.Sleep(400),
+hibbettMarker.actions.addRemove(map),
+O.Sleep(400),
+kmartMarker.actions.addRemove(map),
+O.Sleep(400),
+homedepotMarker.actions.addRemove(map)
+			  
+		  )
+		  step7.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step8 = 		  O.Step(
+			  O.Location.changeHash('8'),
+			  slides.activate(8),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setView([38.725028 , -90.289507],13),
+naacpMarker.actions.addRemove(map),
+fiveohoneMarker.actions.addRemove(map)
+			  
+		  )
+		  step8.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step9 = 		  O.Step(
+			  O.Location.changeHash('9'),
+			  slides.activate(9),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo([38.706699,-90.302403], {duration: 2}),
+naturalbridge1Marker.actions.addRemove(map),
+naturalbridge2Marker.actions.addRemove(map)
+			  
+		  )
+		  step9.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step10 = 		  O.Step(
+			  O.Location.changeHash('10'),
+			  slides.activate(10),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setZoom(12),
+O.Sleep(1000),
+map.actions.panTo([38.625454 , -90.189278], {duration: 2}),
+oldcourthouseMarker.actions.addRemove(map),
+O.Sleep(3000),
+map.actions.panTo([38.748479,-90.268286], {duration: 2}),
+stmarksMarker.actions.addRemove(map)
+			  
+		  )
+		  step10.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step11 = 		  O.Step(
+			  O.Location.changeHash('11'),
+			  slides.activate(11),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setView([38.749381,-90.280044],15),
+wedshootingwomanMarker.actions.addRemove(map),
+wedshootingmanMarker.actions.addRemove(map)
+			  
+		  )
+		  step11.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step12 = 		  O.Step(
+			  O.Location.changeHash('12'),
+			  slides.activate(12),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo(police_station, {duration: 2}),
+police_stationMarker.actions.addRemove(map)
+			  
+		  )
+		  step12.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step13 = 		  O.Step(
+			  O.Location.changeHash('13'),
+			  slides.activate(13),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo(quiktrip, {duration: 2}),
+mcdonaldsMarker.actions.addRemove(map)
+			  
+		  )
+		  step13.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step14 = 		  O.Step(
+			  O.Location.changeHash('14'),
+			  slides.activate(14),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setZoom(12),
+umslMarker.actions.addRemove(map),
+map.actions.panTo([38.709039,-90.310138], {duration: 2}),
+O.Sleep(4000),
+map.actions.panTo(quiktrip, {duration: 2}),
+map.actions.setZoom(15)
+			  
+		  )
+		  step14.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step15 = 		  O.Step(
+			  O.Location.changeHash('15'),
+			  slides.activate(15),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo(police_station, {duration: 2}),
+police_stationMarker.actions.addTo(map)
+			  
+		  )
+		  step15.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step16 = 		  O.Step(
+			  O.Location.changeHash('16'),
+			  slides.activate(16),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo([38.740528,-90.295730], {duration: 2}),
+forestwoodMarker.actions.addRemove(map)
+			  
+		  )
+		  step16.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step17 = 		  O.Step(
+			  O.Location.changeHash('17'),
+			  slides.activate(17),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+police_stationMarker.actions.removeMarker(map),
+map.actions.panTo(quiktrip, {duration: 2}),
+samsMarker.actions.addRemove(map),
+robberyMarker.actions.addRemove(map),
+feelbeautyMarker.actions.addRemove(map)
+			  
+		  )
+		  step17.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step18 = 		  O.Step(
+			  O.Location.changeHash('18'),
+			  slides.activate(18),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo(shooting, {duration: 2}),
+map.actions.panTo([38.738134,-90.278392], {duration: 2}),
+map.actions.panTo([38.749414,-90.279830], {duration: 2}),
+map.actions.panTo([38.748479,-90.268286], {duration: 2}),
+stmarksMarker.actions.addRemove(map)
+			  
+		  )
+		  step18.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step19 = 		  O.Step(
+			  O.Location.changeHash('19'),
+			  slides.activate(19),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.panTo(quiktrip, {duration: 2}),
+satshootingMarker.actions.addRemove(map),
+mediastagingMarker.actions.addRemove(map)
+			  
+		  )
+		  step19.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step20 = 		  O.Step(
+			  O.Location.changeHash('20'),
+			  slides.activate(20),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setView([38.686046 , -90.243759], 11),
+greatergraceMarker.actions.addRemove(map),
+O.Sleep(3000),
+ksdkMarker.actions.addRemove(map)
+			  
+		  )
+		  step20.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step21 = 		  O.Step(
+			  O.Location.changeHash('21'),
+			  slides.activate(21),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+wflorcanfieldMarker.actions.addRemove(map),
+dellwoodmktMarker.actions.addRemove(map),
+rehobothMarker.actions.addRemove(map),
+mcdonaldsMarker.actions.addRemove(map),
+O.Sleep(1000),
+map.actions.panTo([38.738017,-90.278327], {duration:2}),
+map.actions.setZoom(15),
+O.Sleep(3000),
+map.actions.panTo([38.730184 , -90.276911], {duration:2}),
+policecommandMarker.actions.addTo(map)
+			  
+		  )
+		  step21.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step22 = 		  O.Step(
+			  O.Location.changeHash('22'),
+			  slides.activate(22),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+wflorwoodstockMarker.actions.addRemove(map),
+wflorchambersMarker.actions.addRemove(map),
+O.Sleep(3000),
+map.actions.panTo([38.749398 , -90.279894], {duration:2}),
+O.Sleep(500),
+map.actions.setView([38.738017,-90.278327],14)
+			  
+		  )
+		  step22.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step23 = 		  O.Step(
+			  O.Location.changeHash('23'),
+			  slides.activate(23),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+policecommandMarker.actions.removeMarker(map),
+map.actions.setView([38.748479,-90.268286],15),
+stmarksMarker.actions.addRemove(map)
+			  
+		  )
+		  step23.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step24 = 		  O.Step(
+			  O.Location.changeHash('24'),
+			  slides.activate(24),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+map.actions.setZoom(11),
+kienerMarker.actions.addRemove(map),
+wainwrightMarker.actions.addRemove(map),
+O.Sleep(500),
+map.actions.panTo([38.626117 , -90.190918], {duration: 2}),
+O.Sleep(500),
+map.actions.setZoom(15),
+O.Sleep(500),
+map.actions.panTo([38.627372 , -90.192135], {duration: 2})
+			  
+		  )
+		  step24.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step25 = 		  O.Step(
+			  O.Location.changeHash('25'),
+			  slides.activate(25),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+mediastagingMarker.actions.addRemove(map),
+map.actions.setZoom(11),
+O.Sleep(500),
+map.actions.panTo([38.734603,-90.278242], {duration: 2}),
+O.Sleep(500),
+map.actions.setZoom(15)
+			  
+		  )
+		  step25.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step26 = 		  O.Step(
+			  O.Location.changeHash('26'),
+			  slides.activate(26),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+wflorcanfieldMarker.actions.addRemove(map),
+map.actions.panTo([38.738017,-90.278327], {duration: 2})
+			  
+		  )
+		  step26.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step27 = 		  O.Step(
+			  O.Location.changeHash('27'),
+			  slides.activate(27),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+quiktripMarker.actions.addRemove(map),
+map.actions.panTo(quiktrip, {duration: 2})
+			  
+		  )
+		  step27.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step28 = 		  O.Step(
+			  O.Location.changeHash('28'),
+			  slides.activate(28),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+stlshootingMarker.actions.addRemove(map),
+map.actions.setZoom(11),
+O.Sleep(500),
+map.actions.panTo([38.716121 , -90.241356], {duration: 2}),
+O.Sleep(500),
+map.actions.setZoom(15)
+			  
+		  )
+		  step28.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step29 = 		  O.Step(
+			  O.Location.changeHash('29'),
+			  slides.activate(29),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+mcullochMarker.actions.addRemove(map),
+map.actions.setZoom(11),
+O.Sleep(500),
+map.actions.panTo([38.648541 , -90.337679], {duration: 2}),
+O.Sleep(500),
+map.actions.setZoom(15)
+			  
+		  )
+		  step29.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  
+	  var step30 = 		  O.Step(
+			  O.Location.changeHash('30'),
+			  slides.activate(30),
+  			  resizeAction
+			  
+			  ,
+			  shootingMarker.actions.addRemove(map),
+tueprotestMarker.actions.addRemove(map),
+tuemediaMarker.actions.addRemove(map),
+map.actions.setZoom(11),
+O.Sleep(500),
+map.actions.panTo([38.738017,-90.278327], {duration: 2}),
+O.Sleep(500),
+map.actions.setZoom(15)
+			  
+		  )
+		  step30.on('finish.app', function() {
+		    console.log(seq);			
+		  });
+		  ;
+		  
+		  
+		  
+	  
+	  var story = O.Story()
+	  
+	  .addLinearState(
+		  seq.step(0),
+		  step0
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(1),
+		  step1
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(2),
+		  step2
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(3),
+		  step3
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(4),
+		  step4
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(5),
+		  step5
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(6),
+		  step6
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(7),
+		  step7
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(8),
+		  step8
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(9),
+		  step9
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(10),
+		  step10
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(11),
+		  step11
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(12),
+		  step12
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(13),
+		  step13
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(14),
+		  step14
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(15),
+		  step15
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(16),
+		  step16
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(17),
+		  step17
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(18),
+		  step18
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(19),
+		  step19
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(20),
+		  step20
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(21),
+		  step21
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(22),
+		  step22
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(23),
+		  step23
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(24),
+		  step24
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(25),
+		  step25
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(26),
+		  step26
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(27),
+		  step27
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(28),
+		  step28
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(29),
+		  step29
+	  )
+	  
+	  
+	  .addLinearState(
+		  seq.step(30),
+		  step30
+	  )
+	  
+	  
+
+	    
+
+	  story.go(0);
+	  
+	  
+
+</script>
+
+    <script src="js/lib/jquery.js" type="text/javascript"></script>
+    <script src="js/lib/pym.js" type="text/javascript"></script>
+    <script src="js/graphic.js" type="text/javascript"></script>
+    <script src="js/soundcite.js" type="text/javascript"></script>
+    <script src="js/popcorn-complete.min.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	  var pageTrackerA = _gat._getTracker("UA-2139719-1");
+	  pageTrackerA._initData();
+	  pageTrackerA._trackPageview();
+ 
+	  var pageTrackerB = _gat._getTracker("UA-1741309-15");
+	  pageTrackerB._initData();
+	  pageTrackerB._trackPageview();
+	</script>
+	
+</body>
+</html>

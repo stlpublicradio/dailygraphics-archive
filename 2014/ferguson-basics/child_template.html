@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ferguson stats</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Fonts -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	
+    <script src="js/lib/jquery.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="graphic">
+		<h2>Age</h2>
+		<p>Nearly 40 percent of Ferguson's residents are under age 25, compared with about 32 percent of St. Louis County. That helps bring the median age in Ferguson down to 34.3, compared with the county's 39.8.</p>
+		<div id="age">
+		</div>
+		<h2>Race</h2>
+		<p>The racial makeup of Ferguson is very unlike St. Louis County as a whole. Ferguson's population is two-thirds black and nearly a third white. Asians make up around one percent of the city. St. Louis County is almost three-quarters white, one-quarter black and 3.5 percent Asian.</p>
+		<div id="race">
+		</div>
+		<h2>Police department racial breakdown</h2>
+		<p>Data provided by the Ferguson Police Department and St. Louis County police show that in Ferguson, black officers make up around 5 percent of the department. In the county, black officers are about 10 percent of the force.</p>
+		<div id="pd">
+		</div>
+		<h2>Education</h2>
+		<p>About 14 percent of Ferguson's residents age 25 or older have a bachelor's degree, and about 8 percent have a master's or professional degree. In St. Louis County, about 24 percent have a bachelor's, and about 16 percent have an advanced degree.</p>
+		<div id="education">
+		</div>
+		<h2>Median Household Income</h2>
+		<p>In Ferguson, the median household income is about $37,500. In St. Louis County, it's about $58,500. In both Ferguson and St. Louis County, the median household income is higher for white householders than black householders.</p>
+		<p>Additionally, about 14.3 percent of Ferguson's population is unemployed, compared with 8.4 percent of St. Louis County. The proportion of Ferguson's households that received food stamps or SNAP in the past year is about 21.7 percent, more than twice as high as St. Louis County's 9.4 percent. Similarly, about 22 percent of Ferguson's population earned an income below the poverty line in the past year. That number is 10.5 percent for St. Louis County.</p>
+		<div id="income">
+		</div>
+    </div>
+    <div class="footer">
+		<p>Source: <a href="http://census.gov" target="_parent">Census.gov</a>, Ferguson Police Department, St. Louis County Police Department</p>
+    </div>
+    
+	
+	<script>
+	var age = 'age.csv'
+	var education = 'education.csv'
+	var income = 'median_hhold_income.csv'
+	var race = 'race.csv'
+	var pd = 'pd.csv'
+	var formatNumber = d3.format("0,")
+	var formatMoney = d3.format("$0,")
+	
+	margin = {top: 15, right: 10, bottom: 20, left: 45},
+	width = 575 - margin.left - margin.right,
+	gutter = 10
+	mainwidth = (width / 3) * 2,
+	secondwidth = width - mainwidth - gutter - margin.left,
+	mainheight = 200 - margin.top - margin.bottom,
+	secondheight = 50,
+	edmarginbottom = 120;
+	
+	var mainx = d3.scale.ordinal()
+	    .rangeRoundBands([0, mainwidth], .1);
+
+	var mainy = d3.scale.linear()
+	    .range([mainheight, 0]);
+		
+
+	var xAxis = d3.svg.axis()
+	    .scale(mainx)
+	    .orient("bottom");
+		
+	var yAxis = d3.svg.axis()
+	    .scale(mainy)
+	    .orient("left")
+	    .ticks(10)
+		.tickFormat(numberFormat);
+
+		var secondx = d3.scale.ordinal()
+		    .rangeRoundBands([0, secondwidth], .1);
+
+		var secondy = d3.scale.linear()
+		    .range([secondheight, 0]);
+		
+
+		var secondxAxis = d3.svg.axis()
+		    .scale(secondx)
+		    .orient("bottom");
+
+		var secondyAxis = d3.svg.axis()
+		    .scale(secondy)
+		    .orient("left")
+		    .ticks(4)
+			.tickFormat(numberFormat);
+
+	var divs = d3.select("#graphic").selectAll("div")
+		
+	var svg = divs.append("svg")
+	    .attr("width", width + margin.left + margin.right)
+	    .attr("height", mainheight + margin.top + margin.bottom)
+	  .append("g")
+	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+  	  var xaxisg = svg.append("g")
+  	      .attr("class", "x axis")
+  	      .attr("transform", "translate(0," + mainheight + ")");
+
+
+  	  var yaxisg = svg.append("g")
+  	      .attr("class", "y axis");
+		  		
+		var secondgraph = svg.append("g")
+		.attr("class","secondgraph")
+		.attr("transform", "translate(" + (mainwidth + gutter + margin.left) + "," + 0 + ")");
+		
+		var ageGraph = d3.select("#age").select("svg");
+		var raceGraph = d3.select("#race").select("svg");
+		var educationGraph = d3.select("#education").select("svg");
+		var incomeGraph = d3.select("#income").select("svg")
+		var pdGraph = d3.select("#pd").select("svg");
+		
+		educationGraph.attr("height", mainheight + margin.top + edmarginbottom);
+	
+	d3.csv(age, type, function(error, data) {
+	  mainx.domain(data.map(function(d) { return d.category; }));
+	  mainy.domain([0, d3.max(data, function(d) { return d.ferg; })]);
+	  secondx.domain(data.map(function(d) { return d.category; }));
+	  secondy.domain([0, d3.max(data, function(d) { return d.stl; })]);
+	  
+	  ageGraph.select("g").selectAll(".bar")
+	      .data(data)
+	    .enter().append("rect")
+ 		 .attr("class", function(d, i) { return "bar bar-" + i; })
+	      .attr("x", function(d) { return mainx( d.category); })
+	      .attr("width", mainx.rangeBand())
+	      .attr("y", function(d) { return mainy(d.ferg); })
+	      .attr("height", function(d) { return mainheight - mainy(d.ferg); })
+	      .append("title")
+	      .text(function(d) { return formatNumber(d.ferg); });		      
+	      
+
+		  //  ageGraph.select(".secondgraph").append("g")
+		  //    .attr("class", "x axis")
+		  //    .attr("transform", "translate(0," + secondheight + ")")
+		  //    .call(secondxAxis);
+		  
+		  ageGraph.select(".x.axis").call(xAxis)
+
+		
+		  ageGraph.select(".y.axis").call(yAxis);
+		  
+		  ageGraph.select(".secondgraph")
+		  	  .append("g")
+		      .attr("class", "y axis")
+		      .call(secondyAxis);
+
+		  ageGraph.select(".secondgraph").selectAll(".bar")
+		      .data(data)
+		    .enter().append("rect")
+		      .attr("class", function(d, i) { return "second-bar bar-" + i; })
+		      .attr("x", function(d) { return secondx( d.category); })
+		      .attr("width", secondx.rangeBand())
+		      .attr("y", function(d) { return secondy(d.stl); })
+		      .attr("height", function(d) { return secondheight - secondy(d.stl); })
+		      .append("title")
+		      .text(function(d) { return formatNumber(d.stl); });		      
+			  
+		      ageGraph.selectAll(".second-bar")
+		      .attr("opacity", 0.6)
+		  .on("mouseover", function(d, i) {
+			  ageGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 1);
+			  })
+		  .on("mouseout", function(d, i) {
+			  ageGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 0.6);
+			  })
+			  			  
+			  ageGraph.selectAll(".bar")
+			  .attr("opacity", 0.6)
+			  .on("mouseover", function(d, i) {
+				  ageGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 1);
+				  })
+			  .on("mouseout", function(d, i) {
+				  ageGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 0.6);
+				  })
+
+	});
+	
+	d3.csv(education, type, function(error, data) {
+	  mainx.domain(data.map(function(d) { return d.category; }));
+	  mainy.domain([0, d3.max(data, function(d) { return d.ferg; })]);
+	  secondx.domain(data.map(function(d) { return d.category; }));
+	  secondy.domain([0, d3.max(data, function(d) { return d.stl; })]);
+	  
+	  educationGraph.select("g").selectAll(".bar")
+	      .data(data)
+	    .enter().append("rect")
+ 		 .attr("class", function(d, i) { return "bar bar-" + i; })
+	      .attr("x", function(d) { return mainx( d.category); })
+	      .attr("width", mainx.rangeBand())
+	      .attr("y", function(d) { return mainy(d.ferg); })
+	      .attr("height", function(d) { return mainheight - mainy(d.ferg); })
+	      .append("title")
+	      .text(function(d) { return formatNumber(d.ferg); });		      
+	      
+
+		  //  ageGraph.select(".secondgraph").append("g")
+		  //    .attr("class", "x axis")
+		  //    .attr("transform", "translate(0," + secondheight + ")")
+		  //    .call(secondxAxis);
+		  
+		  educationGraph.select(".x.axis").call(xAxis)
+  		.selectAll("text")
+  		.attr("y", 0)
+  		.attr("x", -9)
+  		.attr("transform", "rotate(-45)")
+  		.style("text-anchor", "end");
+		  
+		  educationGraph.select(".y.axis").call(yAxis);
+		  
+		  educationGraph.select(".secondgraph")
+		  	  .append("g")
+		      .attr("class", "y axis")
+		      .call(secondyAxis);
+
+		  educationGraph.select(".secondgraph").selectAll(".bar")
+		      .data(data)
+		    .enter().append("rect")
+		      .attr("class", function(d, i) { return "second-bar bar-" + i; })
+		      .attr("x", function(d) { return secondx( d.category); })
+		      .attr("width", secondx.rangeBand())
+		      .attr("y", function(d) { return secondy(d.stl); })
+		      .attr("height", function(d) { return secondheight - secondy(d.stl); })
+		      .append("title")
+		      .text(function(d) { return formatNumber(d.stl); });		      
+			  
+		      educationGraph.selectAll(".second-bar")
+		      .attr("opacity", 0.6)
+		  .on("mouseover", function(d, i) {
+			  educationGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 1);
+			  })
+		  .on("mouseout", function(d, i) {
+			  educationGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 0.6);
+			  })		      
+		      
+			  educationGraph.selectAll(".bar")
+			  .attr("opacity", 0.6)
+			  .on("mouseover", function(d, i) {
+				  educationGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 1);
+				  })
+			  .on("mouseout", function(d, i) {
+				  educationGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 0.6);
+				  })
+
+	});
+	
+	d3.csv(race, type, function(error, data) {
+	  mainx.domain(data.map(function(d) { return d.category; }));
+	  mainy.domain([0, d3.max(data, function(d) { return d.ferg; })]);
+	  secondx.domain(data.map(function(d) { return d.category; }));
+	  secondy.domain([0, d3.max(data, function(d) { return d.stl; })]);
+	  
+	  raceGraph.select("g").selectAll(".bar")
+	      .data(data)
+	    .enter().append("rect")
+ 		 .attr("class", function(d, i) { return "bar bar-" + i; })
+	      .attr("x", function(d) { return mainx( d.category); })
+	      .attr("width", mainx.rangeBand())
+	      .attr("y", function(d) { return mainy(d.ferg); })
+	      .attr("height", function(d) { return mainheight - mainy(d.ferg); })
+	      .append("title")
+	      .text(function(d) { return formatNumber(d.ferg); });		      
+	      
+
+		  //  ageGraph.select(".secondgraph").append("g")
+		  //    .attr("class", "x axis")
+		  //    .attr("transform", "translate(0," + secondheight + ")")
+		  //    .call(secondxAxis);
+		  
+		  raceGraph.select(".x.axis").call(xAxis);
+		  raceGraph.select(".y.axis").call(yAxis);
+		  
+		  raceGraph.select(".secondgraph")
+		  	  .append("g")
+		      .attr("class", "y axis")
+		      .call(secondyAxis);
+
+		  raceGraph.select(".secondgraph").selectAll(".bar")
+		      .data(data)
+		    .enter().append("rect")
+		      .attr("class", function(d, i) { return "second-bar bar-" + i; })
+		      .attr("x", function(d) { return secondx( d.category); })
+		      .attr("width", secondx.rangeBand())
+		      .attr("y", function(d) { return secondy(d.stl); })
+		      .attr("height", function(d) { return secondheight - secondy(d.stl); })
+		      .append("title")
+		      .text(function(d) { return formatNumber(d.stl); });		      
+			  
+		      raceGraph.selectAll(".second-bar")
+		      .attr("opacity", 0.6)
+		  .on("mouseover", function(d, i) {
+			  raceGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 1);
+			  })
+		  .on("mouseout", function(d, i) {
+			  raceGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 0.6);
+			  })
+			  
+			  raceGraph.selectAll(".bar")
+			  .attr("opacity", 0.6)
+			  .on("mouseover", function(d, i) {
+				  raceGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 1);
+				  })
+			  .on("mouseout", function(d, i) {
+				  raceGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 0.6);
+				  })
+
+	});
+	
+	d3.csv(income, type, function(error, data) {
+	  mainx.domain(data.map(function(d) { return d.category; }));
+	  mainy.domain([0, d3.max(data, function(d) { return d.ferg; })]);
+	  secondx.domain(data.map(function(d) { return d.category; }));
+	  secondy.domain([0, d3.max(data, function(d) { return d.stl; })]);
+	  
+	  incomeGraph.select("g").selectAll(".bar")
+	      .data(data)
+	    .enter().append("rect")
+ 		 .attr("class", function(d, i) { return "bar bar-" + i; })
+	      .attr("x", function(d) { return mainx( d.category); })
+	      .attr("width", mainx.rangeBand())
+	      .attr("y", function(d) { return mainy(d.ferg); })
+	      .attr("height", function(d) { return mainheight - mainy(d.ferg); })
+	      .append("title")
+	      .text(function(d) { return formatMoney(d.ferg); });		      
+	      
+
+		  //  ageGraph.select(".secondgraph").append("g")
+		  //    .attr("class", "x axis")
+		  //    .attr("transform", "translate(0," + secondheight + ")")
+		  //    .call(secondxAxis);
+		  
+		  incomeGraph.select(".x.axis").call(xAxis);
+		  
+	  	var yAxis = d3.svg.axis()
+	  	    .scale(mainy)
+	  	    .orient("left")
+	  	    .ticks(10)
+	  		.tickFormat(dollars);
+			
+		  incomeGraph.select(".y.axis").call(yAxis);
+		  
+  		var secondyAxis = d3.svg.axis()
+  		    .scale(secondy)
+  		    .orient("left")
+  		    .ticks(4)
+  			.tickFormat(dollars);
+		  
+		  incomeGraph.select(".secondgraph")
+		  	  .append("g")
+		      .attr("class", "y axis")
+		      .call(secondyAxis);
+
+		  incomeGraph.select(".secondgraph").selectAll(".bar")
+		      .data(data)
+		    .enter().append("rect")
+		      .attr("class", function(d, i) { return "second-bar bar-" + i; })
+		      .attr("x", function(d) { return secondx( d.category); })
+		      .attr("width", secondx.rangeBand())
+		      .attr("y", function(d) { return secondy(d.stl); })
+		      .attr("height", function(d) { return secondheight - secondy(d.stl); })
+		      .append("title")
+		      .text(function(d) { return formatMoney(d.stl); });		      
+			  
+		      incomeGraph.selectAll(".second-bar")
+		      .attr("opacity", 0.6)
+		  .on("mouseover", function(d, i) {
+			  incomeGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 1);
+			  })
+		  .on("mouseout", function(d, i) {
+			  incomeGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 0.6);
+			  })
+		      
+			  incomeGraph.selectAll(".bar")
+			  .attr("opacity", 0.6)
+			  .on("mouseover", function(d, i) {
+				  incomeGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 1);
+				  })
+			  .on("mouseout", function(d, i) {
+				  incomeGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 0.6);
+				  })
+
+	});
+
+	d3.csv(pd, type, function(error, data) {
+	  mainx.domain(data.map(function(d) { return d.category; }));
+	  mainy.domain([0, d3.max(data, function(d) { return d.ferg; })]);
+	  secondx.domain(data.map(function(d) { return d.category; }));
+	  secondy.domain([0, d3.max(data, function(d) { return d.stl; })]);
+	  
+	  pdGraph.select("g").selectAll(".bar")
+	      .data(data)
+	    .enter().append("rect")
+ 		 .attr("class", function(d, i) { return "bar bar-" + i; })
+	      .attr("x", function(d) { return mainx( d.category); })
+	      .attr("width", mainx.rangeBand())
+	      .attr("y", function(d) { return mainy(d.ferg); })
+	      .attr("height", function(d) { return mainheight - mainy(d.ferg); })
+	      .append("title")
+	      .text(function(d) { return numberFormat(d.ferg); });		      
+	      
+
+		  //  ageGraph.select(".secondgraph").append("g")
+		  //    .attr("class", "x axis")
+		  //    .attr("transform", "translate(0," + secondheight + ")")
+		  //    .call(secondxAxis);
+		  
+		  pdGraph.select(".x.axis").call(xAxis);
+		  
+	  	var yAxis = d3.svg.axis()
+	  	    .scale(mainy)
+	  	    .orient("left")
+	  	    .ticks(10)
+	  		.tickFormat(numberFormat);
+			
+		  pdGraph.select(".y.axis").call(yAxis);
+		  
+  		var secondyAxis = d3.svg.axis()
+  		    .scale(secondy)
+  		    .orient("left")
+  		    .ticks(4)
+  			.tickFormat(numberFormat);
+		  
+		  pdGraph.select(".secondgraph")
+		  	  .append("g")
+		      .attr("class", "y axis")
+		      .call(secondyAxis);
+
+		  pdGraph.select(".secondgraph").selectAll(".bar")
+		      .data(data)
+		    .enter().append("rect")
+		      .attr("class", function(d, i) { return "second-bar bar-" + i; })
+		      .attr("x", function(d) { return secondx( d.category); })
+		      .attr("width", secondx.rangeBand())
+		      .attr("y", function(d) { return secondy(d.stl); })
+		      .attr("height", function(d) { return secondheight - secondy(d.stl); })
+		      .append("title")
+		      .text(function(d) { return numberFormat(d.stl); });		      
+			  
+		      pdGraph.selectAll(".second-bar")
+		      .attr("opacity", 0.6)
+		  .on("mouseover", function(d, i) {
+			  pdGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 1);
+			  })
+		  .on("mouseout", function(d, i) {
+			  pdGraph
+			  .selectAll(".bar-" + i)
+			  .transition()
+			  .duration(100)
+			  .attr("opacity", 0.6);
+			  })
+		      
+			  pdGraph.selectAll(".bar")
+			  .attr("opacity", 0.6)
+			  .on("mouseover", function(d, i) {
+				  pdGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 1);
+				  })
+			  .on("mouseout", function(d, i) {
+				  pdGraph
+				  .selectAll(".bar-" + i)
+				  .transition()
+				  .duration(100)
+				  .attr("opacity", 0.6);
+				  })
+
+	});
+
+
+	function type(d) {
+	  d.ferg = +d.ferg;
+	  d.stl = +d.stl;
+	  return d;
+	}
+	
+	function numberFormat(d) {
+		if (d > 1000) {
+		var s = (d / 1000);
+		if (s > 0) {
+		return s + "k"; }
+		else {
+		return 0; };}
+		else {
+			return d;
+		}
+		}
+		
+		function dollars(d) {
+			var dollars2 = d3.format('$0,');
+			var s = (d / 1000);
+			if (s > 0) {
+			return dollars2(s) + "k"; }
+			else {
+			return 0; };
+			
+		}
+	</script>
+</body>
+</html>

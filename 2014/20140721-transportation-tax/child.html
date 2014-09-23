@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Transportation tax</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="js/d3.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Titillium+Web:400,700,200:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
+    
+    <style type="text/css">
+        /* base styles */
+        html { -webkit-text-size-adjust: none; }
+        body {
+			width: 580px;
+            margin: 0;
+            padding: 0;
+	   	 	font-family: 'Titillium Web', sans-serif;
+            color: #333;
+        }
+		p {
+		    font-family: 'Titillium Web', sans-serif;
+			font-weight: 400;
+		}
+        h1 {
+            margin: 0 0 6px 0;
+			line-height: 1.2em;
+            font-size: 30px;
+            color: #333;
+		    font-family: 'Titillium Web', sans-serif;
+	    font-weight: 700;
+        }
+        h2 {
+            font-weight: normal;
+			line-height: 1.2em;
+			color: #666;
+            font-size: 2em;
+            margin: 0 0 5px 0;
+	    font-family: 'Titillium Web', sans-serif;
+	    font-weight: 400;
+        }
+        h3 {
+            font-weight: normal;
+            color: #666;
+            font-size: 22px;
+            margin: 0 0 22px 0;
+	    font-family: 'Titillium Web', sans-serif;
+	    font-weight: 200;
+		margin: 0px;
+        }
+	h4 {
+            margin: 2px 0 7px 0;
+            color: #666;
+            font-size: 16px;
+	    font-family: 'Titillium Web', sans-serif;
+	    font-weight: 200;
+        }
+		
+		.caption p,
+        .footnotes p,
+        .footer p {
+		    font-family: 'Titillium Web', sans-serif;
+			font-weight: 200;
+            margin: 2px 0 0 0;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #202020;
+        }
+        a, a:link, a:visited {
+            color: #4774CC;
+            text-decoration: none;
+        }
+        a:hover, a:active { opacity: 0.7; }
+		
+		.axis path {
+		  display: none;
+		}
+
+		.axis line {
+		  shape-rendering: crispEdges;
+		  stroke: #000;
+		}
+
+		.axis .minor line {
+		  stroke: #777;
+		  stroke-dasharray: 2,2;
+		}
+		
+		.introtext {
+			font-weight: 400;
+			font-size: 1.2em;
+		}
+		
+		div.motopfive, div.stltopfive {
+			clear:both;
+			padding-top: 10px;
+		}
+		
+		div.topfiveitem {
+			margin: 5px;
+			padding: 30px;
+			border-radius: 25px;
+			background-color: rgba(204,32,59,.4) ;
+			position:relative;
+		}
+		
+		.highways {
+			margin-top: 20px;
+		}
+		
+		div.number {
+			font-size: 2em;
+			font-weight: 700;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			color: rgba(204,32,59,.4);
+			padding: 5px;
+			margin: 0px;
+			border-radius: 25px;
+			width: 30px;
+			height: 30px;
+			background-color: white;
+			text-align: center;
+			float:left;
+		}
+		
+		div.number span {
+			position: relative;
+			top: -10px;
+		}
+		
+		div.topfiveitem h3 {
+			font-size: 4.5em;
+			font-weight: 700;
+			color: black;
+			text-align: center;
+			margin: 0px;
+		}
+		
+		p.county {
+			font-weight: 200;
+			font-size: 1.5em;
+			text-align: center;
+			margin-top: 0px;
+		}
+		
+		p.description {
+			font-size: 1.25em;
+		}
+		
+		.topbarcontain, .stlbarcontain {
+			width:320px;
+			float:left;
+		}
+		
+		.toppiecontain, .stlpiecontain {
+			width: 220px;
+			float: left;
+			margin-left: 15px;
+			padding-left: 15px;
+			border-left: solid 1px #aaa;
+		}
+		
+		.keyblock {
+			width:15px;
+			height: 15px;
+			margin: 3px;
+			float: left;
+		}
+		
+		.road .keyblock {
+			background-color: #006c8e ;
+		}
+		
+		.public .keyblock {
+			background-color: #f1bb4f ;
+		}
+		
+		.aviation .keyblock {
+			background-color: #31716e ;
+		}
+		
+		.rail .keyblock {
+			background-color: #f6883e ;
+		}
+		
+		.sidewalk .keyblock {
+			background-color: #571751 ;
+		}
+		
+		.port-rail .keyblock {
+			background-color: #a5a585 ;
+		}
+		
+		.port .keyblock {
+			background-color: #cc203b ;
+		}
+		
+    </style>
+
+</head>
+<body>
+    
+    <h2>Statewide Breakdown</h2>
+    <p class="introtext">Key takeaways from analyzing the entire project list</p>
+
+    <div id="graphic">
+		<div class="topcharts">
+			<div class="topbarcontain">
+				<h3>Amount by region</h3>
+<svg class="topbar"></svg></div>
+			<div class="toppiecontain">
+				<h3>Amount by project type</h3>
+				<svg class="toppie"></svg>
+			<div class="key">
+				<div class="road"><div class="keyblock"></div><span>Road & bridge</span></div>
+				<div class="public"><div class="keyblock"></div><span>Public Transportation</span></div>
+				<div class="aviation"><div class="keyblock"></div><span>Aviation</span></div>
+				<div class="rail"><div class="keyblock"></div><span>Rail</span></div>
+				<div class="sidewalk"><div class="keyblock"></div><span>Sidewalk/Non-motorized</span></div>
+				<div class="port-rail"><div class="keyblock"></div><span>Port/Rail</span></div>
+				<div class="port"><div class="keyblock"></div><span>Port</span></div>
+
+			</div>
+		</div>
+		</div>
+		<div class="motopfive">
+			<h2>Top five projects in Missouri</h2>
+			
+		
+		
+		<div class="topfiveitem"><div class="number 1"><span>1</span></div> <h3>$500,000,000</h3>
+		<p class="county">Statewide</p>
+		<p class="description">Reconstruct and widen I-70 to six lanes from Independence to Wentzville as a part of the statewide improvement. Additional funding provided by future bonding capacity.</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 2"><span>2</span></div> <h3>$350,000,000</h3>
+		<p class="county">St. Louis County</p>
+		<p class="description">Improve I-270 between Rte 67 (Lindbergh Blvd) and Rte 367</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 3"><span>3</span></div> <h3>$200,000,000</h3>
+		<p class="county">St. Louis County</p>
+		<p class="description">Improve I-70 between Natural Bridge and Hanley Rds, including the I-70/I-170 interchange</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 4"><span>4</span></div> <h3>$93,000,000</h3>
+		<p class="county">Osage / Maries</p>
+		<p class="description">Construct Rte 63 shared 4 lane on new location from Rte 50 to Maries CR 209 south of Freeburg</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 5"><span>5</span></div> <h3>$91,483,000</h3>
+		<p class="county">Moniteau / Morgan</p>
+		<p class="description">Add lanes to Rte 50 from California to Tipton, a new two lane alternate route around Tipton, and add lanes to Rte 50 from Tipton to Morgan County</p></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		<hr>
+	    <h2>St. Louis Regional Breakdown</h2>
+	    <p class="introtext">Key takeways from looking at project list for the city of St. Louis, St. Louis County, Jefferson County, Franklin County and St. Charles County.</p>
+		<div class="stl">
+			<div class="stlbarcontain">
+				<h3>Amount by local county</h3>
+				<svg class="stlcounties"></svg></div>
+			<div class="stlpiecontain">
+				<h3>Amount by local project type</h3>
+				<svg class="stlpie"></svg>
+			<div class="key">
+				<div class="road"><div class="keyblock"></div><span>Road & bridge</span></div>
+				<div class="public"><div class="keyblock"></div><span>Public Transportation</span></div>
+				<div class="sidewalk"><div class="keyblock"></div><span>Sidewalk/Non-motorized</span></div>
+				<div class="aviation"><div class="keyblock"></div><span>Aviation</span></div>
+				<div class="rail"><div class="keyblock"></div><span>Rail</span></div>
+				<div class="port"><div class="keyblock"></div><span>Port</span></div>
+			</div>
+			</div>
+		<div class="stltopfive">
+		<h2>Top five projects in the St. Louis region</h2>
+		
+		
+		<div class="topfiveitem"><div class="number 1"><span>1</span></div> <h3>$350,000,000</h3>
+		<p class="county">St. Louis County</p>
+		<p>Improve I-270 between Rte 67 (Lindbergh Blvd) and Rte 367</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 2"><span>2</span></div> <h3>$200,000,000</h3>
+		<p class="county">St. Louis County</p>
+		<p>Improve I-70 between Natural Bridge and Hanley Rds, including the I-70/I-170 interchange</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 3"><span>3</span></div> <h3>$85,515,000</h3>
+		<p class="county">St. Louis County</p>
+		<p>Improve Manchester Rd (Rte 100) between Hanley Rd and Lindbergh (Rte 61/67)</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 4"><span>4</span></div> <h3>$74,749,000</h3>
+		<p class="county">St. Louis County</p>
+		<p>Improve I-44 between I-270 and Rte 141 including new bridges over the Meramec River and added westbound lane</p></div>
+		
+		
+		
+		<div class="topfiveitem"><div class="number 5"><span>5</span></div> <h3>$55,097,000</h3>
+		<p class="county">Jefferson</p>
+		<p>Add lane on I-55 from Rte Z to McNutt St</p></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		<div class="highways">
+		    <h2>St. Louis regional highway spending</h2>
+		    <p class="introtext">Amounts slated to be spent on each interstate highway in the St. Louis region</p>
+			<div class="stlhighwayscontain">
+			<svg class="stlhighways"></svg>
+			</div>
+		</div>
+		</div>
+	</div>
+		
+		
+<script type="text/javascript">
+var data = [{"region":"Central district", "amount":93000000, "county":"Osage / Maries", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":91483000, "county":"Moniteau / Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":38640000, "county":"Osage", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":20000000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":17221000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":17170000, "county":"Cole", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":15206000, "county":"Laclede", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":13283000, "county":"Miller", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":11500000, "county":"Phelps", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":10500000, "county":"Boone", "type":"Public Transportation", "highway":"" },{"region":"Central district", "amount":9000000, "county":"Boone", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":8000000, "county":"Cole", "type":"Public Transportation", "highway":"" },{"region":"Central district", "amount":6903000, "county":"Washington / Franklin", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":5525000, "county":"Maries / Miller", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":5520000, "county":"Osage", "type":"Rail", "highway":"" },{"region":"Central district", "amount":5449000, "county":"Phelps / Dent", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":5400000, "county":"All", "type":"Public Transportation", "highway":"" },{"region":"Central district", "amount":5000000, "county":"Cole", "type":"Rail", "highway":"" },{"region":"Central district", "amount":4816000, "county":"Cole / Miller / Osage", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":4816000, "county":"Cooper / Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":4500000, "county":"Boone", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":4200000, "county":"Cole", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":4057000, "county":"Laclede", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3811000, "county":"Gasconade", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3741000, "county":"Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3741000, "county":"Howard", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3425000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3257000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":3172000, "county":"Morgan / Miller", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":2933000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":2919000, "county":"Miller / Cole", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":2700000, "county":"Laclede", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":2539000, "county":"Gasconade / Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":2404000, "county":"Laclede", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":2136000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1971000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1849000, "county":"Gasconade", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1802000, "county":"Pulaski", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1765000, "county":"Washington", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":1745000, "county":"Laclede", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1673000, "county":"Cooper", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1651000, "county":"Phelps", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1527000, "county":"Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1520000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1344000, "county":"Miller", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1300000, "county":"Camden", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":1200000, "county":"Miller", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":1139000, "county":"Cooper", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1138000, "county":"Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1100000, "county":"Cole", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":1077000, "county":"Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1066000, "county":"Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1040000, "county":"Washington", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1015000, "county":"Camden", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1010000, "county":"Phelps", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":1000000, "county":"Cole / Callaway / Boone", "type":"Public Transportation", "highway":"" },{"region":"Central district", "amount":990000, "county":"Gasconade", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":941000, "county":"Cole", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":880000, "county":"Dent", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":868000, "county":"Cooper", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":848000, "county":"Callaway", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":846000, "county":"Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":777000, "county":"Crawford", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":726000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":700000, "county":"Boone", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":691000, "county":"Cole", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":661000, "county":"Moniteau", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":638000, "county":"Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":637000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":599000, "county":"Cole", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":590000, "county":"Maries", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":585000, "county":"Cole", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":538000, "county":"Morgan", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":515000, "county":"Osage", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":511000, "county":"Washington", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":507000, "county":"Howard", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":500000, "county":"Boone", "type":"Aviation", "highway":"" },{"region":"Central district", "amount":487000, "county":"Boone", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":474000, "county":"Howard", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":420000, "county":"Camden", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":419000, "county":"Camden", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":409000, "county":"Maries", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":397000, "county":"Camden", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":320000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":300000, "county":"Boone", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":300000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":283000, "county":"Pulaski", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":254000, "county":"Dent", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":232000, "county":"Gasconade", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":175000, "county":"Callaway", "type":"Road and Bridge", "highway":"" },{"region":"Central district", "amount":93000, "county":"Cooper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Central district", "amount":43000, "county":"Pulaski", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":81075000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":75130000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":73830000, "county":"Clay / Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":68310000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":52900000, "county":"Jackson", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":50370000, "county":"Clay", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":45046000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":41751000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":38750000, "county":"Jackson", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":35135000, "county":"Lafayette / Johnson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":35000000, "county":"Jackson / Platte / Clay / Cass", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":32500000, "county":"Jackson / Platte / Clay / Cass", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":32500000, "county":"Jackson / Platte / Clay / Cass", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":32338000, "county":"Jackson", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":30400000, "county":"Pettis", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":24000000, "county":"Jackson / Cass", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":22885000, "county":"Clay", "type":"Aviation", "highway":"" },{"region":"Kansas City", "amount":21402000, "county":"Cass", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":20000000, "county":"Jackson", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":18412000, "county":"Lafayette", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":7585000, "county":"Pettis", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":7383000, "county":"Saline", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":6900000, "county":"Jackson", "type":"Port / Rail", "highway":"" },{"region":"Kansas City", "amount":5819000, "county":"Jackson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":4721000, "county":"Ray", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":4653000, "county":"Ray", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":4497000, "county":"Clay", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":3600000, "county":"Johnson", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":3000000, "county":"Platte / Clay", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":2754000, "county":"Pettis", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":2484000, "county":"Platte", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":2000000, "county":"Lafayette / Saline / Johnson / Pettis", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":2000000, "county":"Platte", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":1725000, "county":"Jackson", "type":"Aviation", "highway":"" },{"region":"Kansas City", "amount":957000, "county":"Pettis", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":669000, "county":"Lafayette", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":614000, "county":"Saline", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":577000, "county":"Ray", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":500000, "county":"Ray", "type":"Public Transportation", "highway":"" },{"region":"Kansas City", "amount":452000, "county":"Saline", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":418000, "county":"Pettis", "type":"Road and Bridge", "highway":"" },{"region":"Kansas City", "amount":300000, "county":"Jackson", "type":"Rail", "highway":"" },{"region":"Kansas City", "amount":300000, "county":"Jackson", "type":"Rail", "highway":"" },{"region":"Kansas City", "amount":300000, "county":"Jackson", "type":"Rail", "highway":"" },{"region":"Kansas City", "amount":300000, "county":"Jackson", "type":"Rail", "highway":"" },{"region":"Kansas City", "amount":300000, "county":"Jackson", "type":"Rail", "highway":"" },{"region":"Kansas City", "amount":272000, "county":"Lafayette", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Kansas City", "amount":50000, "county":"Saline", "type":"Public Transportation", "highway":"" },{"region":"Northeast", "amount":14375000, "county":"Pike", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":12650000, "county":"Audrain", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":12403000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":5926000, "county":"Knox / Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":4892000, "county":"Knox / Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":4111000, "county":"Scotland / Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3680000, "county":"Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3626000, "county":"Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3620000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3602000, "county":"Knox / Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3496000, "county":"Monroe / Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3450000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3325000, "county":"Shelby / Monroe / Audrain / Boone", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3061000, "county":"Clark / Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":3000000, "county":"All", "type":"Public Transportation", "highway":"" },{"region":"Northeast", "amount":2922000, "county":"Pike / Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2844000, "county":"Macon / Knox / Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2810000, "county":"Knox / Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2782000, "county":"Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2746000, "county":"Ralls / Pike", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2550000, "county":"Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2499000, "county":"Scotland / Knox", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2319000, "county":"Marion / Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2299000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2200000, "county":"Knox / Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":2012000, "county":"Montgomery / Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1993000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1942000, "county":"Scotland / Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1626000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1577000, "county":"Pike", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1562000, "county":"Adair / Knox", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1470000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1467000, "county":"Warren / Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1461000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1389000, "county":"Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1380000, "county":"Pike", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1354000, "county":"Audrain", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1323000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1301000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1288000, "county":"Pike", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1256000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1204000, "county":"Audrain / Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1183000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1168000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1149000, "county":"Adair", "type":"Aviation", "highway":"" },{"region":"Northeast", "amount":1139000, "county":"Lewis", "type":"Port", "highway":"" },{"region":"Northeast", "amount":1100000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1092000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1072000, "county":"Knox / Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1036000, "county":"Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1033000, "county":"Marion / Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":1002000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":964000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":956000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":954000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":920000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":891000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":881000, "county":"Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":859000, "county":"Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":848000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":844000, "county":"Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":836000, "county":"Audrain", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":829000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":822000, "county":"Knox", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":811000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":808000, "county":"Monroe", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":800000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":785000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":785000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":776000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":771000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":749000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":743000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":732000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":732000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":727000, "county":"Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":715000, "county":"Monroe", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":701000, "county":"Audrain", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":690000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":689000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":684000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":676000, "county":"Monroe", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":673000, "county":"Audrain", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":661000, "county":"Knox / Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":661000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":660000, "county":"Audrain", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":631000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":627000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":617000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":604000, "county":"Adair", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":588000, "county":"Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":588000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":587000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":575000, "county":"Pike / Lincoln", "type":"Port", "highway":"" },{"region":"Northeast", "amount":573000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":572000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":571000, "county":"Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":568000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":565000, "county":"Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":559000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":547000, "county":"Randolph", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":540000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":540000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":522000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":520000, "county":"Randolph", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":518000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":518000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":508000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":499000, "county":"Schuyler", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":484000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":475000, "county":"Knox", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":475000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":470000, "county":"Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":445000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":443000, "county":"Warren", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":433000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":422000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":415000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":410000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":410000, "county":"Scotland", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":407000, "county":"Clark", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":373000, "county":"Monroe", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":373000, "county":"Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":330000, "county":"Lincoln", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":325000, "county":"Monroe / Ralls", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":316000, "county":"Randolph", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":219000, "county":"Warren", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":210000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":189000, "county":"Montgomery", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":171000, "county":"Monroe", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":162000, "county":"Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":151000, "county":"Macon", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":146000, "county":"Lewis", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":115000, "county":"Adair", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":115000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northeast", "amount":99000, "county":"Marion", "type":"Road and Bridge", "highway":"" },{"region":"Northeast", "amount":12000, "county":"Shelby", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":13309000, "county":"Sullivan / Linn", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":7936000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":6872000, "county":"Putnam / Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":5520000, "county":"Nodaway / Worth", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":5075000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":4521000, "county":"Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":4365000, "county":"Gentry / DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":4286000, "county":"Gentry / DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":3986000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":3892000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2821000, "county":"Livingston / Carroll", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2774000, "county":"Chariton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2707000, "county":"Buchanan / DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2637000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2624000, "county":"Buchanan / Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2560000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2456000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2415000, "county":"Grundy / Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2391000, "county":"Daviess / DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2379000, "county":"Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2366000, "county":"Chariton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2328000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2324000, "county":"Nodaway / Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2302000, "county":"Putnam / Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2300000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Northwest", "amount":2222000, "county":"Worth", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2221000, "county":"Worth / Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2206000, "county":"Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2198000, "county":"Putnam", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2131000, "county":"Sullivan / Linn", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2110000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2086000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2073000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2056000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2036000, "county":"Worth", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2019000, "county":"Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2007000, "county":"Daviess / Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":2000000, "county":"All", "type":"Public Transportation", "highway":"" },{"region":"Northwest", "amount":1987000, "county":"Atchison / Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1917000, "county":"Mercer / Grundy", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1802000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1730000, "county":"Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1730000, "county":"Putnam / Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1711000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1610000, "county":"Buchanan", "type":"Public Transportation", "highway":"" },{"region":"Northwest", "amount":1547000, "county":"Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1490000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1470000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1450000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1439000, "county":"Livingston / Carroll", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1428000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1417000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1397000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1385000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1367000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1359000, "county":"Andrew", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1339000, "county":"Harrison / Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1314000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1279000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1205000, "county":"Gentry", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1178000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1151000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1128000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1075000, "county":"Worth / Gentry", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1072000, "county":"Grundy / Linn", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1055000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1051000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1050000, "county":"Harrison / Grundy", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1035000, "county":"Linn", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1031000, "county":"Putnam", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":1025000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":990000, "county":"Clinton / Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":958000, "county":"Daviess / Caldwell", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":918000, "county":"Dekalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":914000, "county":"Gentry / DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":898000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":866000, "county":"Chariton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":853000, "county":"Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":844000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":794000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":792000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":784000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":781000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":758000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":758000, "county":"Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":754000, "county":"Linn", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":727000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":713000, "county":"Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":712000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":711000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":690000, "county":"DeKalb / Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":684000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":677000, "county":"Andrew", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":657000, "county":"Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":643000, "county":"Carroll", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":630000, "county":"Chariton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":618000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":604000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":543000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":535000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":521000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":495000, "county":"Livingston", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":491000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":489000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":446000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":442000, "county":"Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":439000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":417000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":415000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":415000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":415000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":400000, "county":"Buchanan", "type":"Public Transportation", "highway":"" },{"region":"Northwest", "amount":398000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":370000, "county":"Andrew", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":370000, "county":"Daviess", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":360000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":359000, "county":"Carroll", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":358000, "county":"Buchanan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":358000, "county":"Holt", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":353000, "county":"Andrew", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":340000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":307000, "county":"Harrison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":300000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":289000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":282000, "county":"Mercer", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":263000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":251000, "county":"Putnam", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":238000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":221000, "county":"Sullivan", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":181000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":139000, "county":"DeKalb", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":120000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":116000, "county":"Clinton", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":33000, "county":"Atchison", "type":"Road and Bridge", "highway":"" },{"region":"Northwest", "amount":31000, "county":"Nodaway", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":62221000, "county":"Dunklin", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":43415000, "county":"Butler", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":25000000, "county":"All", "type":"Public Transportation", "highway":"" },{"region":"Southeast", "amount":25000000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":22000000, "county":"Scott", "type":"Rail", "highway":"" },{"region":"Southeast", "amount":19237000, "county":"Perry", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":14377000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":12069000, "county":"Ozark / Howell", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":11078000, "county":"New Madrid", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":8867000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":7296000, "county":"Wayne", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":7000000, "county":"Ste Genevieve", "type":"Port", "highway":"" },{"region":"Southeast", "amount":5793000, "county":"Texas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":5351000, "county":"Cape Girardeau", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southeast", "amount":4859000, "county":"Oregon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":4805000, "county":"Madison", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":4637000, "county":"Howell", "type":"Aviation", "highway":"" },{"region":"Southeast", "amount":4405000, "county":"New Madrid", "type":"Port", "highway":"" },{"region":"Southeast", "amount":4203000, "county":"Madison / Perry", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":4203000, "county":"Shannon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":4045000, "county":"Butler", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":3826000, "county":"Wright", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":3381000, "county":"Oregon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":3105000, "county":"Wright", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2883000, "county":"Ozark", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2851000, "county":"Shannon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2839000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2795000, "county":"Carter", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2674000, "county":"Iron", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2628000, "county":"Howell", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2591000, "county":"Butler", "type":"Aviation", "highway":"" },{"region":"Southeast", "amount":2524000, "county":"St. Francois / Ste Genevieve", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":2085000, "county":"Pemiscot", "type":"Port", "highway":"" },{"region":"Southeast", "amount":1958000, "county":"Reynolds", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1730000, "county":"Shannon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1559000, "county":"Douglas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1551000, "county":"Wright", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1503000, "county":"St. Francois", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1442000, "county":"New Madrid / Pemiscot", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1350000, "county":"Texas / Howell", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1343000, "county":"St. Francois", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1310000, "county":"Perry", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1255000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1245000, "county":"Wayne", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1228000, "county":"Mississippi", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1214000, "county":"Reynolds", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1202000, "county":"Howell", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1189000, "county":"Stoddard / Dunklin", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1164000, "county":"Bollinger / Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1095000, "county":"Texas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1072000, "county":"Wayne", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1058000, "county":"Ozark", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":1043000, "county":"Bollinger", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":926000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":871000, "county":"Douglas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":859000, "county":"Oregon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":859000, "county":"Oregon", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":844000, "county":"Ozark", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":820000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":814000, "county":"Iron / Dent", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":811000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":785000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":767000, "county":"Ripley", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":767000, "county":"Wright", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":752000, "county":"Pemiscot", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":735000, "county":"Bollinger", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":727000, "county":"Douglas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":727000, "county":"Douglas", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":722000, "county":"Perry", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":708000, "county":"Iron", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":696000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":670000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":661000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":661000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":661000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":657000, "county":"Jefferson / Ste Genevieve", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":637000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":629000, "county":"Butler", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southeast", "amount":619000, "county":"Dunklin", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":612000, "county":"Mississippi", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":612000, "county":"Mississippi", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":608000, "county":"Cape Girardeau", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":588000, "county":"Pemiscot", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":569000, "county":"Carter", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":567000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":524000, "county":"Scott", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":454000, "county":"Ripley", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":385000, "county":"Howell", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":345000, "county":"St. Francois", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":345000, "county":"Ste Genevieve", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":334000, "county":"Butler", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southeast", "amount":334000, "county":"Wayne", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southeast", "amount":316000, "county":"Stoddard", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":305000, "county":"Pemiscot", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":261000, "county":"Carter", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":186000, "county":"St. Francois", "type":"Road and Bridge", "highway":"" },{"region":"Southeast", "amount":115000, "county":"Perry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":62443000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":56678000, "county":"Barry / Lawrence / Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":32491000, "county":"McDonald", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":26636000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":24972000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":24500000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":19098000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":13520000, "county":"Webster", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":12682000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":11263000, "county":"Vernon / Barton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":10807000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":10241000, "county":"Newton / Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":10011000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":9996000, "county":"Benton / Hickory / Dallas", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":9555000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":8766000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":8750000, "county":"Bates / Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":7993000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":7164000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":7019000, "county":"Greene", "type":"Rail", "highway":"" },{"region":"Southwest", "amount":6920000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":6861000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":6851000, "county":"Taney", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":6244000, "county":"Henry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":6130000, "county":"Various", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5972000, "county":"Greene", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":5953000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5718000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5658000, "county":"Lawrence / Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5327000, "county":"St. Clair / Hickory", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5114000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":5000000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":4770000, "county":"Christian / Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":4588000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":4382000, "county":"Benton", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":4354000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":4270000, "county":"Christian / Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3807000, "county":"Webster", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3663000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3496000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3256000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3238000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":3228000, "county":"Polk", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":3200000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2989000, "county":"Webster", "type":"Rail", "highway":"" },{"region":"Southwest", "amount":2959000, "county":"Dade", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2942000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2909000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2688000, "county":"Jasper / Newton", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":2671000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2584000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":2506000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2500000, "county":"Greene / Christian", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":2499000, "county":"Webster", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2496000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2470000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2317000, "county":"Bates", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":2205000, "county":"St. Clair", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2201000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2190000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":2083000, "county":"St. Clair / Henry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1956000, "county":"Barry", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":1859000, "county":"Cedar", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1750000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1732000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1716000, "county":"Cedar", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1700000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1683000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1683000, "county":"Henry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1663000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1661000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1650000, "county":"Greene", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":1591000, "county":"Cedar / Dade", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1584000, "county":"Benton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1580000, "county":"Christian", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1570000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1566000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1551000, "county":"Barry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1541000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1522000, "county":"Jasper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1516000, "county":"Jasper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1479000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1478000, "county":"Newton", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":1472000, "county":"Henry", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":1472000, "county":"Jasper", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":1438000, "county":"Various", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1300000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1223000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1198000, "county":"Dallas", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1193000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1185000, "county":"McDonald", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1150000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1147000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1140000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1099000, "county":"Barry", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":1096000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1092000, "county":"Taney", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":1076000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1072000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":1052000, "county":"Barton", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":996000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":996000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":984000, "county":"Christian", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":983000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":949000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":945000, "county":"Jasper / Newton", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":900000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":882000, "county":"McDonald", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":869000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":851000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":844000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":824000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":807000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":800000, "county":"Greene", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":800000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":795000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":775000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":750000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":748000, "county":"Hickory", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":719000, "county":"Barton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":706000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":702000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":687000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":684000, "county":"Jasper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":683000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":680000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":649000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":643000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":618000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":607000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":605000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":594000, "county":"Cedar", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":558000, "county":"Barry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":555000, "county":"Barry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":555000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":542000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":541000, "county":"Jasper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":529000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":527000, "county":"Barry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":524000, "county":"Benton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":519000, "county":"Jasper", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":517000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":504000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":499000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":490000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":488000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":483000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":479000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":470000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":466000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":465000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":454000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":448000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":429000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":429000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":428000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":428000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":428000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":420000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":403000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":386000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":378000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":378000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":365000, "county":"Greene", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":353000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":353000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":346000, "county":"Greene", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":328000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":328000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":315000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":315000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":304000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":304000, "county":"Greene", "type":"Aviation", "highway":"" },{"region":"Southwest", "amount":292000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":277000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":277000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":265000, "county":"Stone", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":265000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":264000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":252000, "county":"Cedar", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":251000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":247000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":240000, "county":"Hickory", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":240000, "county":"Hickory", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":240000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":227000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":226000, "county":"Christian", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":214000, "county":"Dallas", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":214000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":214000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":214000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":213000, "county":"Dade / Barton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":209000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":199000, "county":"Newton", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"Southwest", "amount":189000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":189000, "county":"St. Clair", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":176000, "county":"Barton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":164000, "county":"Camden", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":164000, "county":"Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":164000, "county":"Taney", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":158000, "county":"Barry / Lawrence", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":151000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":139000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":126000, "county":"Vernon", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":113000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":113000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":113000, "county":"Polk", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":105000, "county":"Bates", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":101000, "county":"Henry", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":100000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":100000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":76000, "county":"Dallas", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":76000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":63000, "county":"Benton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":50000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":50000, "county":"Jasper", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":50000, "county":"Newton", "type":"Road and Bridge", "highway":"" },{"region":"Southwest", "amount":50000, "county":"Various", "type":"Public Transportation", "highway":"" },{"region":"Southwest", "amount":46000, "county":"Greene", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":350000000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-270" },{"region":"St. Louis", "amount":200000000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-70" },{"region":"St. Louis", "amount":85515000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":74749000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-44" },{"region":"St. Louis", "amount":55097000, "county":"Jefferson", "type":"Road and Bridge", "highway":"I-55" },{"region":"St. Louis", "amount":46993000, "county":"St. Charles", "type":"Road and Bridge", "highway":"I-70" },{"region":"St. Louis", "amount":43345000, "county":"St. Charles", "type":"Road and Bridge", "highway":"I-64" },{"region":"St. Louis", "amount":39043000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":38616000, "county":"Franklin", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":30001000, "county":"St. Charles", "type":"Road and Bridge", "highway":"I-70" },{"region":"St. Louis", "amount":27513000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-170" },{"region":"St. Louis", "amount":25000000, "county":"St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":24309000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-170" },{"region":"St. Louis", "amount":22967000, "county":"St. Charles", "type":"Road and Bridge", "highway":"I-70" },{"region":"St. Louis", "amount":21300000, "county":"St. Charles / St. Louis County", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":20000000, "county":"St. Louis City", "type":"Road and Bridge", "highway":"I-64" },{"region":"St. Louis", "amount":18771000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":18000000, "county":"St. Louis County / St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":18000000, "county":"St. Louis County / St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":15346000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":12981000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":12130000, "county":"Franklin", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":12000000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-64" },{"region":"St. Louis", "amount":11594000, "county":"St. Louis City", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":11491000, "county":"St. Louis County / St. Louis City", "type":"Aviation", "highway":"" },{"region":"St. Louis", "amount":10127000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":9344000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":8900000, "county":"St. Louis County / St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":8505000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":8111000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":8106000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":8055000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":8050000, "county":"Jefferson", "type":"Port", "highway":"" },{"region":"St. Louis", "amount":7812000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":7769000, "county":"Jefferson", "type":"Road and Bridge", "highway":"I-55" },{"region":"St. Louis", "amount":7589000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-64" },{"region":"St. Louis", "amount":7305000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":6971000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":6941000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":6158000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":5808000, "county":"St. Louis City", "type":"Aviation", "highway":"" },{"region":"St. Louis", "amount":5756000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":5756000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":5700000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-64" },{"region":"St. Louis", "amount":5673000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":5387000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":5284000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":5110000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":5050000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":4997000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":4691000, "county":"St. Louis City", "type":"Port", "highway":"" },{"region":"St. Louis", "amount":4289000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":4005000, "county":"St. Louis City", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":3700000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":3572000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":3456000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":3456000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":3306000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":3223000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":3000000, "county":"St. Louis County / St. Louis City", "type":"Rail", "highway":"" },{"region":"St. Louis", "amount":2875000, "county":"St. Louis County", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":2857000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":2766000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":2500000, "county":"St. Charles", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":2500000, "county":"St. Charles", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":2500000, "county":"St. Louis County", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":2100000, "county":"St. Charles", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":2030000, "county":"St. Louis City", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":2018000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":2000000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"I-170" },{"region":"St. Louis", "amount":2000000, "county":"St. Louis County / St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":1857000, "county":"St. Louis City", "type":"Road and Bridge", "highway":"I-70" },{"region":"St. Louis", "amount":1784000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":1566000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":1500000, "county":"St. Louis County", "type":"Sidewalk / Non-Motorized", "highway":"" },{"region":"St. Louis", "amount":1413000, "county":"St. Louis City", "type":"Rail", "highway":"" },{"region":"St. Louis", "amount":1300000, "county":"Jefferson", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":1156000, "county":"St. Louis County", "type":"Rail", "highway":"" },{"region":"St. Louis", "amount":1109000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":1075000, "county":"Jefferson", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":905000, "county":"St. Louis City", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":836000, "county":"St. Louis City", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":574000, "county":"St. Louis County", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":414000, "county":"Franklin", "type":"Public Transportation", "highway":"" },{"region":"St. Louis", "amount":396000, "county":"St. Charles", "type":"Road and Bridge", "highway":"" },{"region":"St. Louis", "amount":270000, "county":"Jefferson", "type":"Public Transportation", "highway":"" },{"region":"Statewide", "amount":500000000, "county":"Statewide", "type":"Road and Bridge", "highway":"" },];
+
+var formatNumber = d3.format(".0f");
+
+var margin = {top: 40, right: 10, bottom: 90, left: 90},
+    width = 320 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+	
+	var byRegion = d3.nest()
+	.key(function(d) { return d.region; })
+	.sortKeys(d3.ascending)
+	.rollup(function(d) {
+		return d3.sum(d, function(g) {return g.amount; });
+	}).entries(data);
+	
+	var byType = d3.nest()
+	.key(function(d) { return d.type; })
+	.rollup(function(d) {
+		return d3.sum(d, function(g) {return g.amount; });
+	}).entries(data);
+	
+	var byTypeStl = d3.nest()
+	.key(function(d) { return d.type; })
+	.rollup(function(d) {
+		return d3.sum(d, function(g) {return g.amount; });
+	}).entries(data.filter(function(d) {return d.region == "St. Louis"; }));
+
+	var byCountyStl = d3.nest()
+	.key(function(d) { return d.county; })
+	.sortKeys(d3.ascending)
+	.rollup(function(d) {
+		return d3.sum(d, function(g) {return g.amount; });
+	}).entries(data.filter(function(d) {return d.region == "St. Louis"; }));
+	
+	var byHighway = d3.nest()
+	.key(function(d) { return d.highway; })
+	.sortKeys(d3.ascending)
+	.rollup(function(d) {
+		return d3.sum(d, function(g) {return g.amount; });
+	}).entries(data.filter(function(d) {return d.highway; }));
+	
+	var xbyRegion = d3.scale.ordinal()
+	.rangeRoundBands([0, width], .1);
+	
+	var ybyRegion = d3.scale.linear()
+	.domain([0, d3.max(byRegion, function(d) {return d.values;})])
+	.range([height, 0]);
+	
+	var xAxisbyRegion = d3.svg.axis()
+	    .scale(xbyRegion)
+	    .orient("bottom");
+		
+	var yAxisbyRegion = d3.svg.axis()
+    .scale(ybyRegion)
+    .tickSize(width)
+    .tickFormat(formatCurrency)
+    .orient("right");
+
+	
+	var colorbyRegion = d3.scale.ordinal()
+	    .range(["#666666", "#666666", "#666666", "#666666", "#666666", "#666666", "#cc203b", "#666666"]);
+		
+		xbyRegion.domain(byRegion.map(function(d) { return d.key; }));
+		
+		var chartbyRegion = d3.select(".topbar")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+		chartbyRegion.append("g")
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxisbyRegion)
+		.selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-45)" 
+                });;
+		
+			  chartbyRegion.selectAll(".bar")
+		      .data(byRegion)
+		    .enter().append("rect")
+		      .attr("class", "bar")
+		      .attr("x", function(d) { return xbyRegion(d.key); })
+		      .attr("y", function(d) { return ybyRegion(d.values); })
+		      .attr("height", function(d) { return height - ybyRegion(d.values); })
+		      .attr("width", xbyRegion.rangeBand())
+			  .attr("fill", function(d) { return colorbyRegion(d.key); });
+			  
+			  
+			  var gybyRegion = chartbyRegion.append("g")
+		      .attr("class", "y axis")
+		      .call(yAxisbyRegion);
+
+			  gybyRegion.selectAll("g").filter(function(d) { return d; })
+			      .classed("minor", true);
+
+			  gybyRegion.selectAll("text")
+			      .attr("x", -2)
+			      .attr("dy", 4)
+				  .attr("style", "text-anchor:end");
+				  
+			  	var piecolor = d3.scale.ordinal()
+			  	    .range(["#006c8e", "#f1bb4f", "#31716e", "#f6883e", "#571751", "#a5a585", "#cc203b"]);
+				  
+				  var piewidth = 200,
+				  height = 300,
+				  radius = Math.min(width, height) / 2;
+				  
+				  var arc = d3.svg.arc()
+				  .outerRadius(radius - 10)
+				  .innerRadius(0);
+				  
+				  var pie = d3.layout.pie()
+				  .sort(null)
+				  .value(function(d) { return d.values });
+				  
+				  var toppiechart = d3.select(".toppie")
+				  .attr("width", width)
+				  .attr("height", height)
+				  .append("g")
+				  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+				  
+				  var g = toppiechart.selectAll(".arc")
+				  .data(pie(byType))
+				  .enter().append("g")
+				  .attr("class", "arc");
+				  
+				  g.append("path")
+				  .attr("d", arc)
+				  .style("fill", function(d) { return piecolor(d.data.key); });
+				  
+				  var stlpiechart = d3.select(".stlpie")
+				  .attr("width", width)
+				  .attr("height", height)
+				  .append("g")
+				  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+				  
+				  var g = stlpiechart.selectAll(".arc")
+				  .data(pie(byTypeStl))
+				  .enter().append("g")
+				  .attr("class", "arc");
+				  
+				  g.append("path")
+				  .attr("d", arc)
+				  .style("fill", function(d) { return piecolor(d.data.key); });
+			  
+				  var marginbyCountyStl = {top: 40, right: 10, bottom: 135, left: 90},
+				      widthbyCountyStl = 320 - marginbyCountyStl.left - marginbyCountyStl.right,
+				      heightbyCountyStl = 500 - marginbyCountyStl.top - marginbyCountyStl.bottom;
+	
+				var xbyCountyStl = d3.scale.ordinal()
+			  	.rangeRoundBands([0, widthbyCountyStl], .1);
+	
+			  	var ybyCountyStl = d3.scale.linear()
+			  	.domain([0, d3.max(byCountyStl, function(d) {return d.values;})])
+			  	.range([heightbyCountyStl, 0]);
+	
+			  	var xAxisbyCountyStl = d3.svg.axis()
+			  	    .scale(xbyCountyStl)
+			  	    .orient("bottom");
+		
+			  	var yAxisbyCountyStl = d3.svg.axis()
+			      .scale(ybyCountyStl)
+			      .tickSize(widthbyCountyStl)
+			      .tickFormat(formatCurrency)
+			      .orient("right");
+
+	
+			  	var colorbyCountyStl = d3.scale.ordinal()
+			  	    .range(["#666666", "#666666", "#666666", "#666666", "#666666", "#666666", "#666666", "#666666"]);
+		
+			  		xbyCountyStl.domain(byCountyStl.map(function(d) { return d.key; }));
+		
+			  		var chartbyCountyStl = d3.select(".stlcounties")
+			  		.attr("width", widthbyCountyStl + marginbyCountyStl.left + marginbyCountyStl.right)
+			  		.attr("height", heightbyCountyStl + marginbyCountyStl.top + marginbyCountyStl.bottom)
+			  		.append("g")
+			  		.attr("transform", "translate(" + marginbyCountyStl.left + "," + marginbyCountyStl.top + ")");
+		
+			  		chartbyCountyStl.append("g")
+			  		.attr("class", "x axis")
+			  		.attr("transform", "translate(0," + heightbyCountyStl + ")")
+			  		.call(xAxisbyCountyStl)
+			  		.selectAll("text")  
+			              .style("text-anchor", "end")
+			              .attr("dx", "-.8em")
+			              .attr("dy", ".15em")
+			              .attr("transform", function(d) {
+			                  return "rotate(-35)" 
+			                  });;
+		
+			  			  chartbyCountyStl.selectAll(".bar")
+			  		      .data(byCountyStl)
+			  		    .enter().append("rect")
+			  		      .attr("class", "bar")
+			  		      .attr("x", function(d) { return xbyCountyStl(d.key); })
+			  		      .attr("y", function(d) { return ybyCountyStl(d.values); })
+			  		      .attr("height", function(d) { return heightbyCountyStl - ybyCountyStl(d.values); })
+			  		      .attr("width", xbyCountyStl.rangeBand())
+			  			  .attr("fill", function(d) { return colorbyCountyStl(d.key); });
+			  
+			  
+			  			  var gybyCountyStl = chartbyCountyStl.append("g")
+			  		      .attr("class", "y axis")
+			  		      .call(yAxisbyCountyStl);
+
+			  			  gybyCountyStl.selectAll("g").filter(function(d) { return d; })
+			  			      .classed("minor", true);
+
+			  			  gybyCountyStl.selectAll("text")
+			  			      .attr("x", -2)
+			  			      .attr("dy", 4)
+			  				  .attr("style", "text-anchor:end");
+							  
+							  var marginbyHighway = {top: 40, right: 10, bottom: 40, left: 90},
+							      widthbyHighway = 580 - marginbyHighway.left - marginbyHighway.right,
+							      heightbyHighway = 200 - marginbyHighway.top - marginbyHighway.bottom;
+	
+							var xbyHighway = d3.scale.ordinal()
+						  	.rangeRoundBands([0, widthbyHighway], .1);
+	
+						  	var ybyHighway = d3.scale.linear()
+						  	.domain([0, d3.max(byHighway, function(d) {return d.values;})])
+						  	.range([heightbyHighway, 0]);
+	
+						  	var xAxisbyHighway = d3.svg.axis()
+						  	    .scale(xbyHighway)
+						  	    .orient("bottom");
+		
+						  	var yAxisbyHighway = d3.svg.axis()
+						      .scale(ybyHighway)
+						      .tickSize(widthbyHighway)
+						      .tickFormat(formatCurrencyHighway)
+						      .orient("right");
+	
+						  	var colorbyHighway = d3.scale.ordinal()
+						  	    .range(["#666666", "#666666", "#666666", "#666666", "#666666", "#666666", "#666666", "#666666"]);
+		
+						  		xbyHighway.domain(byHighway.map(function(d) { return d.key; }));
+		
+						  		var chartbyHighway = d3.select(".stlhighways")
+						  		.attr("width", widthbyHighway + marginbyHighway.left + marginbyHighway.right)
+						  		.attr("height", heightbyHighway + marginbyHighway.top + marginbyHighway.bottom)
+						  		.append("g")
+						  		.attr("transform", "translate(" + marginbyHighway.left + "," + marginbyHighway.top + ")");
+		
+						  		chartbyHighway.append("g")
+						  		.attr("class", "x axis")
+						  		.attr("transform", "translate(0," + heightbyHighway + ")")
+						  		.call(xAxisbyHighway)
+						  		.selectAll("text")  
+						              .style("text-anchor", "end")
+						              .attr("dx", "-.8em")
+						              .attr("dy", ".15em")
+						              .attr("transform", function(d) {
+						                  return "rotate(-35)" 
+						                  });;
+		
+						  			  chartbyHighway.selectAll(".bar")
+						  		      .data(byHighway)
+						  		    .enter().append("rect")
+						  		      .attr("class", "bar")
+						  		      .attr("x", function(d) { return xbyHighway(d.key); })
+						  		      .attr("y", function(d) { return ybyHighway(d.values); })
+						  		      .attr("height", function(d) { return heightbyHighway - ybyHighway(d.values); })
+						  		      .attr("width", xbyHighway.rangeBand())
+						  			  .attr("fill", function(d) { return colorbyHighway(d.key); });
+			  
+			  
+						  			  var gybyHighway = chartbyHighway.append("g")
+						  		      .attr("class", "y axis")
+						  		      .call(yAxisbyHighway);
+
+						  			  gybyHighway.selectAll("g").filter(function(d) { return d; })
+						  			      .classed("minor", true);
+
+						  			  gybyHighway.selectAll("text")
+						  			      .attr("x", -2)
+						  			      .attr("dy", 4)
+						  				  .attr("style", "text-anchor:end");
+										  
+			  
+			  function formatCurrency(d) {
+			    var s = formatNumber(d / 1e6);
+			    if (s > 999) 
+					{ return "$" + s / 1000 + " billion"; }
+					else if (s == 0)
+					{ return ""; }
+					else if (s == 800)
+			        { return "$" + s + " million"; }
+					else
+			        { return "$" + s; }
+			  }
+	
+	
+			  function formatCurrencyHighway(d) {
+			    var s = formatNumber(d / 1e6);
+			    if (s == 350) 
+					{ return "$" + s + " million"; }
+					else if (s == 0)
+					{ return ""; }
+					else
+			        { return "$" + s; }
+			  }
+</script>
+		
+    </div>
+    
+    
+
+    <div class="footer">
+        
+        
+    </div>
+
+    <script src="js/lib/jquery.js" type="text/javascript"></script>
+    <script src="js/lib/pym.js" type="text/javascript"></script>
+    <script src="js/graphic.js" type="text/javascript"></script>
+</body>
+</html>
