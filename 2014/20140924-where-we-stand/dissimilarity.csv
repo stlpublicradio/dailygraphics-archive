@@ -1,0 +1,71 @@
+city,year,score
+Milwaukee,1980,83.9
+Milwaukee,2010,79.6
+New York,1980,81.3
+New York,2010,76.9
+Chicago,1980,88.1
+Chicago,2010,75.2
+Detroit,1980,87.6
+Detroit,2010,74.0
+Cleveland,1980,85.8
+Cleveland,2010,72.6
+St. Louis,1980,81.6
+St. Louis,2010,70.7
+Philadelphia,1980,77.2
+Philadelphia,2010,67.0
+Cincinnati,1980,78.2
+Cincinnati,2010,66.9
+Los Angeles,1980,81.0
+Los Angeles,2010,65.2
+Indianapolis,1980,78.8
+Indianapolis,2010,64.5
+Baltimore,1980,74.4
+Baltimore,2010,64.3
+Miami,1980,82.1
+Miami,2010,64.0
+Pittsburgh,1980,73.3
+Pittsburgh,2010,63.1
+Memphis,1980,68.8
+Memphis,2010,62.2
+Boston,1980,74.6
+Boston,2010,61.5
+Wash. DC,1980,69.7
+Wash. DC,2010,61.0
+Houston,1980,73.7
+Houston,2010,60.6
+Columbus,1980,72.9
+Columbus,2010,60.0
+Denver,1980,69.1
+Denver,2010,59.4
+San Francisco,1980,72.0
+San Francisco,2010,59.3
+Kansas City,1980,77.7
+Kansas City,2010,58.6
+Atlanta,1980,76.9
+Atlanta,2010,58.4
+Louisville,1980,73.6
+Louisville,2010,56.2
+Dallas,1980,78.2
+Dallas,2010,55.5
+Nashville,1980,65.2
+Nashville,2010,55.0
+Charlotte,1980,58.0
+Charlotte,2010,53.1
+Minneapolis,1980,67.7
+Minneapolis,2010,50.2
+Oklahoma City,1980,71.6
+Oklahoma City,2010,49.0
+Austin,1980,64.8
+Austin,2010,48.4
+San Diego,1980,64.4
+San Diego,2010,48.4
+San Antonio,1980,61.4
+San Antonio,2010,47.7
+Seattle,1980,64.8
+Seattle,2010,45.7
+Phoenix,1980,61.4
+Phoenix,2010,41.3
+Portland,1980,68.7
+Portland,2010,40.9
+Salt Lake City,1980,48.3
+Salt Lake City,2010,34.0

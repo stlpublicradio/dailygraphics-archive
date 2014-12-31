@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Graphic : STLPR</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="js/leaflet-0.7.2/leaflet.js" type="text/javascript"></script>
+	
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    
+    <style type="text/css">
+    @import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Titillium+Web:700,400,300);
+    
+            /* base styles */
+            html { -webkit-text-size-adjust: none; }
+            body {
+                margin: 0;
+                padding: 0;
+                font: 12px/1.4 'Titillium Web', Helvetica, sans-serif;
+                color: #333;
+            }
+	
+	    html,
+	    body,
+	#map {
+	        position: relative;
+	        height: 100%;
+	        width: 100%;
+	        margin: 0;
+	        padding: 0;
+	}
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 12px;
+            margin: 0 0 22px 0;
+        }
+        .footnotes { margin-bottom: 20px; }
+        .footnotes h4 {
+            margin: 2px 0 7px 0;
+            color: #666;
+            font-size: 11px;
+        }
+        .footnotes p,
+        .footer p {
+            margin: 2px 0 0 0;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #808080;
+        }
+        a, a:link, a:visited {
+            color: #4774CC;
+            text-decoration: none;
+        }
+        a:hover, a:active { opacity: 0.7; }
+	
+	.info {
+		padding: 6px 8px;
+	        font: 16px/1.4 'Titillium Web', Helvetica, sans-serif;
+		background: white;
+		background: rgba(255,255,255,0.8);
+		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+		border-radius: 5px;
+		max-width: 500px;
+	}
+
+	.legend {
+		text-align: left;
+		line-height: 18px;
+		color: #555;
+	}
+	.legend i {
+		min-width: 20px;
+		max-width: 20%;
+		height: 18px;
+		float: left;
+		margin-right: 8px;
+		opacity: 0.7;
+	}
+	
+	.ward {
+	  fill: none;
+	}
+
+	.ward-boundary {
+	  fill: none;
+/*	  stroke: #a5a585;
+	  stroke-width:.5;
+*/	}
+	
+	.ward.dist1,
+	.ward.dist2,
+	.ward.dist3,
+	.ward.dist4,
+	.ward.dist5,
+	.ward.dist6,
+	.ward.dist7 {
+      	  opacity:.3;
+      	  stroke: #a5a585;
+      	  stroke-width:.5;
+	}
+
+	.ward.dist1 {
+	  fill: #006c8e;
+	}
+
+	.ward.dist2 {
+	  fill: #449970;
+	}
+
+	.ward.dist3 {
+	  fill: #55b7d9;
+	}
+
+	.ward.dist4 {
+	  fill: #f1bb4f;
+	}
+
+	.ward.dist5 {
+	  fill: #e8604d;
+	}
+
+	.ward.dist6 {
+	  fill: #c72068;
+	}
+
+	.ward.dist7 {
+	  fill: #571751;
+	}
+    </style>
+
+</head>
+<body>
+<div id="map"></div>
+
+    <script type="text/javascript">
+
+
+
+    var map = new L.map('map', {scrollWheelZoom: false, attribution: ''}).setView([38.630, -90.2], 11).addLayer(new L.mapbox.tileLayer('stlpr.hi06d4b5'));
+    
+    var svg = d3.select(map.getPanes().overlayPane).append("svg"),
+        g = svg.append("g").attr("class", "leaflet-zoom-hide");
+     
+     d3.json("wards-projection.json", function(error, us) {
+	     var transform = d3.geo.transform({point: projectPoint}),
+	           path = d3.geo.path().projection(transform);
+	     
+	g.append("path")
+             .datum(topojson.feature(us, us.objects.wards))
+             .attr("class", "ward")
+             .attr("d", path);
+	     
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "1"; })))
+             .attr("class", "ward dist1")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "2"; })))
+             .attr("class", "ward dist2")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "3"; })))
+             .attr("class", "ward dist3")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "4"; })))
+             .attr("class", "ward dist4")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "5"; })))
+             .attr("class", "ward dist5")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "6"; })))
+             .attr("class", "ward dist6")
+             .attr("d", path);
+	
+         g.append("path")
+             .datum(topojson.merge(us, us.objects.wards.geometries.filter(function(d) { return d.properties.district == "7"; })))
+             .attr("class", "ward dist7")
+             .attr("d", path);
+	     
+         g.append("path")
+             .datum(topojson.mesh(us, us.objects.wards, function(a, b) { return a !== b; }))
+             .attr("class", "ward-boundary")
+             .attr("d", path);
+
+	     
+     
+     map.on("viewreset", reset);
+       reset();
+       
+       
+       // Reposition the SVG to cover the features.
+       function reset() {
+         var bounds = path.bounds(topojson.feature(us, us.objects.wards)),
+             topLeft = bounds[0],
+             bottomRight = bounds[1];
+	 
+         svg.attr("width", bottomRight[0] - topLeft[0])
+             .attr("height", bottomRight[1] - topLeft[1])
+             .style("left", topLeft[0] + "px")
+             .style("top", topLeft[1] + "px");
+         g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+	 g.selectAll("path").attr("d", path);
+       }
+       // Use Leaflet to implement a D3 geometric transformation.
+       function projectPoint(x, y) {
+         var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+         this.stream.point(point.x, point.y);
+       }
+     });
+</script>
+     
+     
+    <script src="js/lib/jquery.js" type="text/javascript"></script>
+    <script src="js/lib/pym.js" type="text/javascript"></script>
+    <script src="js/graphic.js" type="text/javascript"></script>
+</body>
+</html>
