@@ -1,110 +1,136 @@
 dailygraphics-archive
 =====================
 
-An archive of graphics and data-visualizations on stlpublicradio.org
+An archive of graphics and data-visualizations on stlpublicradio.org built using [NPR Visuals Team's Dailygraphics rig](http://blog.apps.npr.org/2014/05/27/dailygraphics.html)
 
-##2014-fireworks
+###2014-fireworks
 [**Where Are The Fireworks? We Map Options For Viewing On Independence Day**][stlpublicradio]
-Interactive map with Leaflet.js
+
+Interactive map with [Leaflet.js](http://leafletjs.com/)
 
 ###2014-sinquefield-contributions-record
 [**Checking The Score: How Well Did Sinquefield-Backed Candidates Fare?**][stlpublicradio 2]
-Chart with d3.js
+
+Chart with [d3.js](http://d3js.org/)
 
 ###20140708-nga-sites
 [**Department of Defense Mapping Agency Announces Six Possible Sites For New Facility**][stlpublicradio 3]
+
 Interactive map with Leaflet.js
 
 ###20140721-transportation-tax
 [**By The Numbers: Expect Lots Of Road Work If Transportation Tax Passes**][stlpublicradio 4]
+
 Charts with d3.js
 
 ###20140805-primary-election-results
 [**Winners And Losers At A Glance — The Votes County By County**][stlpublicradio 5]
+
 Maps and charts with d3.js
 
 ###20140807-legislators-bbq-consumption
 [**BBQ, Branson And Booze: Noteworthy Gifts Missouri Lawmakers Took From Lobbyists This Year**][stlpublicradio 6]
+
 Chart with d3.js
 
 ###20140811-ferguson-map
 [**Map Of Events Relating To Michael Brown Shooting**][stlpublicradio 7]
+
 Interactive map with Leaflet.js
 
 ###20140815-ferguson-timeline
 [**Ferguson shooting timeline**][stlpublicradio 8]
+
 Timeline layout with CSS, interactive map with Leaflet.js
 
 ###20140826-weird-al-timeline
 [**Think You’re Nerdy? Meet Weird Al Yankovic's STL Superfan**][stlpublicradio 9]
-Interactive slideshow map with Odyssey.js
+
+Interactive slideshow map with [Odyssey.js](http://cartodb.github.io/odyssey.js/)
 
 ###20140829-map-scores
 [**Five Takeaways From Schools' Annual Progress Reports**][stlpublicradio 10]
+
 Interactive map with Leaflet.js
 
 ###20140903-execution
 [**Missouri Swore It Wouldn’t Use A Controversial Execution Drug. It Did.**][stlpublicradio 11]
+
 Layout with CSS
 
 ###20140908-execution-timelines
 [**When Missouri Has Injected Midazolam**][stlpublicradio 12]
+
 Graphic with d3.js
 
 ###20140924-where-we-stand
 [**Report: When It Comes To Racial Disparity, St. Louis Falls Behind Its Peers**][stlpublicradio 13]
+
 Interactive graphic with d3.js
 
 ###20141002-lobbying-cards-tickets
 [**Missouri Lawmakers Receive A Lot Of Cardinals Tickets, Snacks From Lobbyists**][stlpublicradio 14]
+
 Layout with CSS
 
 ###201411-stlcounty-election
 [**North St. Louis County Carried Stenger Across The Finish Line**][stlpublicradio 15]
+
 Interactive maps with Leaflet.js
 
 ###20141117-women-entrepreneurs
 [**Here's Who Is Helping Women Entrepreneurs In St. Louis**][stlpublicradio 16]
+
 Interactive graphic with CSS and javascript
 
 ###20141204-civillian-oversight-board
 [**Bill Would Create Long-Awaited Civilian Oversight Board For St. Louis Police**][stlpublicradio 17]
+
 Interactive map with Leaflet.js
 
 ###20141209-mo-executions
 [**Missouri Sets Execution Record With 10 In One Year**][stlpublicradio 18]
+
 Graphic with d3.js
 
 ###20141210-hospital-map
 [**Decision Nears On St. Elizabeth’s Hospital Move**][stlpublicradio 19]
+
 Interactive map with Leaflet.js
 
 ###20141216-stds
 [**St. Louis No. 1 In Nation For Chlamydia, No. 2 For Gonorrhea**][stlpublicradio 20]
+
 Graphics with d3.js
 
 ###20141217-dooley-race
 [**For Some, Dooley's Comments On Race, Corruption Hit A Nerve**][stlpublicradio 21]
+
 Interactive graphic with d3.js
 
 ###20141219-night-before-christmas
 [**An STLPR Christmas Poetry Quiz**][stlpublicradio 22]
+
 Quiz with SlickQuiz.js and Soundcite.js
 
 ###20141224-berkeley-shooting-map
 [**Black 18-Year-Old Shot And Killed In Berkeley After He Allegedly Points Gun At Officer**][stlpublicradio 23]
+
 Interactive map with Leaflet.js
 
 ###ferguson-basics
 [**Ferguson By The Numbers**][stlpublicradio 24]
+
 Graphics with d3.js
 
 ###ferguson-story-map
 [**Ferguson When And Where: An Audio Map**][stlpublicradio 25]
+
 Interactive slideshow map with Odyssey.js and Soundcite.js
 
 ###stl-250-cakes-map
 [**Amy Page Found All 251 Cakes, And So Can You**][stlpublicradio 26]
+
 Interactive map with Leaflet.js and d3.js
 
 [stlpublicradio]: http://news.stlpublicradio.org/post/where-are-fireworks-we-map-options-viewing-independence-day
