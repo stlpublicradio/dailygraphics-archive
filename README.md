@@ -3,6 +3,41 @@ dailygraphics-archive
 
 An archive of graphics and data-visualizations on stlpublicradio.org built using [NPR Visuals Team's Dailygraphics rig](http://blog.apps.npr.org/2014/05/27/dailygraphics.html)
 
+##2015
+
+###20150211-voter-rolls
+[Since 2004, St. Louis Has Purged 25 Percent Of Its Voters](http://news.stlpublicradio.org/post/2004-st-louis-has-purged-25-percent-its-voters)
+
+Slopegraph with d3.js
+
+###20150210-unions
+[Missouri's Union Membership Drops To Lowest Level in Decades](http://news.stlpublicradio.org/post/missouris-union-membership-drops-lowest-level-decades)
+
+Graph and table
+
+###20150206-measles-map
+[Vaccines, Outbreaks, and Personal Choice: Measles by the Numbers](http://news.stlpublicradio.org/post/vaccines-outbreaks-and-personal-choice-measles-numbers)
+
+Interactive map with leaflet.js
+
+###20150122-macks-creek
+[New Cities Added To Attorney General Lawsuit Over Traffic Fines](http://news.stlpublicradio.org/post/new-cities-added-attorney-general-lawsuit-over-traffic-fines)
+
+Interactive map with leaflet.js
+
+###20150121-hispanics-map
+[Reputation And The Economy Explain Why Latinos In St. Louis Are Comparatively Rare](http://news.stlpublicradio.org/post/reputation-and-economy-explain-why-latinos-st-louis-are-comparatively-rare)
+
+Interactive map with leaflet.js
+
+
+###20150115-homicide-map
+[Six Dead In Violent 13 Hours In St. Louis](http://news.stlpublicradio.org/post/six-dead-violent-13-hours-st-louis)
+
+Interactive map with leaflet.js
+
+##2014
+
 ###2014-fireworks
 [**Where Are The Fireworks? We Map Options For Viewing On Independence Day**][stlpublicradio]
 
