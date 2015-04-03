@@ -1,0 +1,583 @@
+[
+    {
+        "judge": "Virginia Nye",
+        "judge_firm": "",
+        "muni": "BALLWIN",
+        "prosecutor": "Christopher Graville",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Sean O'Hagan",
+        "judge_firm": "",
+        "muni": "BEL-NOR",
+        "prosecutor": "Stephanie Karr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Thomas Flach",
+        "judge_firm": "",
+        "muni": "BEL-RIDGE",
+        "prosecutor": "Michael McAvoy",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "William Buchholz",
+        "judge_firm": "",
+        "muni": "BELLA VILLA",
+        "prosecutor": "Doug Sidel",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "John Duepner",
+        "judge_firm": "",
+        "muni": "BELLEFONTAINE",
+        "prosecutor": "William J. Clark",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Charles Kirksey",
+        "judge_firm": "",
+        "muni": "BELLERIVE",
+        "prosecutor": "Bob Horan",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Jennifer Fisher",
+        "judge_firm": "",
+        "muni": "BERKELEY",
+        "prosecutor": "Donnell Smith",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Brian Dunlop",
+        "judge_firm": "",
+        "muni": "BEVERLY HILLS",
+        "prosecutor": "Stuart L. O'Brien",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "John Duepner",
+        "judge_firm": "",
+        "muni": "BLACK JACK",
+        "prosecutor": "Scott Apking",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "William Buchholz",
+        "judge_firm": "",
+        "muni": "BRECKENRIDGE HILLS",
+        "prosecutor": "Steve Clark",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Ernest Hill",
+        "judge_firm": "",
+        "muni": "BRENTWOOD",
+        "prosecutor": "Michael Shelton",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Joseph Larrew",
+        "judge_firm": "",
+        "muni": "BRIDGETON",
+        "prosecutor": "Rob Schultz",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Phillip Ayers",
+        "judge_firm": "",
+        "muni": "CALVERTON PARK",
+        "prosecutor": "Carl Kohnen",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "No Municipal Court",
+        "judge_firm": "",
+        "muni": "CHAMP",
+        "prosecutor": "No Municipal Court",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "William Buchholz and Dan Cierpot",
+        "judge_firm": "",
+        "muni": "CHARLACK",
+        "prosecutor": "Joseph O'Neill",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Richard Brunk",
+        "judge_firm": "",
+        "muni": "CHESTERFIELD",
+        "prosecutor": "Timothy Engelmeyer",
+        "prosecutor_firm": "EngelMeyer & Pezzani, LLC"
+    },
+    {
+        "judge": "April Porter",
+        "judge_firm": "",
+        "muni": "CLARKSON VALLEY",
+        "prosecutor": "Christopher Graville",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Joseph Dulle",
+        "judge_firm": "",
+        "muni": "CLAYTON",
+        "prosecutor": "David Crotzer",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Kevin Kelly",
+        "judge_firm": "",
+        "muni": "COOL VALLEY",
+        "prosecutor": "Scott Pollard",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "William Buchholz",
+        "judge_firm": "",
+        "muni": "COUNTRY CLUB HILLS",
+        "prosecutor": "Steve Clark",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "John Newsham",
+        "judge_firm": "",
+        "muni": "CRESTWOOD",
+        "prosecutor": "Sheena Hamilton",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Timothy Engelmeyer",
+        "judge_firm": "EngelMeyer & Pezzani, LLC",
+        "muni": "CREVE COEUR",
+        "prosecutor": "Dennis Beckley",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Andrea Niehoff",
+        "judge_firm": "",
+        "muni": "CRYSTAL LAKE PARK",
+        "prosecutor": "Keith Cheung",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Donnell Smith",
+        "judge_firm": "",
+        "muni": "DELLWOOD",
+        "prosecutor": "",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Charles Billings",
+        "judge_firm": "Bruntrager & Billings, P.C.",
+        "muni": "DES PERES",
+        "prosecutor": "Timothy Engelmeyer and Tony Pezzani",
+        "prosecutor_firm": "EngelMeyer & Pezzani, LLC"
+    },
+    {
+        "judge": "Marc Kramer",
+        "judge_firm": "",
+        "muni": "EDMUNDSON",
+        "prosecutor": "John Miller",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Donald Anderson",
+        "judge_firm": "",
+        "muni": "ELLISVILLE",
+        "prosecutor": "George Restovich",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Rick Berry",
+        "judge_firm": "",
+        "muni": "EUREKA",
+        "prosecutor": "Katherine Butler",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Charles Billings",
+        "judge_firm": "Bruntrager & Billings, P.C.",
+        "muni": "FENTON",
+        "prosecutor": "Christopher Graville",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Roy Richter",
+        "judge_firm": "",
+        "muni": "FERGUSON",
+        "prosecutor": "Stephanie Karr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Thomas Sandifer",
+        "judge_firm": "",
+        "muni": "FLORDELL HILLS",
+        "prosecutor": "Jeffrey Duke",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dan Boyle and Robert Linhare",
+        "judge_firm": "",
+        "muni": "FLORISSANT",
+        "prosecutor": "DeAnn Outlaw and Mary-Elizabeth Dorsey",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Andrea Niehoff",
+        "judge_firm": "",
+        "muni": "FRONTENAC",
+        "prosecutor": "Keith Cheung",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Charles Kirksey",
+        "judge_firm": "",
+        "muni": "GLEN ECHO PARK",
+        "prosecutor": "Keith Cheung",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "William Terry Burnet",
+        "judge_firm": "",
+        "muni": "GLENDALE",
+        "prosecutor": "Edward McSweeney",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Timothy Devereaux",
+        "judge_firm": "",
+        "muni": "GRANTWOOD VILLAGE",
+        "prosecutor": "Jeffrey Duke",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Donnell Smith",
+        "judge_firm": "",
+        "muni": "GREENDALE",
+        "prosecutor": "Phillip Ayers",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Steve Clark",
+        "judge_firm": "",
+        "muni": "HANLEY HILLS",
+        "prosecutor": "Dean Plocher ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Kevin Kelly",
+        "judge_firm": "",
+        "muni": "HAZELWOOD",
+        "prosecutor": "Stephanie Karr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Victor B. Thompson",
+        "judge_firm": "",
+        "muni": "HILLSDALE",
+        "prosecutor": "Alan Baker",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "John Duepner",
+        "judge_firm": "",
+        "muni": "JENNINGS",
+        "prosecutor": "Ethan Corlija",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Christopher Bent ",
+        "judge_firm": "",
+        "muni": "KINLOCH",
+        "prosecutor": "Lee Goodman",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Stephen O'Brien",
+        "judge_firm": "",
+        "muni": "KIRKWOOD",
+        "prosecutor": "Jacqueline Graves",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Keith Cheung",
+        "judge_firm": "Curtis, Heinz, Garrett & O'Keefe",
+        "muni": "LADUE",
+        "prosecutor": "James Towey",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Neil Bruntrager",
+        "judge_firm": "Bruntrager & Billings, P.C.",
+        "muni": "LAKESHIRE",
+        "prosecutor": "Helmut Starr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Richard Bumb",
+        "judge_firm": "",
+        "muni": "MACKENZIE",
+        "prosecutor": "Joseph Westhus",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Michael Gunn",
+        "judge_firm": "",
+        "muni": "MANCHESTER",
+        "prosecutor": "Mark Levitt",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Brian Dunlop",
+        "judge_firm": "",
+        "muni": "MAPLEWOOD",
+        "prosecutor": "Doug Sidel",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Ron Wessel",
+        "judge_firm": "",
+        "muni": "MARLBOROUGH",
+        "prosecutor": "Michael Shelton",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Kevin Kelly",
+        "judge_firm": "",
+        "muni": "MARYLAND HEIGHTS",
+        "prosecutor": "DeAnn Outlaw",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Jennifer Fisher ",
+        "judge_firm": "",
+        "muni": "MOLINE ACRES",
+        "prosecutor": "Donnell Smith",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Charles Kirksey",
+        "judge_firm": "",
+        "muni": "NORMANDY",
+        "prosecutor": "Keith Cheung",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Raphael Morris",
+        "judge_firm": "",
+        "muni": "NORTHWOODS",
+        "prosecutor": "Lee Goodman",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Christopher Graville",
+        "judge_firm": "",
+        "muni": "OAKLAND",
+        "prosecutor": "Helmut Starr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Paul D'Argrosa",
+        "judge_firm": "",
+        "muni": "OLIVETTE",
+        "prosecutor": "Sam Alton ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Charles Billings, Frank Vatterott and Mason Klippel",
+        "judge_firm": "Bruntrager & Billings, P.C.",
+        "muni": "OVERLAND",
+        "prosecutor": "Rebecca Shaffar",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Daniel Leslie",
+        "judge_firm": "",
+        "muni": "PACIFIC",
+        "prosecutor": "Matthew Schroeder ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Raphael Morris",
+        "judge_firm": "",
+        "muni": "PAGEDALE",
+        "prosecutor": "Sam Alton",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dan Diemer",
+        "judge_firm": "",
+        "muni": "PASADENA HILLS",
+        "prosecutor": "Thomas Gilliam",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Daniel Chartrand",
+        "judge_firm": "",
+        "muni": "PASADENA PARK",
+        "prosecutor": "Marc Kramer",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dean Plocher ",
+        "judge_firm": "",
+        "muni": "PINE LAWN",
+        "prosecutor": "Anthony Gray",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Stephen O'Brien",
+        "judge_firm": "",
+        "muni": "RICHMOND HEIGHTS",
+        "prosecutor": "John Lally",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Christopher McDonough",
+        "judge_firm": "",
+        "muni": "RIVERVIEW",
+        "prosecutor": "Wesley Bell",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Mark Levitt",
+        "judge_firm": "",
+        "muni": "ROCK HILL",
+        "prosecutor": "Stephan Jianakoplos",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "William Buchholz and Sean O'Hagan",
+        "judge_firm": "",
+        "muni": "SAINT ANN",
+        "prosecutor": "Patrick Monahan and Keith Cheung ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dennis Beckley ",
+        "judge_firm": "",
+        "muni": "SAINT JOHN",
+        "prosecutor": "Hardy Menees ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Richard Bumb",
+        "judge_firm": "",
+        "muni": "SHREWSBURY",
+        "prosecutor": "Joseph Westhus",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Laird Hetlage",
+        "judge_firm": "",
+        "muni": "SUNSET HILLS",
+        "prosecutor": "Robert Jones",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dennis Beckley ",
+        "judge_firm": "",
+        "muni": "SYCAMORE HILLS",
+        "prosecutor": "Hardy Menees ",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Dean Waldermer",
+        "judge_firm": "",
+        "muni": "TOWN AND COUNTRY",
+        "prosecutor": "Brian Malone",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Paul D'Agrosa",
+        "judge_firm": "",
+        "muni": "UNIVERSITY CITY",
+        "prosecutor": "Cindy Reeds Ormsby",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Phillip Ayers",
+        "judge_firm": "",
+        "muni": "UPLANDS PARK",
+        "prosecutor": "Sharhonda Shahid",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Steve Clark",
+        "judge_firm": "",
+        "muni": "VALLEY PARK",
+        "prosecutor": "Timothy Engelmeyer",
+        "prosecutor_firm": "EngelMeyer & Pezzani, LLC"
+    },
+    {
+        "judge": "Wesley Bell",
+        "judge_firm": "",
+        "muni": "VELDA CITY",
+        "prosecutor": "J. Patrick Chassaing",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Thomas Flach",
+        "judge_firm": "",
+        "muni": "VELDA VILLAGE HILLS",
+        "prosecutor": "Steve Clark",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Will Goldstein ",
+        "judge_firm": "",
+        "muni": "VINITA PARK",
+        "prosecutor": "",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Daniel Chartrand",
+        "judge_firm": "",
+        "muni": "VINITA TERRACE",
+        "prosecutor": "Marc Kramer",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "John P. Lord III",
+        "judge_firm": "",
+        "muni": "WARSON WOODS",
+        "prosecutor": "David L. Pentland",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "James Whitney",
+        "judge_firm": "",
+        "muni": "WEBSTER GROVES",
+        "prosecutor": "Helmut Starr",
+        "prosecutor_firm": "Curtis, Heinz, Garrett & O'Keefe"
+    },
+    {
+        "judge": "Charles Kirksey",
+        "judge_firm": "",
+        "muni": "WELLSTON",
+        "prosecutor": "Thomas Gilliam",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Richard Brunk",
+        "judge_firm": "",
+        "muni": "WILDWOOD",
+        "prosecutor": "Bart Calhoun",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "Daniel Bruntrager",
+        "judge_firm": "Bruntrager & Billings, P.C.",
+        "muni": "WINCHESTER",
+        "prosecutor": "Howard Papener",
+        "prosecutor_firm": ""
+    },
+    {
+        "judge": "E Thomas Clarkin ",
+        "judge_firm": "",
+        "muni": "WOODSON TERRACE",
+        "prosecutor": "Brian Howe",
+        "prosecutor_firm": ""
+    }
+]
