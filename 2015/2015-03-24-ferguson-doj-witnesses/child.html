@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Graphic : STLPR</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="shortcut icon" href="https://s3.amazonaws.com/stlpr-assets/stlpr-favicon.ico" />
+
+    <style type="text/css">
+	    /* import fonts */
+		@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Titillium+Web:700,400,300);
+
+	    /* base styles */
+	    html { -webkit-text-size-adjust: none; }
+	    body {
+	        margin: 0;
+	        padding: 0;
+	        font: 12px/1.4 'Titillium Web', Helvetica, sans-serif;
+	        color: #333;
+	    }
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 12px;
+            margin: 0 0 22px 0;
+        }
+        .footnotes { margin-bottom: 20px; }
+        .footnotes h4 {
+            margin: 2px 0 7px 0;
+            color: #666;
+            font-size: 11px;
+        }
+        .footnotes p,
+        .footer p {
+            margin: 2px 0 0 0;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #808080;
+        }
+        a, a:link, a:visited {
+            color: #4774CC;
+            text-decoration: none;
+        }
+        a:hover, a:active { opacity: 0.7; }
+        
+        /* table */
+        table {
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0 0 22px 0;
+            width: 100%;
+            font-size: 12px;
+        }
+        table th {
+            text-align: left;
+            border-bottom: 2px solid #eee;
+            vertical-align: bottom;
+        }
+        table td {
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        table th,
+        table td {
+            padding: 10px;
+            color: #333;
+            text-align: right;
+        }
+        table th:nth-child(1),
+        table td:nth-child(1) {
+            text-align: left;
+            font-weight: bold;
+        }
+		
+		tr.divider th {
+			text-align: center;
+			background: #aaa;
+		}
+		
+		td.category {
+			display: none;
+		}
+
+        /* responsive table */
+        @media screen and (max-width: 480px) {
+            table,
+            tbody {
+                display: block;
+                width: 100%;
+            }
+            thead { display: none; }
+            table tr,
+            table th,
+            table td,
+			td.category {
+                display: block;
+                padding: 0;
+                text-align: left;
+                white-space: normal;
+            }
+            table td { 
+                border: none;
+                margin-bottom: 6px;
+                color: #444;
+            }
+            table td:empty { display: none; }
+
+            table tr {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 11px;
+                margin-bottom: 11px;
+            }
+            table th[data-title]:before,
+            table td[data-title]:before {
+                content: attr(data-title) ":\00A0";
+                font-weight: bold;
+            }
+
+            table tr td:first-child { 
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 6px;
+                color: #333;
+            }
+/*            table tr td:first-child:before {
+                content: '';
+            }*/
+        }
+    </style>
+
+</head>
+<body>
+    <h1>DOJ's conclusions about Ferguson witnesses</h1>
+    <h2>In its report about Darren Wilson's killing of Michael Brown, the Department of Justice concluded there was not enough evidence to prosecute Wilson. The DOJ reached its conclusion in part based on witness testimony and statements. The DOJ found seven witnesses who remained consistent with the physical evidence, their own statements over time, and the other credible witnesses. Eight witnesses, the department said, neither completely helped or hurt the case against Wilson. But the largest group — 24 witnesses — the department discounted, because it said they contradicted the phyiscal evidence or changed their stories significantly over time.<br /><br />CORRECTION: A previous version of this graphic listed an incorrect number for witness 142, an incorrect "reason" for witness 132, and omitted witness 106. We regret the errors.</h2>
+
+    <div id="graphic">
+        <table>
+			
+            <thead>
+				<tr class="divider">
+					<th colspan=7 data-title="group.grouper">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+				</tr>
+                <tr>
+                <th>Witness number</th>
+                <th>Race</th>
+                <th>Sex</th>
+                <th>Encounter at Wilson's car</th>
+                <th>Did Brown move back toward Wilson?</th>
+                <th>Did Brown have his hands up?</th>
+                <th>DOJ's reason for discounting witness</th>
+                </tr>
+            </thead>
+				
+            <tr class="witness_102">
+				<td data-title="Witness number">102</td>
+                <td data-title="Race">Bi-racial</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">yes –wrestling</td>
+                <td data-title="Did Brown move back toward Wilson?">charged</td>
+                <td data-title="Did Brown have his hands up?">no</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_103">
+				<td data-title="Witness number">103</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">yes – punched</td>
+                <td data-title="Did Brown move back toward Wilson?">moving fast</td>
+                <td data-title="Did Brown have his hands up?">no</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_104">
+				<td data-title="Witness number">104</td>
+                <td data-title="Race">Bi-racial</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">yes – hand in car</td>
+                <td data-title="Did Brown move back toward Wilson?">charged</td>
+                <td data-title="Did Brown have his hands up?">briefly then balled</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_105">
+				<td data-title="Witness number">105</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">hands on car</td>
+                <td data-title="Did Brown move back toward Wilson?">running</td>
+                <td data-title="Did Brown have his hands up?">briefly then down</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_108">
+				<td data-title="Witness number">108</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">charged</td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_109">
+				<td data-title="Witness number">109</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">fight outside</td>
+                <td data-title="Did Brown move back toward Wilson?">wouldn’t stop</td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            <tr class="witness_113">
+				<td data-title="Witness number">113</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">running</td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Materially Consistent with Prior Statements, Physical Evidence, and Other Witnesses Who Corroborate That Wilson Acted in Self-Defense</td>
+            </tr>
+            
+            
+            <thead>
+				<tr class="divider">
+					<th colspan=7 data-title="group.grouper">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+				</tr>
+                <tr>
+                <th>Witness number</th>
+                <th>Race</th>
+                <th>Sex</th>
+                <th>Encounter at Wilson's car</th>
+                <th>Did Brown move back toward Wilson?</th>
+                <th>Did Brown have his hands up?</th>
+                <th>DOJ's reason for discounting witness</th>
+                </tr>
+            </thead>
+				
+            <tr class="witness_106">
+				<td data-title="Witness number">106</td>
+                <td data-title="Race">White</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">flung out</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_107">
+				<td data-title="Witness number">107</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">running/stumbling</td>
+                <td data-title="Did Brown move back toward Wilson?">briefly, then down</td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_110">
+				<td data-title="Witness number">110</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">scuffle</td>
+                <td data-title="Did Brown move back toward Wilson?">not charging</td>
+                <td data-title="Did Brown have his hands up?">looked hands </td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_111">
+				<td data-title="Witness number">111</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">slow motion</td>
+                <td data-title="Did Brown have his hands up?">looked at hand</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_115">
+				<td data-title="Witness number">115</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">scuffle</td>
+                <td data-title="Did Brown move back toward Wilson?">walking</td>
+                <td data-title="Did Brown have his hands up?">fold across stomach</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_141">
+				<td data-title="Witness number">141</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">stumbling</td>
+                <td data-title="Did Brown have his hands up?">no</td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_114">
+				<td data-title="Witness number">114</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">tussling</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_129">
+				<td data-title="Witness number">129</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">scuffle</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            <tr class="witness_116">
+				<td data-title="Witness number">116</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">yes - arms in car</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?"></td>
+                <td data-title="DOJ's reason for discounting witness"></td>
+				<td class="category" data-title="DOJ classification">Witnesses Who Neither Inculpate Nor Fully Corroborate Wilson</td>
+            </tr>
+            
+            
+            <thead>
+				<tr class="divider">
+					<th colspan=7 data-title="group.grouper">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+				</tr>
+                <tr>
+                <th>Witness number</th>
+                <th>Race</th>
+                <th>Sex</th>
+                <th>Encounter at Wilson's car</th>
+                <th>Did Brown move back toward Wilson?</th>
+                <th>Did Brown have his hands up?</th>
+                <th>DOJ's reason for discounting witness</th>
+                </tr>
+            </thead>
+				
+            <tr class="witness_101">
+				<td data-title="Witness number">101</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">Wilson grabbed Brown</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">B,C</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_123">
+				<td data-title="Witness number">123</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">tussle</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">half-way</td>
+                <td data-title="DOJ's reason for discounting witness">B</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_133">
+				<td data-title="Witness number">133</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">tussle</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Black-out</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_119">
+				<td data-title="Witness number">119</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">Wilson shot Brown</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied </td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_125">
+				<td data-title="Witness number">125</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_131">
+				<td data-title="Witness number">131</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_112">
+				<td data-title="Witness number">112</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">one arm in</td>
+                <td data-title="Did Brown move back toward Wilson?">yes – unthreatening</td>
+                <td data-title="Did Brown have his hands up?">part or all</td>
+                <td data-title="DOJ's reason for discounting witness">A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_135">
+				<td data-title="Witness number">135</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">yes</td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">yes – scrunched</td>
+                <td data-title="DOJ's reason for discounting witness">Eyes — A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_124">
+				<td data-title="Witness number">124</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">yes</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_127">
+				<td data-title="Witness number">127</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">rassling – hands out</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">B</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_118">
+				<td data-title="Witness number">118</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">Wilson shot Brown in back</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_122">
+				<td data-title="Witness number">122</td>
+                <td data-title="Race">White</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">staggering</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">D</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_130">
+				<td data-title="Witness number">130</td>
+                <td data-title="Race">White</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">staggering</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">D</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_142">
+				<td data-title="Witness number">142</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">conflicting</td>
+                <td data-title="Did Brown move back toward Wilson?">conflicted</td>
+                <td data-title="Did Brown have his hands up?">conflicted</td>
+                <td data-title="DOJ's reason for discounting witness">Lied — A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_138">
+				<td data-title="Witness number">138</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">B</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_132">
+				<td data-title="Witness number">132</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">fight</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied — A</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_121">
+				<td data-title="Witness number">121</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">Wilson grabbed Brown</td>
+                <td data-title="Did Brown move back toward Wilson?">walking</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_126">
+				<td data-title="Witness number">126</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?"></td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Memory</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_137">
+				<td data-title="Witness number">137</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car"></td>
+                <td data-title="Did Brown move back toward Wilson?">walking</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_128">
+				<td data-title="Witness number">128</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">Wilson choking Brown</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Hallucinated</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_140">
+				<td data-title="Witness number">140</td>
+                <td data-title="Race">White</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">Brown hits Wilson</td>
+                <td data-title="Did Brown move back toward Wilson?">charging</td>
+                <td data-title="Did Brown have his hands up?">no</td>
+                <td data-title="DOJ's reason for discounting witness">Fabricated</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_139">
+				<td data-title="Witness number">139</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">incoherent</td>
+                <td data-title="Did Brown move back toward Wilson?">incoherent</td>
+                <td data-title="Did Brown have his hands up?">incoherent</td>
+                <td data-title="DOJ's reason for discounting witness">Hysterics — D</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_120">
+				<td data-title="Witness number">120</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Male</td>
+                <td data-title="Encounter at Wilson's car">Wilson shot Brown</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Lied</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            <tr class="witness_148">
+				<td data-title="Witness number">148</td>
+                <td data-title="Race">Black</td>
+                <td data-title="Sex">Female</td>
+                <td data-title="Encounter at Wilson's car">Wilson grabs Brown</td>
+                <td data-title="Did Brown move back toward Wilson?">no</td>
+                <td data-title="Did Brown have his hands up?">yes</td>
+                <td data-title="DOJ's reason for discounting witness">Waited 7 mo.</td>
+				<td class="category" data-title="DOJ classification">Witnesses Whose Accounts Do Not Support a Prosecution Due to Materially Inconsistent Prior Statements or Inconsistencies With the Physical and Forensic Evidence</td>
+            </tr>
+            
+            
+
+        </table>
+    </div>
+    
+    
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>Reasons DOJ discounted witnesses: <strong>A</strong> — inconsistent accounts and/or insonsistent with physical evidence; <strong>B</strong> — inconsistent with physical evidence: said Brown did not move back toward Wilson; <strong>C</strong> — inconsistent with physical evidence: said Brown's arms were never inside Wilson's car; <strong>D</strong> — inconsistent with physical evidence: said Brown was shot in the back repeatedly.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p>Source: Compiled from DOJ report by Bill Freivogel</p>
+        <p>Credit: St. Louis Public Radio</p>
+    </div>
+
+
+    <script src="js/lib/jquery.min.js" type="text/javascript"></script>
+    <script src="js/lib/pym.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        var pymChild = new pym.Child({ });
+    })
+    </script>
+
+</body>
+</html>
