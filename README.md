@@ -5,6 +5,138 @@ An archive of graphics and data-visualizations on stlpublicradio.org built using
 
 ##2015
 
+###2015-08-17-ferguson-donations-deaconess, 2015-08-17-ferguson-donations-emerson, 2015-08-17-ferguson-donations-united-way
+
+[Analysis: Even with public disclosures, Ferguson donations are hard to track](http://news.stlpublicradio.org/post/analysis-even-public-disclosures-ferguson-donations-are-hard-track)
+
+Responsive tables
+
+###2015-08-17-district-map-scores
+
+[District-by-district MAP results show continued struggles in some area schools](http://news.stlpublicradio.org/post/district-district-map-results-show-continued-struggles-some-area-schools)
+
+Grouped bar chart with d3.js
+
+###2015-08-11-map-data
+
+[MAP results show achievement gap persists in Missouri schools](http://news.stlpublicradio.org/post/map-results-show-achievement-gap-persists-missouri-schools)
+
+Grouped bar charts with d3.js
+
+###2015-08-10-lead
+
+[Federal inspectors cracking down on lead paint violations in St. Louis](http://news.stlpublicradio.org/post/federal-inspectors-cracking-down-lead-paint-violations-st-louis)
+
+Leaflet.js map
+
+###2015-07-21-health-providers-map
+
+[We Live Here: Caring about health in the face of toxic stress](http://news.stlpublicradio.org/post/we-live-here-caring-about-health-face-toxic-stress)
+
+Google Map (iFramed with [Pym.js](http://blog.apps.npr.org/pym.js/))
+
+###2015-07-08-northside-school-neighborhoods-1, 2015-07-08-northside-school-neighborhoods-2, 2015-07-08-northside-school-neighborhoods-3, 2015-07-08-northside-school-neighborhoods-4, 2015-07-12-northside-school-neighborhoods-map
+
+[We Live Here: Health happens where we live; a school shows how](http://news.stlpublicradio.org/post/we-live-here-health-happens-where-we-live-school-shows-how)
+
+Column charts with d3.js, Leaflet.js map
+
+###2015-07-08-mckee-loans
+
+[Small town bank has big stake in McKee’s north city project](http://news.stlpublicradio.org/post/small-town-bank-has-big-stake-mckee-s-north-city-project)
+
+Responsive table
+
+###2015-07-07-stl-crime
+
+[St. Louis reaches 93 homicides for 2015](http://news.stlpublicradio.org/post/st-louis-reaches-93-homicides-2015)
+
+Leaflet.js map
+
+###2015-07-02-payments-to-doctors
+
+[Data: Drug and medical device companies paid $72 million to Missouri doctors in 17 months](http://news.stlpublicradio.org/post/data-drug-and-medical-device-companies-paid-72-million-missouri-doctors-17-months)
+
+Bar graph with d3.js
+
+###2015-07-01-fair-stl-map
+
+[Fair St. Louis officials encourage alternate transportation to Forest Park](http://news.stlpublicradio.org/post/fair-st-louis-officials-encourage-alternate-transportation-forest-park)
+
+Graphic with AI2HTML
+
+###2015-06-26-same-sex-ruling
+
+[Missouri couples rejoice as U.S. Supreme Court upholds their right to marry](http://news.stlpublicradio.org/post/missouri-couples-rejoice-us-supreme-court-upholds-their-right-marry)
+
+Hex map ([updates NPR's graphic](http://www.npr.org/sections/itsallpolitics/2015/06/25/417112332/heres-how-the-supreme-court-could-rule-today-on-same-sex-marriage))
+
+###2015-06-25-census-pop, 2015-06-25-census-race-age
+
+[Latest census estimates show slow growth in St. Louis region](http://news.stlpublicradio.org/post/latest-census-estimates-show-slow-growth-st-louis-region)
+
+Line graph, slopegraph with d3.js
+
+###2015-06-16-mo-budget
+
+[Thanks to its income tax, Missouri ends fiscal year with budget in good shape](http://news.stlpublicradio.org/post/thanks-its-income-tax-missouri-ends-fiscal-year-budget-good-shape)
+
+Grouped bar chart with d3.js
+
+###2015-05-26-muni-revenue
+
+[Municipal court bill's reach will extend well beyond Ferguson's streets](http://news.stlpublicradio.org/post/municipal-court-bills-reach-will-extend-well-beyond-fergusons-streets)
+
+Leaflet.js map
+
+###2015-05-21-welivehere-public-defender-bar, 2015-05-21-welivehere-public-defender-map
+
+[We Live Here Graphic: How do Missouri's public defenders stack up?](http://news.stlpublicradio.org/post/we-live-here-graphic-how-do-missouris-public-defenders-stack)
+
+Bar graph, hex map with d3.js.
+
+###2015-05-11-kingshighway-detour
+
+[Kingshighway traffic will be routed onto Vandeventer starting July 6](http://news.stlpublicradio.org/post/kingshighway-traffic-will-be-routed-vandeventer-starting-july-6)
+
+Graphic using [AI2HTML](http://ai2html.org/)
+
+###2015-05-08-northside-lawsuit, 2015-06-15-nga-purchases-from-city
+
+[Missouri tax credits helped McKee buy land; now the city of St. Louis wants to buy it](http://news.stlpublicradio.org/post/missouri-tax-credits-helped-mckee-buy-land-now-city-st-louis-wants-buy-it)
+
+Leaflet.js maps
+
+###2015-05-07-muni-revenue
+
+[Beyond budgets: New state law may force county municipalities to make major changes](http://news.stlpublicradio.org/post/beyond-budgets-new-state-law-may-force-county-municipalities-make-major-changes)
+
+Responsive table
+
+###2015-04-29-college-value-add
+
+[Rolla = Cambridge in new college rankings that try to show how schools add value](http://news.stlpublicradio.org/post/rolla-cambridge-new-college-rankings-try-show-how-schools-add-value)
+
+Small multiples chart with d3.js
+
+###2015-04-27-mo-budget
+
+[How the Missouri General Assembly's budget differs from governor's proposals](http://news.stlpublicradio.org/post/how-missouri-general-assemblys-budget-differs-governors-proposals)
+
+Grouped bar chart with d3.js
+
+###2015-04-23-police-mental-health-response
+
+[What options do police have when interacting with those with mental health issues?](http://news.stlpublicradio.org/post/what-options-do-police-have-when-interacting-those-mental-health-issues)
+
+Responsive table
+
+###2015-03-25-nga-property-tax-map, 2015-03-26-nga-property-tax-charts, 2015-04-07-city-parcel-tax-map
+
+[Northside Developer McKee leaves city property taxes unpaid](http://news.stlpublicradio.org/post/northside-developer-mckee-leaves-city-property-taxes-unpaid)
+
+Interactive map with Leaflet.js, charts with D3.js, map with Mapbox.
+
 ###2015-04-02-hepatitis-drugs
 [Express Scripts uses clout to reduce cost of $1,000-per-day hepatitis treatment](http://news.stlpublicradio.org/post/express-scripts-uses-clout-reduce-cost-1000-day-hepatitis-treatment)
 

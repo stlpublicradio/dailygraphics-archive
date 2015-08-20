@@ -1,0 +1,31 @@
+school,category,rank
+Washington University,Salary,83
+Saint Louis University,Salary,48
+Southern Illinois University-Edwardsville,Salary,47
+University of Missouri-St Louis,Salary,26
+Fontbonne University,Salary,3
+Missouri University of Science and Technology,Salary,98
+Truman State University,Salary,56
+University of Missouri-Columbia,Salary,66
+Southwestern Illinois College*,Salary,30
+Saint Louis Community College*,Salary,
+Washington University,Loan Payback,72
+Saint Louis University,Loan Payback,54
+Southern Illinois University-Edwardsville,Loan Payback,58
+University of Missouri-St Louis,Loan Payback,20
+Fontbonne University,Loan Payback,16
+Missouri University of Science and Technology,Loan Payback,96
+Truman State University,Loan Payback,72
+University of Missouri-Columbia,Loan Payback,56
+Southwestern Illinois College*,Loan Payback,14
+Saint Louis Community College*,Loan Payback,90
+Washington University,Earning Potential,83
+Saint Louis University,Earning Potential,66
+Southern Illinois University-Edwardsville,Earning Potential,86
+University of Missouri-St Louis,Earning Potential,58
+Fontbonne University,Earning Potential,29
+Missouri University of Science and Technology,Earning Potential,100
+Truman State University,Earning Potential,64
+University of Missouri-Columbia,Earning Potential,58
+Southwestern Illinois College*,Earning Potential,65
+Saint Louis Community College*,Earning Potential,50

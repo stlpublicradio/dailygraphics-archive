@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Graphic : STLPR</title>
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex" />
+	<link rel="shortcut icon" href="https://s3.amazonaws.com/stlpr-assets/stlpr-favicon.ico" />
+
+	<style type="text/css">
+		/* import fonts */
+		@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Titillium+Web:700,400,300);
+
+		/* base styles */
+		html { -webkit-text-size-adjust: none; }
+
+		body {
+			font: 14px/1.4 'Titillium Web', Helvetica, sans-serif;
+			color: #333;
+		}
+
+		h1 {
+			margin: 0 0 20px 0;
+			font-size: 20px;
+			color: #000;
+			font-weight: 700;
+			line-height: 1.3;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		h2, h3 {
+			font-weight: 700;
+			color: #777;
+			margin: 20px 0 0 0;
+			line-height: 1.6;
+		}
+
+		h2 {
+			font-size: 16px;
+		}
+
+		h3 {
+			font-size: 14px;
+		}
+
+		p {
+			margin: 5px 0;
+		}
+
+		.footnotes { margin-bottom: 20px; }
+		.footnotes h4 {
+			margin: 2px 0 7px 0;
+			color: #666;
+			font-size: 11px;
+		}
+	
+		.footnotes p,
+		.footer p {
+			margin: 2px 0 0 0;
+			font-size: 11px;
+			line-height: 1.7;
+			color: #999;
+		}
+
+		a, a:link, a:visited {
+			color: #4774CC;
+			text-decoration: none;
+		}
+	
+		a:hover, a:active { color: #bccae5; }
+
+		/* Size "Full" divs in Core Publisher correctly — add div.full inside body tags */
+		@media screen and (max-width: 641px) { 
+			div.full { 
+				margin-right: 8.75%; 
+			} 
+		}
+
+		@media screen and (min-width: 642px) and (max-width: 1009px) {
+			div.full {
+				margin-right: 8.3%; 
+			}
+		}
+		@media screen and (min-width: 1011px) and (max-width: 1025px) {
+			div.full {
+				margin-right: 8.3%;
+			}
+		}
+		
+
+		/* graphic */
+		#graphic {
+			position: relative;
+			margin-bottom: 22px;
+		}
+		#graphic:before,
+		#graphic:after {
+			content: ' ';
+			display: table;
+		}
+		#graphic:after { clear: both; }
+
+
+		/* table */
+		table {
+			border-collapse: collapse;
+			padding: 0;
+			width: 100%;
+			font-size: 12px;
+			color: #666;
+		}
+		table th,
+		table td {
+			padding: 10px;
+			text-align: left;
+		}
+		table th {
+			border-bottom: 2px solid #eee;
+			vertical-align: bottom;
+			font-family: 'Knockout 31 4r';
+			font-weight: normal;
+			text-transform: uppercase;
+			padding-top: 0;
+			line-height: 1.2;
+			letter-spacing: 0.05em;
+			-webkit-font-smoothing: antialiased;
+		}
+		table td {
+			border-bottom: 1px solid #eee;
+			vertical-align: top;
+		}
+		
+		table th.amt,
+		table td.amt,
+		table th.pct,
+		table td.pct {
+			text-align: right;
+		}
+
+		table tr.shadedrow { 
+			background-color: #f1f1f1; 
+			color: #333;
+			font-weight: bold;
+		}
+
+		/* responsive table */
+		@media screen and (max-width: 480px) {
+			table,
+			tbody {
+				display: block;
+				width: 100%;
+			}
+			thead { display: none; }
+			table tr,
+			table th,
+			table td,
+			table td.amt,
+			table td.pct {
+				display: block;
+				padding: 0;
+				text-align: left;
+				white-space: normal;
+			}
+			table td,
+			table td.amt,
+			table td.pct { 
+				border: none;
+				margin-bottom: 6px;
+			}
+			table td:empty { display: none; }
+
+			table tr {
+				border-bottom: 1px solid #eee;
+				padding: 10px;
+			}
+			table tr:first-child { border-top: 1px solid #eee; }
+
+			table th[data-title]:before,
+			table td[data-title]:before {
+				content: attr(data-title) ":\00A0";
+				display: inline-block;
+				width: 75%;
+				min-width: 220px;
+				width: 220px;
+			}
+
+			table tr td:first-child { 
+				font-size: 14px;
+				margin-bottom: 6px;
+				color: #333;
+				font-family: 'Knockout 31 4r', Helvetica, Arial, sans-serif;
+				font-weight: 500;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+			}
+			table tr td:first-child:before {
+				content: '';
+				display: none;
+			}
+		}
+	</style>
+
+</head>
+<body>
+	<h1>St. Louis County municpality revenue from fines and fees</h1>
+	
+
+	<div id="graphic">
+		<table>
+			<thead>
+				<tr>
+					<th>Municipality</th>
+					<th class="amt">Revenue from fines & fees</th>
+					<th class="amt">General revenue</th>
+					<th class="pct">Percentage of revenue from fines & fees</th>
+					<th class="year">Year</th>
+				</tr>
+			</thead>
+
+			
+			<tr class="copy.data.0.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Ballwin</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,031,778</td>
+				<td data-title="General revenue" class="amt">$17,620,540.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.86%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.1.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bella Villa</td>
+				<td data-title="Revenue from fines & fees" class="amt">$371,393</td>
+				<td data-title="General revenue" class="amt">$647,243.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">57.38%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.2.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bellefontaine</td>
+				<td data-title="Revenue from fines & fees" class="amt">$685,700</td>
+				<td data-title="General revenue" class="amt">$4,918,310.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">13.94%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.3.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bellerive</td>
+				<td data-title="Revenue from fines & fees" class="amt">$71,979</td>
+				<td data-title="General revenue" class="amt">$245,032.45</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">29.38%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.4.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bel-Nor</td>
+				<td data-title="Revenue from fines & fees" class="amt">$84,414</td>
+				<td data-title="General revenue" class="amt"></td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct"></td>
+				<td data-title="Year" class="year">2007</td>
+			</tr>
+			
+			<tr class="copy.data.5.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bel-Ridge</td>
+				<td data-title="Revenue from fines & fees" class="amt">$352,638</td>
+				<td data-title="General revenue" class="amt">$1,481,633.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">23.80%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.6.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Berkeley</td>
+				<td data-title="Revenue from fines & fees" class="amt">$951,412</td>
+				<td data-title="General revenue" class="amt">$8,680,716</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">10.96%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.7.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Beverly Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$221,165</td>
+				<td data-title="General revenue" class="amt">$838,833</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">26.37%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.8.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Black Jack</td>
+				<td data-title="Revenue from fines & fees" class="amt">$93,073</td>
+				<td data-title="General revenue" class="amt">$2,621,186</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.55%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.9.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Breckenridge HIlls</td>
+				<td data-title="Revenue from fines & fees" class="amt">$622,636</td>
+				<td data-title="General revenue" class="amt">$2,160,734</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">28.82%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.10.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Brentwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$470,868</td>
+				<td data-title="General revenue" class="amt">$11,780,199</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">4.00%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.11.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Bridgeton</td>
+				<td data-title="Revenue from fines & fees" class="amt">$349,145</td>
+				<td data-title="General revenue" class="amt">$12,887,494</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">2.71%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.12.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Calverton Park</td>
+				<td data-title="Revenue from fines & fees" class="amt">$366,791</td>
+				<td data-title="General revenue" class="amt">$728,226</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">50.37%</td>
+				<td data-title="Year" class="year">2011</td>
+			</tr>
+			
+			<tr class="copy.data.13.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Charlack</td>
+				<td data-title="Revenue from fines & fees" class="amt">$291,634</td>
+				<td data-title="General revenue" class="amt">$1,009,747</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">28.88%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.14.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Chesterfield</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,340,143</td>
+				<td data-title="General revenue" class="amt">$21,125,292</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.34%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.15.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Clarkson Valley</td>
+				<td data-title="Revenue from fines & fees" class="amt">$161,604</td>
+				<td data-title="General revenue" class="amt">$881,785</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">18.33%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.16.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Clayton</td>
+				<td data-title="Revenue from fines & fees" class="amt">$672,029</td>
+				<td data-title="General revenue" class="amt">$21,761,741</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.09%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.17.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Cool Valley</td>
+				<td data-title="Revenue from fines & fees" class="amt">$366,763</td>
+				<td data-title="General revenue" class="amt">$1,259,770</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">29.11%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.18.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Country Club Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$231,734</td>
+				<td data-title="General revenue" class="amt">$1,400,359</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">16.55%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.19.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Crestwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$268,737</td>
+				<td data-title="General revenue" class="amt">$8,207,811</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.27%</td>
+				<td data-title="Year" class="year">2011</td>
+			</tr>
+			
+			<tr class="copy.data.20.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Creve Coeur</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,966,254</td>
+				<td data-title="General revenue" class="amt">$16,365,796</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">12.01%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.21.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Dellwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$244,694</td>
+				<td data-title="General revenue" class="amt">$3,434,353</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">7.12%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.22.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Des Peres</td>
+				<td data-title="Revenue from fines & fees" class="amt">$433,576</td>
+				<td data-title="General revenue" class="amt">$9,782,524</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">4.43%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.23.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Edmundson</td>
+				<td data-title="Revenue from fines & fees" class="amt">$559,465</td>
+				<td data-title="General revenue" class="amt">$1,604,815</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">34.86%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.24.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Ellisville</td>
+				<td data-title="Revenue from fines & fees" class="amt">$596,932</td>
+				<td data-title="General revenue" class="amt">$5,905,836</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">10.11%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.25.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Fenton</td>
+				<td data-title="Revenue from fines & fees" class="amt">$421,832</td>
+				<td data-title="General revenue" class="amt">$5,607,923</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">7.52%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.26.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Ferguson</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,832,519</td>
+				<td data-title="General revenue" class="amt">$12,746,894</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">14.38%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.27.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Flordell Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$116,351</td>
+				<td data-title="General revenue" class="amt">$516,749</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">22.52%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.28.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Florissant</td>
+				<td data-title="Revenue from fines & fees" class="amt">$2,421,797</td>
+				<td data-title="General revenue" class="amt">$23,120,332</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">10.47%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.29.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Frontenac</td>
+				<td data-title="Revenue from fines & fees" class="amt">$513,790</td>
+				<td data-title="General revenue" class="amt">$5,962,282</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">8.62%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.30.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Glendale</td>
+				<td data-title="Revenue from fines & fees" class="amt">$143,194</td>
+				<td data-title="General revenue" class="amt">$3,746,924</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.82%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.31.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Grantwood Village</td>
+				<td data-title="Revenue from fines & fees" class="amt">$7,003</td>
+				<td data-title="General revenue" class="amt">$387,995</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">1.81%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.32.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Hanley Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$94,194</td>
+				<td data-title="General revenue" class="amt">$7,221,061</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">1.30%</td>
+				<td data-title="Year" class="year">2010</td>
+			</tr>
+			
+			<tr class="copy.data.33.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Hazelwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,307,572</td>
+				<td data-title="General revenue" class="amt">$23,809,852</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.49%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.34.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Jennings</td>
+				<td data-title="Revenue from fines & fees" class="amt">$436,219</td>
+				<td data-title="General revenue" class="amt">$7,737,693</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.64%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.35.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Kinloch</td>
+				<td data-title="Revenue from fines & fees" class="amt"></td>
+				<td data-title="General revenue" class="amt">$900,778</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">0.00%</td>
+				<td data-title="Year" class="year">2011</td>
+			</tr>
+			
+			<tr class="copy.data.36.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Kirkwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$528,690</td>
+				<td data-title="General revenue" class="amt">$19,297,564</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">2.74%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.37.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Ladue</td>
+				<td data-title="Revenue from fines & fees" class="amt">$457,915</td>
+				<td data-title="General revenue" class="amt">$11,775,575</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.89%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.38.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Manchester</td>
+				<td data-title="Revenue from fines & fees" class="amt">$430,901</td>
+				<td data-title="General revenue" class="amt">$8,202,013</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.25%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.39.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Maplewood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$969,445</td>
+				<td data-title="General revenue" class="amt">$8,793,643</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">11.02%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.40.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Maryland Heights</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,745,016</td>
+				<td data-title="General revenue" class="amt">$22,420,540</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">7.78%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.41.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Moline Acres</td>
+				<td data-title="Revenue from fines & fees" class="amt">$503,061</td>
+				<td data-title="General revenue" class="amt">$1,619,488</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">31.06%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.42.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Normandy</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,725,753</td>
+				<td data-title="General revenue" class="amt">$4,249,631</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">40.61%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.43.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Northwoods</td>
+				<td data-title="Revenue from fines & fees" class="amt">$690,534</td>
+				<td data-title="General revenue" class="amt">$2,620,992</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">26.35%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.44.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Norwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$8,161.50</td>
+				<td data-title="General revenue" class="amt">$70,198.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">11.63%</td>
+				<td data-title="Year" class="year">2014</td>
+			</tr>
+			
+			<tr class="copy.data.45.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Oakland</td>
+				<td data-title="Revenue from fines & fees" class="amt">$103,112</td>
+				<td data-title="General revenue" class="amt">$675,079</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">15.27%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.46.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Olivette</td>
+				<td data-title="Revenue from fines & fees" class="amt">$292,184</td>
+				<td data-title="General revenue" class="amt">$7,046,302</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">4.15%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.47.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Overland</td>
+				<td data-title="Revenue from fines & fees" class="amt">$483,282</td>
+				<td data-title="General revenue" class="amt">$8,255,774</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.85%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.48.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Pasadena Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$0</td>
+				<td data-title="General revenue" class="amt">$384,979</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">0.00%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.49.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Pasadena Park</td>
+				<td data-title="Revenue from fines & fees" class="amt">$0</td>
+				<td data-title="General revenue" class="amt">$146,446</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">0.00%</td>
+				<td data-title="Year" class="year">2011</td>
+			</tr>
+			
+			<tr class="copy.data.50.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Pine Lawn </td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,841,985</td>
+				<td data-title="General revenue" class="amt">$3,827,753</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">48.12%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.51.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Richmond Heights</td>
+				<td data-title="Revenue from fines & fees" class="amt">$809,252</td>
+				<td data-title="General revenue" class="amt">$12,109,281</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.68%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.52.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Riverview</td>
+				<td data-title="Revenue from fines & fees" class="amt">$139,632</td>
+				<td data-title="General revenue" class="amt">$913,332</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">15.29%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.53.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Rock Hill</td>
+				<td data-title="Revenue from fines & fees" class="amt">$628,510</td>
+				<td data-title="General revenue" class="amt">$3,370,845</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">18.65%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.54.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">St. Ann</td>
+				<td data-title="Revenue from fines & fees" class="amt">$3,415,671</td>
+				<td data-title="General revenue" class="amt">$9,115,012</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">37.47%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.55.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">St. John</td>
+				<td data-title="Revenue from fines & fees" class="amt">$932,313</td>
+				<td data-title="General revenue" class="amt">$3,835,573</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">24.31%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.56.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Sunset Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$404,953</td>
+				<td data-title="General revenue" class="amt">$7,253,769</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.58%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.57.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Town & Country</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,504,837</td>
+				<td data-title="General revenue" class="amt">$10,040,225</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">14.99%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.58.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">University City</td>
+				<td data-title="Revenue from fines & fees" class="amt">$571,516</td>
+				<td data-title="General revenue" class="amt">$26,917,526</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">2.12%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.59.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Uplands Park</td>
+				<td data-title="Revenue from fines & fees" class="amt">$90,935</td>
+				<td data-title="General revenue" class="amt">$386,887</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">23.50%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.60.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Valley Park</td>
+				<td data-title="Revenue from fines & fees" class="amt">$221,432</td>
+				<td data-title="General revenue" class="amt">$3,290,258</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.73%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.61.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Velda City</td>
+				<td data-title="Revenue from fines & fees" class="amt">$260,770</td>
+				<td data-title="General revenue" class="amt">$1,042,254</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">25.02%</td>
+				<td data-title="Year" class="year">2011</td>
+			</tr>
+			
+			<tr class="copy.data.62.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Velda Village Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$41,497</td>
+				<td data-title="General revenue" class="amt">$420,343</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">9.87%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.63.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Vinita Park</td>
+				<td data-title="Revenue from fines & fees" class="amt">$262,231</td>
+				<td data-title="General revenue" class="amt">$2,156,671</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">12.16%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.64.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Vinita Terrace</td>
+				<td data-title="Revenue from fines & fees" class="amt">$121,145</td>
+				<td data-title="General revenue" class="amt">$233,738</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">51.83%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.65.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Warson Woods</td>
+				<td data-title="Revenue from fines & fees" class="amt">$43,911</td>
+				<td data-title="General revenue" class="amt">$1,518,054</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">2.89%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.66.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Webster Groves</td>
+				<td data-title="Revenue from fines & fees" class="amt">$1,011,126</td>
+				<td data-title="General revenue" class="amt">$14,955,343</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.76%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.67.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Wellston</td>
+				<td data-title="Revenue from fines & fees" class="amt">$332,891</td>
+				<td data-title="General revenue" class="amt">$2,693,995</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">12.36%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.68.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Wildwood</td>
+				<td data-title="Revenue from fines & fees" class="amt">$615,040</td>
+				<td data-title="General revenue" class="amt">$9,051,444</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.79%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.69.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Winchester</td>
+				<td data-title="Revenue from fines & fees" class="amt">$50,361</td>
+				<td data-title="General revenue" class="amt">$778,189</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.47%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.70.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Woodson Terrace</td>
+				<td data-title="Revenue from fines & fees" class="amt">$244,040</td>
+				<td data-title="General revenue" class="amt">$3,706,617</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.58%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.71.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Eureka</td>
+				<td data-title="Revenue from fines & fees" class="amt">$143,936</td>
+				<td data-title="General revenue" class="amt">$4,853,232</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">2.97%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.72.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Greendale</td>
+				<td data-title="Revenue from fines & fees" class="amt">$40,467</td>
+				<td data-title="General revenue" class="amt">$357,424</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">11.32%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.73.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Hillsdale</td>
+				<td data-title="Revenue from fines & fees" class="amt">$224,550</td>
+				<td data-title="General revenue" class="amt">$834,036</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">26.92%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.74.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Lakeshire</td>
+				<td data-title="Revenue from fines & fees" class="amt">$18,851</td>
+				<td data-title="General revenue" class="amt">$554,181</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">3.40%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.75.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Marlborough</td>
+				<td data-title="Revenue from fines & fees" class="amt">$91,461</td>
+				<td data-title="General revenue" class="amt">$575,062</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">15.90%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.76.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Pacific</td>
+				<td data-title="Revenue from fines & fees" class="amt">$201,825.13</td>
+				<td data-title="General revenue" class="amt">$3,767,395.00</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">5.36%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.77.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Pagedale</td>
+				<td data-title="Revenue from fines & fees" class="amt">$247,950</td>
+				<td data-title="General revenue" class="amt">$2,016,430</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">12.30%</td>
+				<td data-title="Year" class="year">2012</td>
+			</tr>
+			
+			<tr class="copy.data.78.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Shrewsbury</td>
+				<td data-title="Revenue from fines & fees" class="amt">$378,706</td>
+				<td data-title="General revenue" class="amt">$5,997,095</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">6.31%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+			<tr class="copy.data.79.state-[column-does-not-exist-in-sheet]">
+				<td data-title="Municipality">Sycamore Hills</td>
+				<td data-title="Revenue from fines & fees" class="amt">$40,126</td>
+				<td data-title="General revenue" class="amt">$174,844</td>
+				<td data-title="Percentage of revenue from fines & fees" class="pct">22.95%</td>
+				<td data-title="Year" class="year">2013</td>
+			</tr>
+			
+
+		</table>
+	</div>
+	
+	
+
+	<div class="footer">
+		<p>Source: Senator Eric Schmitt</p>
+		
+	</div>
+
+
+	<script src="js/lib/jquery.min.js" type="text/javascript"></script>
+	<script src="js/lib/pym.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(window).load(function() {
+		var pymChild = new pym.Child({ });
+	})
+	</script>
+
+</body>
+</html>

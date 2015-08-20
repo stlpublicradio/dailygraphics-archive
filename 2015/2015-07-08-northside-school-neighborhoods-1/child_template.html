@@ -1,0 +1,33 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    <div id="graphic">
+      <ul class="key">
+        <li class="key-item">
+          <b style="background-color:#f1bb4f"></b>
+          <label>Dashed line represents all of St. Louis</label>
+        </li>
+      </ul>
+      <div id="pop">
+      </div>
+      <div id="pop_chg">
+      </div>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source_1 %}<p>Source: {{ COPY.labels.source_1 }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+        var GRAPHIC_DATA = [{{ COPY.pop.json() }}, {{ COPY.race.json()}}, {{ COPY.pop_chg.json()}}, {{ COPY.pct_vacant.json() }}, {{ COPY.income.json() }}, {{ COPY.violent_crime.json() }}, {{ COPY.property_crime.json() }}, {{ COPY.obese.json() }} ];
+    </script>
+
+{% endblock content %}
