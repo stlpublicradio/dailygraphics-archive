@@ -1,0 +1,53 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<h2>{{ render(COPY.labels.subhed) }}</h2>{% endif %}
+    {% if COPY.labels.note %}<p>{{ COPY.labels.note }}</p>{% endif %}
+    {% if COPY.labels.key %}<p class="key"><span>{{ COPY.labels.key }}<span></p>{% endif %}
+
+        {% if COPY.labels.footnote %}
+        <div class="footnotes">
+            <h4>Notes</h4>
+            <p>{{ COPY.labels.footnote }}</p>
+        </div>
+        {% endif %}
+
+    <div id="graphic">
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ COPY.labels.hdr_name }}</th>
+                    <th>{{ COPY.labels.hdr_detox_beds }}</th>
+                    <th>{{ COPY.labels.hdr_residential_beds }}</th>
+                    <th>{{ COPY.labels.hdr_total_capacity }}</th>
+                </tr>
+            </thead>
+
+            {% for row in COPY.data %}
+            <tr class="{{ row.name|classify }} {% if row.pay %}{{row.pay}}{% endif %}">
+                <td data-title="{{ COPY.labels.hdr_name }}">{{ row.name }}</td>
+                <td data-title="{{ COPY.labels.hdr_detox_beds }}">{{ row.detox_beds }}</td>
+                <td data-title="{{ COPY.labels.hdr_residential_beds }}">{{ row.residential_beds }}</td>
+                <td data-title="{{ COPY.labels.hdr_total_capacity }}" class="amt">{{ row.total_capacity }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    {{ JS.push('js/lib/pym.js') }}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+
+{% endblock js %}

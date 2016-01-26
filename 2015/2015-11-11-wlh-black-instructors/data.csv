@@ -1,0 +1,704 @@
+school_name,state,hbcu_bool,land_grant_bool,staff,staff_black,staff_black_pct
+Abraham Baldwin Agricultural College,GA,False,False,87,6,0.06896551724137931034482758621
+Adams State University,CO,False,False,111,0,0
+Alabama A & M University,AL,True,True,263,203,0.7718631178707224334600760456
+Alabama State University,AL,True,False,274,153,0.5583941605839416058394160584
+Albany State University,GA,True,False,148,86,0.5810810810810810810810810811
+Alcorn State University,MS,True,True,167,101,0.6047904191616766467065868263
+American Samoa Community College,AS,False,True,69,0,0
+Angelo State University,TX,False,False,274,6,0.02189781021897810218978102190
+Appalachian State University,NC,False,False,901,17,0.01886792452830188679245283019
+Arizona State University-Downtown Phoenix,AZ,False,False,345,13,0.03768115942028985507246376812
+Arizona State University-Polytechnic,AZ,False,False,181,6,0.03314917127071823204419889503
+Arizona State University-Skysong,AZ,False,False,221,7,0.03167420814479638009049773756
+Arizona State University-Tempe,AZ,False,False,1798,38,0.02113459399332591768631813126
+Arizona State University-West,AZ,False,False,207,5,0.02415458937198067632850241546
+Arkansas State University-Main Campus,AR,False,False,505,33,0.06534653465346534653465346535
+Arkansas Tech University,AR,False,False,349,6,0.01719197707736389684813753582
+Armstrong Atlantic State University,GA,False,False,263,23,0.08745247148288973384030418251
+Athens State University,AL,False,False,84,10,0.1190476190476190476190476190
+Atlanta Metropolitan State College,GA,False,False,56,39,0.6964285714285714285714285714
+Auburn University,AL,False,True,1184,48,0.04054054054054054054054054054
+Auburn University at Montgomery,AL,False,False,203,14,0.06896551724137931034482758621
+Austin Peay State University,TN,False,False,360,26,0.07222222222222222222222222222
+Ball State University,IN,False,False,961,16,0.01664932362122788761706555671
+Bellevue College,WA,False,False,173,5,0.02890173410404624277456647399
+Bemidji State University,MN,False,False,144,0,0
+Bismarck State College,ND,False,False,119,1,0.008403361344537815126050420168
+Black Hills State University,SD,False,False,117,0,0
+Bloomsburg University of Pennsylvania,PA,False,False,417,10,0.02398081534772182254196642686
+Bluefield State College,WV,True,False,78,7,0.08974358974358974358974358974
+Boise State University,ID,False,False,650,2,0.003076923076923076923076923077
+Bowie State University,MD,True,False,228,164,0.7192982456140350877192982456
+Bowling Green State University-Main Campus,OH,False,False,750,25,0.03333333333333333333333333333
+Brazosport College,TX,False,False,90,3,0.03333333333333333333333333333
+Bridgewater State University,MA,False,False,328,15,0.04573170731707317073170731707
+Broward College,FL,False,False,406,70,0.1724137931034482758620689655
+Buffalo State SUNY,NY,False,False,415,21,0.05060240963855421686746987952
+California Maritime Academy,CA,False,False,59,1,0.01694915254237288135593220339
+California Polytechnic State University-San Luis Obispo,CA,False,False,751,11,0.01464713715046604527296937417
+California State Polytechnic University-Pomona,CA,False,False,517,12,0.02321083172147001934235976789
+California State University-Bakersfield,CA,False,False,252,10,0.03968253968253968253968253968
+California State University-Channel Islands,CA,False,False,165,3,0.01818181818181818181818181818
+California State University-Chico,CA,False,False,480,6,0.0125
+California State University-Dominguez Hills,CA,False,False,290,25,0.08620689655172413793103448276
+California State University-East Bay,CA,False,False,311,20,0.06430868167202572347266881029
+California State University-Fresno,CA,False,False,657,27,0.04109589041095890410958904110
+California State University-Fullerton,CA,False,False,893,29,0.03247480403135498320268756999
+California State University-Long Beach,CA,False,False,954,30,0.03144654088050314465408805031
+California State University-Los Angeles,CA,False,False,563,26,0.04618117229129662522202486679
+California State University-Monterey Bay,CA,False,False,170,7,0.04117647058823529411764705882
+California State University-Northridge,CA,False,False,896,46,0.05133928571428571428571428571
+California State University-Sacramento,CA,False,False,667,27,0.04047976011994002998500749625
+California State University-San Bernardino,CA,False,False,436,21,0.04816513761467889908256880734
+California State University-San Marcos,CA,False,False,296,7,0.02364864864864864864864864865
+California State University-Stanislaus,CA,False,False,277,7,0.02527075812274368231046931408
+California University of Pennsylvania,PA,False,False,266,19,0.07142857142857142857142857143
+Cameron University,OK,False,False,189,9,0.04761904761904761904761904762
+Castleton State College,VT,False,False,97,1,0.01030927835051546391752577320
+Central Connecticut State University,CT,False,False,434,24,0.05529953917050691244239631336
+Central Michigan University,MI,False,False,756,22,0.02910052910052910052910052910
+Central State University,OH,True,False,105,54,0.5142857142857142857142857143
+Central Washington University,WA,False,False,453,2,0.004415011037527593818984547461
+Centralia College,WA,False,False,69,0,0
+Chadron State College,NE,False,False,88,0,0
+Cheyney University of Pennsylvania,PA,True,False,63,36,0.5714285714285714285714285714
+Chicago State University,IL,False,False,299,138,0.4615384615384615384615384615
+Chipola College,FL,False,False,42,1,0.02380952380952380952380952381
+Christopher Newport University,VA,False,False,268,11,0.04104477611940298507462686567
+Citadel Military College of South Carolina,SC,False,False,186,9,0.04838709677419354838709677419
+Clarion University of Pennsylvania,PA,False,False,223,9,0.04035874439461883408071748879
+Clayton  State University,GA,False,False,216,37,0.1712962962962962962962962963
+Clemson University,SC,False,True,1101,41,0.03723887375113533151680290645
+Cleveland State University,OH,False,False,511,38,0.07436399217221135029354207436
+Coastal Carolina University,SC,False,False,410,20,0.04878048780487804878048780488
+Colegio Universitario de San Juan,PR,False,False,28,0,0
+College of Central Florida,FL,False,False,114,7,0.06140350877192982456140350877
+College of Charleston,SC,False,False,535,22,0.04112149532710280373831775701
+College of Coastal Georgia,GA,False,False,90,6,0.06666666666666666666666666667
+College of Southern Nevada,NV,False,False,487,25,0.05133470225872689938398357290
+College of Staten Island CUNY,NY,False,False,374,19,0.05080213903743315508021390374
+College of William and Mary,VA,False,False,632,19,0.03006329113924050632911392405
+Colorado Mesa University,CO,False,False,250,1,0.004
+Colorado Mountain College,CO,False,False,110,0,0
+Colorado School of Mines,CO,False,False,263,2,0.007604562737642585551330798479
+Colorado State University-Fort Collins,CO,False,True,1435,15,0.01045296167247386759581881533
+Colorado State University-Global Campus,CO,False,False,8,0,0
+Colorado State University-Pueblo,CO,False,False,191,3,0.01570680628272251308900523560
+Columbia Basin College,WA,False,False,133,2,0.01503759398496240601503759398
+Columbus State University,GA,False,False,296,35,0.1182432432432432432432432432
+Concord University,WV,False,False,114,1,0.008771929824561403508771929825
+Coppin State University,MD,True,False,130,86,0.6615384615384615384615384615
+CUNY Bernard M Baruch College,NY,False,False,516,29,0.05620155038759689922480620155
+CUNY Brooklyn College,NY,False,False,547,37,0.06764168190127970749542961609
+CUNY City College,NY,False,False,610,58,0.09508196721311475409836065574
+CUNY Graduate School and University Center,NY,False,False,205,16,0.07804878048780487804878048780
+CUNY Hunter College,NY,False,False,722,61,0.08448753462603878116343490305
+CUNY John Jay College of Criminal Justice,NY,False,False,414,45,0.1086956521739130434782608696
+CUNY Lehman College,NY,False,False,378,39,0.1031746031746031746031746032
+CUNY Medgar Evers College,NY,False,False,178,109,0.6123595505617977528089887640
+CUNY New York City College of Technology,NY,False,False,415,52,0.1253012048192771084337349398
+CUNY Queens College,NY,False,False,612,35,0.05718954248366013071895424837
+CUNY School of Law at Queens College,NY,False,False,42,7,0.1666666666666666666666666667
+CUNY York College,NY,False,False,198,42,0.2121212121212121212121212121
+Dakota State University,SD,False,False,98,0,0
+Dalton State College,GA,False,False,147,5,0.03401360544217687074829931973
+Daytona State College,FL,False,False,297,24,0.08080808080808080808080808081
+Delaware State University,DE,True,True,215,78,0.3627906976744186046511627907
+Delta State University,MS,False,False,176,21,0.1193181818181818181818181818
+Dickinson State University,ND,False,False,92,0,0
+Dine College,AZ,False,True,60,1,0.01666666666666666666666666667
+Dixie State University,UT,False,False,177,0,0
+East Carolina University,NC,False,False,1459,65,0.04455106237148732008224811515
+East Central University,OK,False,False,167,4,0.02395209580838323353293413174
+East Georgia State College,GA,False,False,69,6,0.08695652173913043478260869565
+East Stroudsburg University of Pennsylvania,PA,False,False,268,11,0.04104477611940298507462686567
+East Tennessee State University,TN,False,False,735,21,0.02857142857142857142857142857
+Eastern Connecticut State University,CT,False,False,201,12,0.05970149253731343283582089552
+Eastern Florida State College,FL,False,False,239,19,0.07949790794979079497907949791
+Eastern Illinois University,IL,False,False,571,22,0.03852889667250437828371278459
+Eastern Kentucky University,KY,False,False,557,25,0.04488330341113105924596050269
+Eastern Michigan University,MI,False,False,751,45,0.05992010652463382157123834887
+Eastern New Mexico University-Main Campus,NM,False,False,158,3,0.01898734177215189873417721519
+Eastern Oregon University,OR,False,False,109,2,0.01834862385321100917431192661
+Eastern Virginia Medical School,VA,False,False,252,14,0.05555555555555555555555555556
+Eastern Washington University,WA,False,False,459,10,0.02178649237472766884531590414
+Edinboro University of Pennsylvania,PA,False,False,316,10,0.03164556962025316455696202532
+Edison State College,FL,False,False,170,8,0.04705882352941176470588235294
+Elizabeth City State University,NC,True,False,139,67,0.4820143884892086330935251799
+Emporia State University,KS,False,False,248,3,0.01209677419354838709677419355
+Escuela de Artes Plasticas de Puerto Rico,PR,False,False,13,0,0
+Fairmont State University,WV,False,False,161,3,0.01863354037267080745341614907
+Farmingdale State College,NY,False,False,203,11,0.05418719211822660098522167488
+Fashion Institute of Technology,NY,False,False,240,8,0.03333333333333333333333333333
+Fayetteville State University,NC,True,False,270,115,0.4259259259259259259259259259
+Ferris State University,MI,False,False,599,13,0.02170283806343906510851419032
+Fitchburg State University,MA,False,False,192,10,0.05208333333333333333333333333
+Florida Agricultural and Mechanical University,FL,True,True,550,379,0.6890909090909090909090909091
+Florida Atlantic University,FL,False,False,760,43,0.05657894736842105263157894737
+Florida Gateway College,FL,False,False,66,3,0.04545454545454545454545454545
+Florida Gulf Coast University,FL,False,False,429,15,0.03496503496503496503496503497
+Florida International University,FL,False,False,1178,78,0.06621392190152801358234295416
+Florida State College at Jacksonville,FL,False,False,389,52,0.1336760925449871465295629820
+Florida State University,FL,False,False,1359,62,0.04562178072111846946284032377
+Fort Berthold Community College,ND,False,True,17,0,0
+Fort Hays State University,KS,False,False,303,6,0.01980198019801980198019801980
+Fort Lewis College,CO,False,False,161,2,0.01242236024844720496894409938
+Fort Valley State University,GA,True,True,135,81,0.6
+Framingham State University,MA,False,False,182,7,0.03846153846153846153846153846
+Francis Marion University,SC,False,False,204,8,0.03921568627450980392156862745
+Frostburg State University,MD,False,False,252,8,0.03174603174603174603174603175
+George Mason University,VA,False,False,1241,43,0.03464947622884770346494762288
+Georgia College and State University,GA,False,False,310,19,0.06129032258064516129032258065
+Georgia Gwinnett College,GA,False,False,344,38,0.1104651162790697674418604651
+Georgia Institute of Technology-Main Campus,GA,False,False,1067,27,0.02530459231490159325210871603
+Georgia Regents University,GA,False,False,903,50,0.05537098560354374307862679956
+Georgia Southern University,GA,False,False,776,39,0.05025773195876288659793814433
+Georgia Southwestern State University,GA,False,False,108,4,0.03703703703703703703703703704
+Georgia State University,GA,False,False,1180,113,0.09576271186440677966101694915
+Glenville State College,WV,False,False,69,0,0
+Gordon State College,GA,False,False,117,11,0.09401709401709401709401709402
+Governors State University,IL,False,False,224,25,0.1116071428571428571428571429
+Grambling State University,LA,True,False,194,143,0.7371134020618556701030927835
+Grand Valley State University,MI,False,False,1069,38,0.03554724041159962581852198316
+Granite State College,NH,False,False,6,0,0
+Great Basin College,NV,False,False,61,2,0.03278688524590163934426229508
+Gulf Coast State College,FL,False,False,103,8,0.07766990291262135922330097087
+Harris-Stowe State University,MO,True,False,46,22,0.4782608695652173913043478261
+Haskell Indian Nations University,KS,False,True,46,0,0
+Henderson State University,AR,False,False,173,10,0.05780346820809248554913294798
+Humboldt State University,CA,False,False,281,6,0.02135231316725978647686832740
+Idaho State University,ID,False,False,553,4,0.007233273056057866184448462929
+Illinois State University,IL,False,False,878,33,0.03758542141230068337129840547
+Indian River State College,FL,False,False,206,23,0.1116504854368932038834951456
+Indiana State University,IN,False,False,470,18,0.03829787234042553191489361702
+Indiana University of Pennsylvania-Main Campus,PA,False,False,606,20,0.03300330033003300330033003300
+Indiana University-Bloomington,IN,False,False,1992,81,0.04066265060240963855421686747
+Indiana University-East,IN,False,False,100,5,0.05
+Indiana University-Kokomo,IN,False,False,98,4,0.04081632653061224489795918367
+Indiana University-Northwest,IN,False,False,174,15,0.08620689655172413793103448276
+Indiana University-Purdue University-Fort Wayne,IN,False,False,318,10,0.03144654088050314465408805031
+Indiana University-Purdue University-Indianapolis,IN,False,False,2156,90,0.04174397031539888682745825603
+Indiana University-South Bend,IN,False,False,280,8,0.02857142857142857142857142857
+Indiana University-Southeast,IN,False,False,200,8,0.04
+Institute of American Indian and Alaska Native Culture,NM,False,True,20,0,0
+Iowa State University,IA,False,True,1421,32,0.02251935256861365235749472203
+Jackson State University,MS,True,False,386,252,0.6528497409326424870466321244
+Jacksonville State University,AL,False,False,318,21,0.06603773584905660377358490566
+James Madison University,VA,False,False,960,23,0.02395833333333333333333333333
+Johnson State College,VT,False,False,45,0,0
+Kansas State University,KS,False,True,1065,22,0.02065727699530516431924882629
+Kean University,NJ,False,False,348,27,0.07758620689655172413793103448
+Keene State College,NH,False,False,217,3,0.01382488479262672811059907834
+Kennesaw State University,GA,False,False,706,55,0.07790368271954674220963172805
+Kent State University at Ashtabula,OH,False,False,50,0,0
+Kent State University at East Liverpool,OH,False,False,27,0,0
+Kent State University at Geauga,OH,False,False,38,2,0.05263157894736842105263157895
+Kent State University at Kent,OH,False,False,940,37,0.03936170212765957446808510638
+Kent State University at Salem,OH,False,False,45,1,0.02222222222222222222222222222
+Kent State University at Stark,OH,False,False,110,3,0.02727272727272727272727272727
+Kent State University at Trumbull,OH,False,False,58,0,0
+Kent State University at Tuscarawas,OH,False,False,54,1,0.01851851851851851851851851852
+Kentucky State University,KY,True,True,126,32,0.2539682539682539682539682540
+Kutztown University of Pennsylvania,PA,False,False,410,16,0.03902439024390243902439024390
+Lake Superior State University,MI,False,False,112,0,0
+Lake Washington Institute of Technology,WA,False,False,82,1,0.01219512195121951219512195122
+Lake-Sumter State College,FL,False,False,78,4,0.05128205128205128205128205128
+Lamar University,TX,False,False,421,16,0.03800475059382422802850356295
+Lander University,SC,False,False,138,5,0.03623188405797101449275362319
+Langston University,OK,True,True,134,80,0.5970149253731343283582089552
+Lewis-Clark State College,ID,False,False,159,1,0.006289308176100628930817610063
+Lincoln University,MO,True,True,121,24,0.1983471074380165289256198347
+Lincoln University of Pennsylvania,PA,True,False,96,46,0.4791666666666666666666666667
+Lock Haven University,PA,False,False,228,6,0.02631578947368421052631578947
+Longwood University,VA,False,False,236,6,0.02542372881355932203389830508
+Louisiana State University and Agricultural & Mechanical College,LA,False,True,1241,53,0.04270749395648670427074939565
+Louisiana State University Health Sciences Center-New Orleans,LA,False,False,697,42,0.06025824964131994261119081779
+Louisiana State University Health Sciences Center-Shreveport,LA,False,False,433,25,0.05773672055427251732101616628
+Louisiana State University-Alexandria,LA,False,False,85,4,0.04705882352941176470588235294
+Louisiana State University-Shreveport,LA,False,False,127,9,0.07086614173228346456692913386
+Louisiana Tech University,LA,False,False,375,11,0.02933333333333333333333333333
+Lyndon State College,VT,False,False,54,0,0
+Madison Area Technical College,WI,False,False,466,15,0.03218884120171673819742489270
+Maine Maritime Academy,ME,False,False,63,0,0
+Mansfield University of Pennsylvania,PA,False,False,146,3,0.02054794520547945205479452055
+Marshall University,WV,False,False,748,18,0.02406417112299465240641711230
+Massachusetts College of Art and Design,MA,False,False,100,5,0.05
+Massachusetts College of Liberal Arts,MA,False,False,87,3,0.03448275862068965517241379310
+Massachusetts Maritime Academy,MA,False,False,73,0,0
+Mayville State University,ND,False,False,44,0,0
+McNeese State University,LA,False,False,270,18,0.06666666666666666666666666667
+Medical University of South Carolina,SC,False,False,205,9,0.04390243902439024390243902439
+Metropolitan State University,MN,False,False,129,8,0.06201550387596899224806201550
+Metropolitan State University of Denver,CO,False,False,547,24,0.04387568555758683729433272395
+Miami Dade College,FL,False,False,733,119,0.1623465211459754433833560709
+Miami University-Hamilton,OH,False,False,92,6,0.06521739130434782608695652174
+Miami University-Middletown,OH,False,False,55,2,0.03636363636363636363636363636
+Miami University-Oxford,OH,False,False,843,40,0.04744958481613285883748517200
+Michigan State University,MI,False,True,2709,118,0.04355850867478774455518641565
+Michigan Technological University,MI,False,False,402,3,0.007462686567164179104477611940
+Middle Georgia State College,GA,False,False,255,25,0.09803921568627450980392156863
+Middle Tennessee State University,TN,False,False,911,66,0.07244785949506037321624588364
+Midland College,TX,False,False,123,3,0.02439024390243902439024390244
+Midwestern State University,TX,False,False,226,3,0.01327433628318584070796460177
+Millersville University of Pennsylvania,PA,False,False,281,13,0.04626334519572953736654804270
+Minnesota State University-Mankato,MN,False,False,444,18,0.04054054054054054054054054054
+Minnesota State University-Moorhead,MN,False,False,257,6,0.02334630350194552529182879377
+Minot State University,ND,False,False,198,2,0.01010101010101010101010101010
+Mississippi State University,MS,False,True,940,47,0.05
+Mississippi University for Women,MS,False,False,135,7,0.05185185185185185185185185185
+Mississippi Valley State University,MS,True,False,126,89,0.7063492063492063492063492063
+Missouri Southern State University,MO,False,False,197,6,0.03045685279187817258883248731
+Missouri State University-Springfield,MO,False,False,708,19,0.02683615819209039548022598870
+Missouri University of Science and Technology,MO,False,False,339,6,0.01769911504424778761061946903
+Missouri Western State University,MO,False,False,194,1,0.005154639175257731958762886598
+Montana State University,MT,False,True,550,0,0
+Montana State University-Billings,MT,False,False,165,0,0
+Montana State University-Northern,MT,False,False,61,2,0.03278688524590163934426229508
+Montana Tech of the University of Montana,MT,False,False,136,1,0.007352941176470588235294117647
+Montclair State University,NJ,False,False,585,40,0.06837606837606837606837606838
+Morehead State University,KY,False,False,371,16,0.04312668463611859838274932615
+Morgan State University,MD,True,False,371,151,0.4070080862533692722371967655
+Morrisville State College,NY,False,False,140,5,0.03571428571428571428571428571
+Murray State University,KY,False,False,427,14,0.03278688524590163934426229508
+Navajo Technical University,NM,False,True,73,1,0.01369863013698630136986301370
+Naval Postgraduate School,CA,False,False,342,2,0.005847953216374269005847953216
+Nevada State College,NV,False,False,54,3,0.05555555555555555555555555556
+New College of Florida,FL,False,False,75,4,0.05333333333333333333333333333
+New Jersey City University,NJ,False,False,241,39,0.1618257261410788381742738589
+New Jersey Institute of Technology,NJ,False,False,413,15,0.03631961259079903147699757869
+New Mexico Highlands University,NM,False,False,144,4,0.02777777777777777777777777778
+New Mexico Institute of Mining and Technology,NM,False,False,125,0,0
+New Mexico State University-Main Campus,NM,False,True,700,10,0.01428571428571428571428571429
+Nicholls State University,LA,False,False,242,9,0.03719008264462809917355371901
+Norfolk State University,VA,True,False,282,179,0.6347517730496453900709219858
+North Carolina A & T State University,NC,True,True,462,245,0.5303030303030303030303030303
+North Carolina Central University,NC,True,False,413,230,0.5569007263922518159806295400
+North Carolina State University at Raleigh,NC,False,True,1490,59,0.03959731543624161073825503356
+North Dakota State University-Main Campus,ND,False,True,573,10,0.01745200698080279232111692845
+Northeast Ohio Medical University,OH,False,False,59,1,0.01694915254237288135593220339
+Northeastern Illinois University,IL,False,False,372,26,0.06989247311827956989247311828
+Northeastern State University,OK,False,False,328,8,0.02439024390243902439024390244
+Northern Arizona University,AZ,False,False,958,13,0.01356993736951983298538622129
+Northern Illinois University,IL,False,False,922,27,0.02928416485900216919739696312
+Northern Kentucky University,KY,False,False,551,24,0.04355716878402903811252268603
+Northern Marianas College,MP,False,True,43,1,0.02325581395348837209302325581
+Northern Michigan University,MI,False,False,332,4,0.01204819277108433734939759036
+Northern New Mexico College,NM,False,False,49,1,0.02040816326530612244897959184
+Northern State University,SD,False,False,92,1,0.01086956521739130434782608696
+Northwest Florida State College,FL,False,False,100,4,0.04
+Northwest Indian College,WA,False,True,25,0,0
+Northwest Missouri State University,MO,False,False,238,5,0.02100840336134453781512605042
+Northwestern Michigan College,MI,False,False,90,0,0
+Northwestern Oklahoma State University,OK,False,False,90,2,0.02222222222222222222222222222
+Northwestern State University of Louisiana,LA,False,False,266,15,0.05639097744360902255639097744
+Oakland University,MI,False,False,579,17,0.02936096718480138169257340242
+Oglala Lakota College,SD,False,True,70,0,0
+Ohio State University-Lima Campus,OH,False,False,36,0,0
+Ohio State University-Main Campus,OH,False,True,3499,128,0.03658188053729637039154044013
+Ohio State University-Mansfield Campus,OH,False,False,37,1,0.02702702702702702702702702703
+Ohio State University-Marion Campus,OH,False,False,36,0,0
+Ohio State University-Newark Campus,OH,False,False,49,1,0.02040816326530612244897959184
+Ohio University-Chillicothe Campus,OH,False,False,31,0,0
+Ohio University-Eastern Campus,OH,False,False,17,0,0
+Ohio University-Lancaster Campus,OH,False,False,30,2,0.06666666666666666666666666667
+Ohio University-Main Campus,OH,False,False,948,40,0.04219409282700421940928270042
+Ohio University-Southern Campus,OH,False,False,35,0,0
+Ohio University-Zanesville Campus,OH,False,False,39,2,0.05128205128205128205128205128
+Oklahoma Panhandle State University,OK,False,False,46,0,0
+Oklahoma State University Center for Health Sciences,OK,False,False,54,1,0.01851851851851851851851851852
+Oklahoma State University Institute of Technology,OK,False,False,123,4,0.03252032520325203252032520325
+Oklahoma State University-Main Campus,OK,False,True,1106,17,0.01537070524412296564195298373
+Oklahoma State University-Oklahoma City,OK,False,False,87,3,0.03448275862068965517241379310
+Old Dominion University,VA,False,False,793,47,0.05926860025220680958385876419
+Olympic College,WA,False,False,111,4,0.03603603603603603603603603604
+Oregon Health & Science University,OR,False,False,1161,15,0.01291989664082687338501291990
+Oregon Institute of Technology,OR,False,False,140,0,0
+Oregon State University,OR,False,True,930,6,0.006451612903225806451612903226
+Palm Beach State College,FL,False,False,282,36,0.1276595744680851063829787234
+Peninsula College,WA,False,False,36,0,0
+Pennsylvania College of Technology,PA,False,False,290,2,0.006896551724137931034482758621
+Pennsylvania State University-College of Medicine,PA,False,False,985,25,0.02538071065989847715736040609
+Pennsylvania State University-Main Campus,PA,False,True,2629,94,0.03575503993914035755039939140
+Pennsylvania State University-Penn State Abington,PA,False,False,111,6,0.05405405405405405405405405405
+Pennsylvania State University-Penn State Altoona,PA,False,False,183,2,0.01092896174863387978142076503
+Pennsylvania State University-Penn State Beaver,PA,False,False,34,1,0.02941176470588235294117647059
+Pennsylvania State University-Penn State Berks,PA,False,False,127,0,0
+Pennsylvania State University-Penn State Brandywine,PA,False,False,64,3,0.046875
+Pennsylvania State University-Penn State Dubois,PA,False,False,47,2,0.04255319148936170212765957447
+Pennsylvania State University-Penn State Erie-Behrend College,PA,False,False,251,4,0.01593625498007968127490039841
+Pennsylvania State University-Penn State Fayette- Eberly,PA,False,False,54,1,0.01851851851851851851851851852
+Pennsylvania State University-Penn State Great Valley,PA,False,False,35,0,0
+Pennsylvania State University-Penn State Greater Allegheny,PA,False,False,38,8,0.2105263157894736842105263158
+Pennsylvania State University-Penn State Harrisburg,PA,False,False,228,11,0.04824561403508771929824561404
+Pennsylvania State University-Penn State Hazleton,PA,False,False,56,1,0.01785714285714285714285714286
+Pennsylvania State University-Penn State Lehigh Valley,PA,False,False,43,1,0.02325581395348837209302325581
+Pennsylvania State University-Penn State Mont Alto,PA,False,False,59,0,0
+Pennsylvania State University-Penn State New Kensington,PA,False,False,38,0,0
+Pennsylvania State University-Penn State Schuylkill,PA,False,False,41,0,0
+Pennsylvania State University-Penn State Shenango,PA,False,False,31,0,0
+Pennsylvania State University-Penn State Wilkes-Barre,PA,False,False,35,3,0.08571428571428571428571428571
+Pennsylvania State University-Penn State Worthington Scranton,PA,False,False,52,1,0.01923076923076923076923076923
+Pennsylvania State University-Penn State York,PA,False,False,52,1,0.01923076923076923076923076923
+Pennsylvania State University-World Campus,PA,False,False,1,0,0
+Pensacola State College,FL,False,False,183,16,0.08743169398907103825136612022
+Peru State College,NE,False,False,52,0,0
+Pittsburg State University,KS,False,False,305,3,0.009836065573770491803278688525
+Plymouth State University,NH,False,False,193,2,0.01036269430051813471502590674
+Polk State College,FL,False,False,161,10,0.06211180124223602484472049689
+Portland State University,OR,False,False,737,14,0.01899592944369063772048846676
+Potomac State College of West Virginia University,WV,False,False,42,0,0
+Prairie View A & M University,TX,True,True,370,217,0.5864864864864864864864864865
+Puerto Rico Conservatory of Music,PR,False,False,50,0,0
+Purdue University-Calumet Campus,IN,False,False,234,8,0.03418803418803418803418803419
+Purdue University-Main Campus,IN,False,True,1772,45,0.02539503386004514672686230248
+Purdue University-North Central Campus,IN,False,False,111,3,0.02702702702702702702702702703
+Radford University,VA,False,False,433,14,0.03233256351039260969976905312
+Ramapo College of New Jersey,NJ,False,False,216,13,0.06018518518518518518518518519
+Rhode Island College,RI,False,False,327,8,0.02446483180428134556574923547
+Rogers State University,OK,False,False,102,3,0.02941176470588235294117647059
+Rowan University,NJ,False,False,567,33,0.05820105820105820105820105820
+Rutgers University-Camden,NJ,False,False,291,11,0.03780068728522336769759450172
+Rutgers University-New Brunswick,NJ,False,True,3122,132,0.04228058936579115951313260730
+Rutgers University-Newark,NJ,False,False,484,36,0.07438016528925619834710743802
+Saginaw Valley State University,MI,False,False,301,11,0.03654485049833887043189368771
+Saint Cloud State University,MN,False,False,459,23,0.05010893246187363834422657952
+Saint Johns River State College,FL,False,False,144,13,0.09027777777777777777777777778
+Salem State University,MA,False,False,344,10,0.02906976744186046511627906977
+Salisbury University,MD,False,False,409,23,0.05623471882640586797066014670
+Sam Houston State University,TX,False,False,661,17,0.02571860816944024205748865356
+San Diego State University,CA,False,False,806,22,0.02729528535980148883374689826
+San Francisco State University,CA,False,False,790,37,0.04683544303797468354430379747
+San Jose State University,CA,False,False,696,20,0.02873563218390804597701149425
+Santa Fe College,FL,False,False,239,16,0.06694560669456066945606694561
+Savannah State University,GA,True,False,172,67,0.3895348837209302325581395349
+Seattle Central College,WA,False,False,159,16,0.1006289308176100628930817610
+Seattle Community College-North Campus,WA,False,False,88,5,0.05681818181818181818181818182
+Seattle Community College-South Campus,WA,False,False,91,7,0.07692307692307692307692307692
+Seminole State College of Florida,FL,False,False,197,10,0.05076142131979695431472081218
+Shawnee State University,OH,False,False,150,2,0.01333333333333333333333333333
+Shepherd University,WV,False,False,143,5,0.03496503496503496503496503497
+Shippensburg University of Pennsylvania,PA,False,False,325,16,0.04923076923076923076923076923
+Sitting Bull College,ND,False,True,25,1,0.04
+Slippery Rock University of Pennsylvania,PA,False,False,354,13,0.03672316384180790960451977401
+Snow College,UT,False,False,117,1,0.008547008547008547008547008547
+Sonoma State University,CA,False,False,246,4,0.01626016260162601626016260163
+South Carolina State University,SC,True,True,226,149,0.6592920353982300884955752212
+South Dakota School of Mines and Technology,SD,False,False,153,0,0
+South Dakota State University,SD,False,True,570,4,0.007017543859649122807017543860
+South Florida State College,FL,False,False,65,3,0.04615384615384615384615384615
+South Georgia State College,GA,False,False,61,2,0.03278688524590163934426229508
+South Texas College,TX,False,False,548,10,0.01824817518248175182481751825
+Southeast Missouri State University,MO,False,False,394,14,0.03553299492385786802030456853
+Southeastern Louisiana University,LA,False,False,464,20,0.04310344827586206896551724138
+Southeastern Oklahoma State University,OK,False,False,132,0,0
+Southern Arkansas University Main Campus,AR,False,False,160,11,0.06875
+Southern Connecticut State University,CT,False,False,421,27,0.06413301662707838479809976247
+Southern Illinois University-Carbondale,IL,False,False,1203,71,0.05901911886949293433083956775
+Southern Illinois University-Edwardsville,IL,False,False,626,37,0.05910543130990415335463258786
+Southern Oregon University,OR,False,False,209,0,0
+Southern Polytechnic State University,GA,False,False,226,18,0.07964601769911504424778761062
+Southern University and A & M College,LA,True,True,279,214,0.7670250896057347670250896057
+Southern University at New Orleans,LA,True,False,107,55,0.5140186915887850467289719626
+Southern University Law Center,LA,False,False,38,21,0.5526315789473684210526315789
+Southern Utah University,UT,False,False,247,0,0
+Southwest Minnesota State University,MN,False,False,111,1,0.009009009009009009009009009009
+Southwestern Oklahoma State University,OK,False,False,216,1,0.004629629629629629629629629630
+St Mary's College of Maryland,MD,False,False,153,5,0.03267973856209150326797385621
+St Petersburg College,FL,False,False,372,34,0.09139784946236559139784946237
+State College of Florida-Manatee-Sarasota,FL,False,False,131,6,0.04580152671755725190839694656
+State University of New York at New Paltz,NY,False,False,347,12,0.03458213256484149855907780980
+Stephen F Austin State University,TX,False,False,520,19,0.03653846153846153846153846154
+Stony Brook University,NY,False,False,1332,30,0.02252252252252252252252252252
+Sul Ross State University,TX,False,False,105,2,0.01904761904761904761904761905
+SUNY at Albany,NY,False,False,606,25,0.04125412541254125412541254125
+SUNY at Binghamton,NY,False,False,616,26,0.04220779220779220779220779221
+SUNY at Fredonia,NY,False,False,259,4,0.01544401544401544401544401544
+SUNY at Purchase College,NY,False,False,169,5,0.02958579881656804733727810651
+SUNY College at Brockport,NY,False,False,332,10,0.03012048192771084337349397590
+SUNY College at Cortland,NY,False,False,295,8,0.02711864406779661016949152542
+SUNY College at Geneseo,NY,False,False,253,7,0.02766798418972332015810276680
+SUNY College at Old Westbury,NY,False,False,148,17,0.1148648648648648648648648649
+SUNY College at Oswego,NY,False,False,336,15,0.04464285714285714285714285714
+SUNY College at Plattsburgh,NY,False,False,274,6,0.02189781021897810218978102190
+SUNY College at Potsdam,NY,False,False,261,7,0.02681992337164750957854406130
+SUNY College of Agriculture and Technology at Cobleskill,NY,False,False,99,1,0.01010101010101010101010101010
+SUNY College of Environmental Science and Forestry,NY,False,False,113,2,0.01769911504424778761061946903
+SUNY College of Optometry,NY,False,False,59,0,0
+SUNY College of Technology at Alfred,NY,False,False,168,2,0.01190476190476190476190476190
+SUNY College of Technology at Canton,NY,False,False,131,6,0.04580152671755725190839694656
+SUNY College of Technology at Delhi,NY,False,False,136,5,0.03676470588235294117647058824
+SUNY Downstate Medical Center,NY,False,False,360,40,0.1111111111111111111111111111
+SUNY Empire State College,NY,False,False,202,20,0.09900990099009900990099009901
+SUNY Institute of Technology at Utica-Rome,NY,False,False,79,4,0.05063291139240506329113924051
+SUNY Maritime College,NY,False,False,85,3,0.03529411764705882352941176471
+SUNY Oneonta,NY,False,False,275,13,0.04727272727272727272727272727
+Tarleton State University,TX,False,False,334,9,0.02694610778443113772455089820
+Temple University,PA,False,False,2034,94,0.04621435594886922320550639135
+Tennessee State University,TN,True,True,355,144,0.4056338028169014084507042254
+Tennessee Technological University,TN,False,False,388,11,0.02835051546391752577319587629
+Texas A & M International University,TX,False,False,196,7,0.03571428571428571428571428571
+Texas A & M University Health Science Center,TX,False,False,345,10,0.02898550724637681159420289855
+Texas A & M University-Central Texas,TX,False,False,68,4,0.05882352941176470588235294118
+Texas A & M University-College Station,TX,False,True,2488,82,0.03295819935691318327974276527
+Texas A & M University-Commerce,TX,False,False,360,27,0.075
+Texas A & M University-Corpus Christi,TX,False,False,376,9,0.02393617021276595744680851064
+Texas A & M University-Kingsville,TX,False,False,552,23,0.04166666666666666666666666667
+Texas A & M University-Texarkana,TX,False,False,74,1,0.01351351351351351351351351351
+Texas Southern University,TX,True,False,424,286,0.6745283018867924528301886792
+Texas State University,TX,False,False,1132,32,0.02826855123674911660777385159
+Texas Tech University,TX,False,False,1412,30,0.02124645892351274787535410765
+Texas Tech University Health Sciences Center,TX,False,False,906,27,0.02980132450331125827814569536
+Texas Woman's University,TX,False,False,413,18,0.04358353510895883777239709443
+The College of New Jersey,NJ,False,False,347,20,0.05763688760806916426512968300
+The Dickinson School of Law of the Pennsylvania State University,PA,False,False,17,0,0
+The Evergreen State College,WA,False,False,166,9,0.05421686746987951807228915663
+The Richard Stockton College of New Jersey,NJ,False,False,291,22,0.07560137457044673539518900344
+The University of Alabama,AL,False,False,1252,75,0.05990415335463258785942492013
+The University of Montana,MT,False,False,575,2,0.003478260869565217391304347826
+The University of Montana-Western,MT,False,False,79,0,0
+The University of Tennessee-Chattanooga,TN,False,False,465,32,0.06881720430107526881720430108
+The University of Tennessee-Knoxville,TN,False,True,2116,87,0.04111531190926275992438563327
+The University of Tennessee-Martin,TN,False,False,281,14,0.04982206405693950177935943060
+The University of Texas at Arlington,TX,False,False,858,37,0.04312354312354312354312354312
+The University of Texas at Austin,TX,False,False,2752,103,0.03742732558139534883720930233
+The University of Texas at Brownsville,TX,False,False,350,25,0.07142857142857142857142857143
+The University of Texas at Dallas,TX,False,False,695,13,0.01870503597122302158273381295
+The University of Texas at El Paso,TX,False,False,685,9,0.01313868613138686131386861314
+The University of Texas at San Antonio,TX,False,False,905,33,0.03646408839779005524861878453
+The University of Texas at Tyler,TX,False,False,294,14,0.04761904761904761904761904762
+The University of Texas Health Science Center at Houston,TX,False,False,1411,79,0.05598866052445074415308291991
+The University of Texas Health Science Center at San Antonio,TX,False,False,1264,31,0.02452531645569620253164556962
+The University of Texas MD Anderson Cancer Center,TX,False,False,1022,46,0.04500978473581213307240704501
+The University of Texas Medical Branch,TX,False,False,456,17,0.03728070175438596491228070175
+The University of Texas of the Permian Basin,TX,False,False,118,1,0.008474576271186440677966101695
+The University of Texas-Pan American,TX,False,False,690,21,0.03043478260869565217391304348
+The University of Virginia's College at Wise,VA,False,False,92,3,0.03260869565217391304347826087
+The University of West Florida,FL,False,False,312,14,0.04487179487179487179487179487
+Towson University,MD,False,False,870,44,0.05057471264367816091954022989
+Troy University,AL,False,False,491,42,0.08553971486761710794297352342
+Truman State University,MO,False,False,312,2,0.006410256410256410256410256410
+United States Air Force Academy,CO,False,False,168,0,0
+United States Coast Guard Academy,CT,False,False,157,7,0.04458598726114649681528662420
+United States Merchant Marine Academy,NY,False,False,114,2,0.01754385964912280701754385965
+United States Military Academy,NY,False,False,205,5,0.02439024390243902439024390244
+United States Naval Academy,MD,False,False,370,12,0.03243243243243243243243243243
+University at Buffalo,NY,False,False,1537,39,0.02537410540013012361743656474
+University of Akron Main Campus,OH,False,False,780,38,0.04871794871794871794871794872
+University of Alabama at Birmingham,AL,False,False,2244,135,0.06016042780748663101604278075
+University of Alabama in Huntsville,AL,False,False,312,14,0.04487179487179487179487179487
+University of Alaska Anchorage,AK,False,False,546,6,0.01098901098901098901098901099
+University of Alaska Fairbanks,AK,False,True,416,3,0.007211538461538461538461538462
+University of Alaska Southeast,AK,False,False,100,1,0.01
+University of Arizona,AZ,False,True,1790,25,0.01396648044692737430167597765
+University of Arkansas,AR,False,True,1094,37,0.03382084095063985374771480804
+University of Arkansas at Little Rock,AR,False,False,471,21,0.04458598726114649681528662420
+University of Arkansas at Monticello,AR,False,False,157,6,0.03821656050955414012738853503
+University of Arkansas at Pine Bluff,AR,True,True,159,98,0.6163522012578616352201257862
+University of Arkansas for Medical Sciences,AR,False,False,221,7,0.03167420814479638009049773756
+University of Arkansas-Fort Smith,AR,False,False,239,9,0.03765690376569037656903765690
+University of Baltimore,MD,False,False,197,18,0.09137055837563451776649746193
+University of California-Berkeley,CA,False,True,1649,48,0.02910855063674954517889630079
+University of California-Davis,CA,False,True,2096,40,0.01908396946564885496183206107
+University of California-Hastings College of Law,CA,False,False,68,5,0.07352941176470588235294117647
+University of California-Irvine,CA,False,False,1566,37,0.02362707535121328224776500639
+University of California-Los Angeles,CA,False,False,3104,82,0.02641752577319587628865979381
+University of California-Merced,CA,False,False,269,5,0.01858736059479553903345724907
+University of California-Riverside,CA,False,True,721,25,0.03467406380027739251040221914
+University of California-San Diego,CA,False,False,2016,39,0.01934523809523809523809523810
+University of California-San Francisco,CA,False,False,1924,43,0.02234927234927234927234927235
+University of California-Santa Barbara,CA,False,False,899,20,0.02224694104560622914349276974
+University of California-Santa Cruz,CA,False,False,553,12,0.02169981916817359855334538879
+University of Central Arkansas,AR,False,False,533,24,0.04502814258911819887429643527
+University of Central Florida,FL,False,False,1174,46,0.03918228279386712095400340716
+University of Central Missouri,MO,False,False,467,17,0.03640256959314775160599571734
+University of Central Oklahoma,OK,False,False,488,13,0.02663934426229508196721311475
+University of Cincinnati-Blue Ash College,OH,False,False,153,5,0.03267973856209150326797385621
+University of Cincinnati-Clermont College,OH,False,False,98,2,0.02040816326530612244897959184
+University of Cincinnati-Main Campus,OH,False,False,1654,75,0.04534461910519951632406287787
+University of Colorado Boulder,CO,False,False,1411,27,0.01913536498936924167257264352
+University of Colorado Colorado Springs,CO,False,False,398,7,0.01758793969849246231155778894
+University of Colorado Denver,CO,False,False,3121,37,0.01185517462351810317206023710
+University of Connecticut,CT,False,True,1896,56,0.02953586497890295358649789030
+University of Delaware,DE,False,True,1112,46,0.04136690647482014388489208633
+University of Florida,FL,False,True,2502,87,0.03477218225419664268585131894
+University of Georgia,GA,False,True,1894,109,0.05755015839493136219640971489
+University of Guam,GU,False,True,139,2,0.01438848920863309352517985612
+University of Hawaii at Hilo,HI,False,False,221,1,0.004524886877828054298642533937
+University of Hawaii at Manoa,HI,False,True,1281,16,0.01249024199843871975019516003
+University of Hawaii Maui College,HI,False,False,93,2,0.02150537634408602150537634409
+University of Hawaii-West Oahu,HI,False,False,54,4,0.07407407407407407407407407407
+University of Houston,TX,False,False,1298,48,0.03697996918335901386748844376
+University of Houston-Clear Lake,TX,False,False,250,15,0.06
+University of Houston-Downtown,TX,False,False,320,29,0.090625
+University of Houston-Victoria,TX,False,False,123,3,0.02439024390243902439024390244
+University of Idaho,ID,False,True,550,5,0.009090909090909090909090909091
+University of Illinois at Chicago,IL,False,False,1788,101,0.05648769574944071588366890380
+University of Illinois at Springfield,IL,False,False,209,8,0.03827751196172248803827751196
+University of Illinois at Urbana-Champaign,IL,False,True,2176,97,0.04457720588235294117647058824
+University of Iowa,IA,False,False,2224,53,0.02383093525179856115107913669
+University of Kansas,KS,False,False,2066,63,0.03049370764762826718296224589
+University of Kentucky,KY,False,True,1662,62,0.03730445246690734055354993983
+University of Louisiana at Lafayette,LA,False,False,605,34,0.05619834710743801652892561983
+University of Louisiana at Monroe,LA,False,False,297,16,0.05387205387205387205387205387
+University of Louisville,KY,False,False,1774,99,0.05580608793686583990980834273
+University of Maine,ME,False,True,489,4,0.008179959100204498977505112474
+University of Maine at Augusta,ME,False,False,93,0,0
+University of Maine at Farmington,ME,False,False,119,1,0.008403361344537815126050420168
+University of Maine at Fort Kent,ME,False,False,33,1,0.03030303030303030303030303030
+University of Maine at Machias,ME,False,False,32,0,0
+University of Maine at Presque Isle,ME,False,False,46,0,0
+University of Mary Washington,VA,False,False,245,9,0.03673469387755102040816326531
+University of Maryland Eastern Shore,MD,True,True,215,74,0.3441860465116279069767441860
+University of Maryland-Baltimore,MD,False,False,1768,153,0.08653846153846153846153846154
+University of Maryland-Baltimore County,MD,False,False,505,27,0.05346534653465346534653465347
+University of Maryland-College Park,MD,False,True,1694,79,0.04663518299881936245572609209
+University of Maryland-University College,MD,False,False,214,15,0.07009345794392523364485981308
+University of Massachusetts Medical School Worcester,MA,False,False,1316,24,0.01823708206686930091185410334
+University of Massachusetts-Amherst,MA,False,True,1260,52,0.04126984126984126984126984127
+University of Massachusetts-Boston,MA,False,False,602,33,0.05481727574750830564784053156
+University of Massachusetts-Dartmouth,MA,False,False,376,15,0.03989361702127659574468085106
+University of Massachusetts-Lowell,MA,False,False,541,10,0.01848428835489833641404805915
+University of Memphis,TN,False,False,887,80,0.09019165727170236753100338219
+University of Michigan-Ann Arbor,MI,False,False,5971,199,0.03332775079551163959135823145
+University of Michigan-Dearborn,MI,False,False,325,11,0.03384615384615384615384615385
+University of Michigan-Flint,MI,False,False,300,29,0.09666666666666666666666666667
+University of Minnesota-Crookston,MN,False,False,74,2,0.02702702702702702702702702703
+University of Minnesota-Duluth,MN,False,False,491,14,0.02851323828920570264765784114
+University of Minnesota-Morris,MN,False,False,128,1,0.0078125
+University of Minnesota-Rochester,MN,False,False,39,2,0.05128205128205128205128205128
+University of Minnesota-Twin Cities,MN,False,True,3330,67,0.02012012012012012012012012012
+University of Mississippi,MS,False,False,812,51,0.06280788177339901477832512315
+University of Mississippi Medical Center,MS,False,False,831,69,0.08303249097472924187725631769
+University of Missouri-Columbia,MO,False,True,1853,57,0.03076092822450080949811117107
+University of Missouri-Kansas City,MO,False,False,741,41,0.05533063427800269905533063428
+University of Missouri-St Louis,MO,False,False,467,35,0.07494646680942184154175588865
+University of Montevallo,AL,False,False,136,4,0.02941176470588235294117647059
+University of Nebraska at Kearney,NE,False,False,325,3,0.009230769230769230769230769231
+University of Nebraska at Omaha,NE,False,False,506,22,0.04347826086956521739130434783
+University of Nebraska Medical Center,NE,False,False,413,5,0.01210653753026634382566585956
+University of Nebraska-Lincoln,NE,False,True,1236,31,0.02508090614886731391585760518
+University of Nevada-Las Vegas,NV,False,False,871,32,0.03673938002296211251435132032
+University of Nevada-Reno,NV,False,True,834,14,0.01678657074340527577937649880
+University of New Hampshire at Manchester,NH,False,False,28,0,0
+University of New Hampshire-Main Campus,NH,False,True,588,11,0.01870748299319727891156462585
+University of New Mexico-Main Campus,NM,False,False,1766,36,0.02038505096262740656851642129
+University of New Orleans,LA,False,False,289,19,0.06574394463667820069204152249
+University of North Alabama,AL,False,False,224,11,0.04910714285714285714285714286
+University of North Carolina at Asheville,NC,False,False,219,11,0.05022831050228310502283105023
+University of North Carolina at Chapel Hill,NC,False,False,2034,122,0.05998033431661750245821042281
+University of North Carolina at Charlotte,NC,False,False,1016,61,0.06003937007874015748031496063
+University of North Carolina at Greensboro,NC,False,False,794,44,0.05541561712846347607052896725
+University of North Carolina at Pembroke,NC,False,False,306,17,0.05555555555555555555555555556
+University of North Carolina School of the Arts,NC,False,False,129,1,0.007751937984496124031007751938
+University of North Carolina Wilmington,NC,False,False,625,25,0.04
+University of North Dakota,ND,False,False,746,6,0.008042895442359249329758713137
+University of North Florida,FL,False,False,472,17,0.03601694915254237288135593220
+University of North Georgia,GA,False,False,451,14,0.03104212860310421286031042129
+University of North Texas,TX,False,False,1095,45,0.04109589041095890410958904110
+University of North Texas Health Science Center,TX,False,False,379,14,0.03693931398416886543535620053
+University of Northern Colorado,CO,False,False,504,9,0.01785714285714285714285714286
+University of Northern Iowa,IA,False,False,577,16,0.02772963604852686308492201040
+University of Oklahoma-Health Sciences Center,OK,False,False,1153,30,0.02601908065915004336513443192
+University of Oklahoma-Norman Campus,OK,False,False,1156,29,0.02508650519031141868512110727
+University of Oregon,OR,False,False,938,12,0.01279317697228144989339019190
+University of Pittsburgh-Bradford,PA,False,False,76,3,0.03947368421052631578947368421
+University of Pittsburgh-Greensburg,PA,False,False,80,2,0.025
+University of Pittsburgh-Johnstown,PA,False,False,134,4,0.02985074626865671641791044776
+University of Pittsburgh-Pittsburgh Campus,PA,False,False,4037,95,0.02353232598464206093633886549
+University of Puerto Rico-Aguadilla,PR,False,False,113,0,0
+University of Puerto Rico-Arecibo,PR,False,False,185,1,0.005405405405405405405405405405
+University of Puerto Rico-Bayamon,PR,False,False,203,0,0
+University of Puerto Rico-Carolina,PR,False,False,133,1,0.007518796992481203007518796992
+University of Puerto Rico-Cayey,PR,False,False,90,0,0
+University of Puerto Rico-Humacao,PR,False,False,205,1,0.004878048780487804878048780488
+University of Puerto Rico-Mayaguez,PR,False,True,686,2,0.002915451895043731778425655977
+University of Puerto Rico-Medical Sciences,PR,False,False,792,1,0.001262626262626262626262626263
+University of Puerto Rico-Ponce,PR,False,False,114,0,0
+University of Puerto Rico-Rio Piedras,PR,False,False,984,3,0.003048780487804878048780487805
+University of Puerto Rico-Utuado,PR,False,False,74,0,0
+University of Rhode Island,RI,False,True,690,17,0.02463768115942028985507246377
+University of Science and Arts of Oklahoma,OK,False,False,57,2,0.03508771929824561403508771930
+University of South Alabama,AL,False,False,755,38,0.05033112582781456953642384106
+University of South Carolina-Aiken,SC,False,False,136,5,0.03676470588235294117647058824
+University of South Carolina-Beaufort,SC,False,False,63,1,0.01587301587301587301587301587
+University of South Carolina-Columbia,SC,False,False,1507,78,0.05175846051758460517584605176
+University of South Carolina-Upstate,SC,False,False,212,18,0.08490566037735849056603773585
+University of South Dakota,SD,False,False,443,4,0.009029345372460496613995485327
+University of South Florida-Main Campus,FL,False,False,1850,108,0.05837837837837837837837837838
+University of South Florida-Sarasota-Manatee,FL,False,False,70,3,0.04285714285714285714285714286
+University of South Florida-St Petersburg,FL,False,False,127,5,0.03937007874015748031496062992
+University of Southern Indiana,IN,False,False,323,6,0.01857585139318885448916408669
+University of Southern Maine,ME,False,False,314,1,0.003184713375796178343949044586
+University of Southern Mississippi,MS,False,False,694,25,0.03602305475504322766570605187
+University of Texas Southwestern Medical Center,TX,False,False,1546,59,0.03816300129366106080206985770
+University of the District of Columbia,DC,True,True,287,123,0.4285714285714285714285714286
+University of the District of Columbia-David A Clarke School of Law,DC,False,False,36,11,0.3055555555555555555555555556
+University of the Virgin Islands,VI,True,True,110,45,0.4090909090909090909090909091
+University of Toledo,OH,False,False,750,23,0.03066666666666666666666666667
+University of Utah,UT,False,False,3584,33,0.009207589285714285714285714286
+University of Vermont,VT,False,True,1099,27,0.02456778889899909008189262966
+University of Virginia-Main Campus,VA,False,False,1940,71,0.03659793814432989690721649485
+University of Washington-Bothell Campus,WA,False,False,175,8,0.04571428571428571428571428571
+University of Washington-Seattle Campus,WA,False,False,3538,57,0.01611079706048615036743923120
+University of Washington-Tacoma Campus,WA,False,False,185,7,0.03783783783783783783783783784
+University of West Alabama,AL,False,False,116,15,0.1293103448275862068965517241
+University of West Georgia,GA,False,False,510,32,0.06274509803921568627450980392
+University of Wisconsin-Eau Claire,WI,False,False,464,10,0.02155172413793103448275862069
+University of Wisconsin-Green Bay,WI,False,False,190,4,0.02105263157894736842105263158
+University of Wisconsin-La Crosse,WI,False,False,490,7,0.01428571428571428571428571429
+University of Wisconsin-Madison,WI,False,True,3297,65,0.01971489232635729451016075220
+University of Wisconsin-Milwaukee,WI,False,False,1113,59,0.05300988319856244384546271339
+University of Wisconsin-Oshkosh,WI,False,False,430,7,0.01627906976744186046511627907
+University of Wisconsin-Parkside,WI,False,False,176,8,0.04545454545454545454545454545
+University of Wisconsin-Platteville,WI,False,False,335,14,0.04179104477611940298507462687
+University of Wisconsin-River Falls,WI,False,False,242,4,0.01652892561983471074380165289
+University of Wisconsin-Stevens Point,WI,False,False,393,5,0.01272264631043256997455470738
+University of Wisconsin-Stout,WI,False,False,350,6,0.01714285714285714285714285714
+University of Wisconsin-Superior,WI,False,False,132,3,0.02272727272727272727272727273
+University of Wisconsin-Whitewater,WI,False,False,474,16,0.03375527426160337552742616034
+University of Wyoming,WY,False,True,757,7,0.009247027741083223249669749009
+Upstate Medical University,NY,False,False,395,12,0.03037974683544303797468354430
+Utah State University,UT,False,True,880,4,0.004545454545454545454545454545
+Utah Valley University,UT,False,False,576,5,0.008680555555555555555555555556
+Valdosta State University,GA,False,False,484,26,0.05371900826446280991735537190
+Valencia College,FL,False,False,475,40,0.08421052631578947368421052632
+Valley City State University,ND,False,False,67,0,0
+Vermont Technical College,VT,False,False,85,1,0.01176470588235294117647058824
+Vincennes University,IN,False,False,228,5,0.02192982456140350877192982456
+Virginia Commonwealth University,VA,False,False,2107,105,0.04983388704318936877076411960
+Virginia Military Institute,VA,False,False,124,3,0.02419354838709677419354838710
+Virginia Polytechnic Institute and State University,VA,False,True,1723,50,0.02901915264074289030760301799
+Virginia State University,VA,True,True,296,161,0.5439189189189189189189189189
+Washburn University,KS,False,False,278,6,0.02158273381294964028776978417
+Washington State University,WA,False,True,1242,12,0.009661835748792270531400966184
+Wayne State College,NE,False,False,126,1,0.007936507936507936507936507937
+Wayne State University,MI,False,False,1755,115,0.06552706552706552706552706553
+Weber State University,UT,False,False,517,6,0.01160541586073500967117988395
+West Chester University of Pennsylvania,PA,False,False,636,30,0.04716981132075471698113207547
+West Liberty University,WV,False,False,144,1,0.006944444444444444444444444444
+West Texas A & M University,TX,False,False,284,6,0.02112676056338028169014084507
+West Virginia School of Osteopathic Medicine,WV,False,False,65,1,0.01538461538461538461538461538
+West Virginia State University,WV,True,True,119,20,0.1680672268907563025210084034
+West Virginia University,WV,False,True,1880,53,0.02819148936170212765957446809
+West Virginia University at Parkersburg,WV,False,False,93,1,0.01075268817204301075268817204
+West Virginia University Institute of Technology,WV,False,False,80,2,0.025
+Western Carolina University,NC,False,False,444,3,0.006756756756756756756756756757
+Western Connecticut State University,CT,False,False,213,8,0.03755868544600938967136150235
+Western Illinois University,IL,False,False,650,34,0.05230769230769230769230769231
+Western Kentucky University,KY,False,False,788,42,0.05329949238578680203045685279
+Western Michigan University,MI,False,False,877,35,0.03990877993158494868871151653
+Western Nevada College,NV,False,False,43,0,0
+Western New Mexico University,NM,False,False,117,2,0.01709401709401709401709401709
+Western Oregon University,OR,False,False,221,5,0.02262443438914027149321266968
+Western State Colorado University,CO,False,False,111,0,0
+Western Washington University,WA,False,False,535,6,0.01121495327102803738317757009
+Westfield State University,MA,False,False,232,13,0.05603448275862068965517241379
+Wichita State University,KS,False,False,525,10,0.01904761904761904761904761905
+William Paterson University of New Jersey,NJ,False,False,399,35,0.08771929824561403508771929825
+Winona State University,MN,False,False,327,6,0.01834862385321100917431192661
+Winston-Salem State University,NC,True,False,321,159,0.4953271028037383177570093458
+Winthrop University,SC,False,False,288,19,0.06597222222222222222222222222
+Worcester State University,MA,False,False,201,9,0.04477611940298507462686567164
+Wright State University-Main Campus,OH,False,False,861,35,0.04065040650406504065040650407
+Youngstown State University,OH,False,False,421,29,0.06888361045130641330166270784

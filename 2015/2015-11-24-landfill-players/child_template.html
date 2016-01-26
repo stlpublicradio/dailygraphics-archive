@@ -1,0 +1,38 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed) }}</p>{% endif %}
+
+    <div id="graphic" class="graphic">
+        {% for group in COPY.data|groupby('section')|reverse %}
+            <div class="group {{ group.grouper|classify }}">
+            <h1>{{ group.grouper }}</h1>
+                {% for row in group.list %}
+                    <div class="name {{ row.name|classify }}">
+                        <h2>{{ row.name }}</h2>
+                        {% if row.image %}
+                        <img src="assets/{{ row.image }}">
+                        {% endif %}
+                        <p>{{ row.description }}</p>
+                    </div>
+                {% endfor %}
+                <div style="clear:both"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit }}</p>{% endif %}
+    </div>
+
+{% endblock content %}

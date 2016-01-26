@@ -1,0 +1,51 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<h2>{{ render(COPY.labels.subhed) }}</h2>{% endif %}
+
+    <div id="graphic">
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ COPY.labels.hdr_district }}</th>
+                    <th class="amt">2015</th>
+                    <th class="amt">2014</th>
+                    <th class="amt">2013</th>
+                </tr>
+            </thead>
+
+            {% for row in COPY.data %}
+            <tr class="{{ row.district|classify }}">
+                <td data-title="{{ COPY.labels.hdr_district }}">{{ row.district }}</td>
+                <td data-title="2015" class="amt {{ row.class_2015 }}">{{ row.pct_2015 }}%</td>
+                <td data-title="2014" class="amt {{ row.class_2014 }}">{{ row.pct_2014 }}%</td>
+                <td data-title="2013" class="amt {{ row.class_2013 }}">{{ row.pct_2013 }}%</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    {{ JS.push('js/lib/pym.js') }}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+
+{% endblock js %}

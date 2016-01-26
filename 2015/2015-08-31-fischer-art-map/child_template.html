@@ -1,0 +1,79 @@
+{% extends 'base_template.html' %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+{% endblock extra_css %}
+
+{% block content %}
+{% if COPY.labels.headline %}<h1>{{ COPY.labels.headline }}</h1>{% endif %}
+{% if COPY.labels.subhed %}<p>{{ COPY.labels.subhed }}</p>{% endif %}
+
+<div id="graphic">
+	<div id="map"></div>
+</div>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+	<h4>Notes</h4>
+	<p>{{ COPY.labels.footnote }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+	{% if COPY.labels.source %}<p>Source: {{ COPY.labels.source }}</p>{% endif %}
+	{% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit }}</p>{% endif %}
+</div>
+
+<script type="text/javascript">
+		var GRAPHIC_DATA = 	{% set pipe = joiner(",") %}
+
+			{
+				"type": "FeatureCollection",
+				"features": [
+				{% for place in COPY.data|groupby('address_id') %}
+					{
+						"type": "Feature",
+						"geometry":
+						{
+							"type": "Point",
+							"coordinates": [ {{ place.list[0].longitude }}, {{ place.list[0].latitude }} ]
+						},
+						"properties":
+							{
+
+								{% for sculpture in place.list %}
+								"sculpture_{{ loop.index }}": {
+								"title": "{{ sculpture.sculpture_title }}",
+								"artist": "{{ sculpture.artist }}",
+								"filename": "{{ sculpture.filename}}"
+								{% if sculpture.location %}
+								,"location": "{{ sculpture.location }}"
+								{% endif %}
+								{% if sculpture is sameas(place.list|last) %}
+								}
+								{% else %}
+								},
+								{% endif %}
+								{% endfor %}
+
+							}
+					{% if place is sameas(COPY.data|groupby('address_id')|last) %}
+					}
+					{% else %}
+					},
+					{% endif %}
+				{% endfor %}
+				]
+			};
+</script>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="js/lib/jquery.min.js"
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+{% endblock extra_js %}

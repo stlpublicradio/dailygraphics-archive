@@ -1,0 +1,48 @@
+@import "base";
+
+.bin {
+    &.bin-0 rect { fill: #31716e; }
+    &.bin-1 rect { fill: #31716e; }
+    &.bin-2 rect { fill: #449970; }
+    &.bin-3 rect { fill: #449970; }
+    &.bin-4 rect { fill: #70a99a; }
+    &.bin-5 rect { fill: #70a99a; }
+    &.bin-6 rect { fill: #f1bb4f; }
+    &.bin-7 rect { fill: #f1bb4f; }
+    &.bin-8 rect { fill: #f6883e; }
+    &.bin-9 rect { fill: #f6883e; }
+    &.bin-10 rect { fill: #e8604d; }
+    &.bin-11 rect { fill: #e8604d; }
+    &.bin-12 rect { fill: #cc203b; }
+
+    rect {
+      opacity: .6;
+    }
+
+}  
+
+rect.mo { opacity: 1;}
+
+.value text {
+    fill: #fff;
+    font-size: 14px;
+    font-family: 'Titillium Web',Helvetica,Arial,sans-serif;
+    text-anchor: middle;
+    -webkit-font-smoothing: antialiased;
+}
+
+.label-top {
+    font-style: italic;
+    fill: #999;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+line.axis-0 {
+    stroke: #999;
+}
+
+
+@media screen and (max-width: 480px) {
+    .value text { font-size: 10px; }
+}

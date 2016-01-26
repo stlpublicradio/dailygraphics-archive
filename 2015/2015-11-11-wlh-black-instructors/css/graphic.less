@@ -1,0 +1,97 @@
+@import "base";
+
+// Add custom styles here
+.hed-main {
+    font-weight: 200;
+    font-size: 4em;
+    text-shadow: 4px 4px 4px rgba(241,187,79,0.8);
+
+}
+
+.lede-main {
+    font-family: 'Merriweather';
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+
+.section {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #333;
+
+    .hed {
+        font-weight: 200;
+        font-size: 2.5em;
+        margin-bottom: 0;
+        text-shadow: 2px 2px 4px rgba(241,187,79,0.4);
+    }
+
+    .lede {
+        margin-top: 0;
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+
+    .fact {
+        clear: both;
+        display: table;
+        margin: 20px;
+
+        .number {
+            padding: 10px;
+            background-color: #f1bb4f;
+            border-radius: 10px;
+            float: left;
+            margin-right: 5px;
+            font-weight: 700;
+            font-size: 2.5em;
+
+            span {
+                color: #333;
+                text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+            }
+        }
+
+        .explain {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.2em;
+            font-weight: 300;
+
+        }
+    }
+}
+
+// d3.tip
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  max-width: 175px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+// .d3-tip:after {
+//   box-sizing: border-box;
+//   display: inline;
+//   font-size: 10px;
+//   width: 100%;
+//   line-height: 1;
+//   color: rgba(0, 0, 0, 0.8);
+//   content: "\25BC";
+//   position: absolute;
+//   text-align: center;
+// }
+
+/* Style northward tooltips differently */
+// .d3-tip.n:after {
+//   margin: -1px 0 0 0;
+//   top: 100%;
+//   left: 0;
+// }
