@@ -1,0 +1,13 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    <div id="column-chart" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <script type="text/javascript">
+        var DATA = {{ COPY.data.json() }};
+    </script>
+
+{% endblock content %}

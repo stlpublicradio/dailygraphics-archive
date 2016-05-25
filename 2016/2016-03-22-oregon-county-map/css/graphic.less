@@ -1,0 +1,166 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #d3eaf7;
+}
+
+.label {
+    font-family:'Titillium Web', Helvetica, sans-serif;
+}
+
+.states path {
+    fill: #ddd;
+    stroke: #ebebeb;
+    stroke-width: 2.5px;
+
+    &.primary {
+        fill: #fff;
+        stroke: #bababa;
+    }
+}
+
+.counties path {
+    fill: #fff;
+    stroke: #bababa;
+}
+
+path#oregon {
+    fill: #f1bb4f;
+}
+
+path.landmass { fill: #a8d5ef; }
+
+.lakes path {
+    fill: #d3eaf7;
+    stroke: #a8d5ef;
+    stroke-width: 1px;
+}
+
+.rivers path {
+    fill: none;
+    stroke: #358fb3;
+    stroke-width: 2px;
+}
+
+.cities path {
+    fill: #aaa;
+
+    &.scalerank-4,
+    &.scalerank-3,
+    &.scalerank-2,
+    &.scalerank-1 { fill: #333; }
+}
+
+.cities.neighbors path {
+    fill: #ccc;
+}
+
+.city-labels text {
+    fill: #787878;
+    font-size: 65%;
+    text-anchor: start;
+    -webkit-font-smoothing: antialiased;
+
+    &.tulsa {
+        display: none;
+    }
+
+
+    &.admin-0-capital {
+        fill: #555;
+        font-weight: bold;
+    }
+}
+
+.city-labels.shadow text {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 2px;
+    opacity: .7;
+}
+
+.state-labels text {
+    fill: #787878;
+    font-size: 80%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-anchor: middle;
+    -webkit-font-smoothing: antialiased;
+
+    &.primary {
+        fill: #555;
+        font-weight: 700;
+        font-size: 90%;
+    }
+    &.missouri,
+    &.kentucky,
+    &.tennessee,
+    &.oklahoma,
+    &.kansas,
+    &.nebraska { display: none; }
+}
+
+.county-labels text {
+    fill: #aaa;
+    font-size: 50%;
+    text-anchor: middle;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+
+    &.oregon {
+        fill: #555;
+        font-weight: 700;
+        font-size: 70%;
+    }
+
+    &.st-louis {
+        display:none;
+    }
+}
+
+.scale-bar {
+    line {
+        stroke: #666;
+        stroke-width: 5px;
+    }
+    text {
+        fill: #666;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+// responsive styles
+@media screen and (max-width: 500px) {
+    svg { font-size: 16px; }
+    .states path { stroke-width: 2px; }
+    .state-labels text {
+        &.iowa,
+        &.illinois,
+        &.arkansas {
+            display: none;
+        }
+    }
+    .county-labels text {
+        display: none;
+
+        &.oregon {
+            display: block;
+        }
+    }
+
+    .city-labels text { letter-spacing: .5px; }
+    .city-labels.shadow { display: none; }
+    .city-labels text,
+    .cities path {
+        &.scalerank-4,
+        &.scalerank-5,
+        &.scalerank-6,
+        &.scalerank-7,
+        &.scalerank-8 {
+            display: none;
+        }
+    }
+}

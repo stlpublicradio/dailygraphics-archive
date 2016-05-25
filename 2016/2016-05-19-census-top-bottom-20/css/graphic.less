@@ -1,0 +1,54 @@
+@import "base";
+
+.label-top {
+    font-style: italic;
+    fill: #999;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bin {
+    &.bin-0 rect.mo { fill: #470B14; }
+    &.bin-1 rect.mo { fill: #6A111E; }
+    &.bin-2 rect.mo { fill: #8D1628; }
+    &.bin-3 rect.mo { fill: #B01C32; }
+    &.bin-4 rect.mo { fill: #CC203B; }
+    &.bin-5 rect.mo { fill: #E13D55; }
+    &.bin-6 rect.mo { fill: #E66074; }
+    &.bin-7 rect.mo { fill: #EC8393; }
+    &.bin-0 rect.il { fill: #0E262F; }
+    &.bin-1 rect.il { fill: #173F4F; }
+    &.bin-2 rect.il { fill: #21586E; }
+    &.bin-3 rect.il { fill: #2A718D; }
+    &.bin-4 rect.il { fill: #358FB3; }
+    &.bin-5 rect.il { fill: #43A1C7; }
+    &.bin-6 rect.il { fill: #62B1D0; }
+    &.bin-7 rect.il { fill: #81C0D9; }
+}  
+
+.value text {
+    fill: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Titillium Web',Helvetica,Arial,sans-serif;
+    text-anchor: middle;
+    -webkit-font-smoothing: antialiased;
+}
+
+line.axis-0 {
+    stroke: #999;
+}
+
+@media screen and (max-width: 480px) {
+    .value text { font-size: 10px; }
+}
+
+ul {
+    float: left;
+    list-style: none;
+}
+
+.key {
+    width: 100%;
+    overflow: auto;
+}
