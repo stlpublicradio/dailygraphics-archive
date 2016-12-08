@@ -1,0 +1,55 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div class="graphic">
+        <table>
+            {% for company in COPY.data | groupby('company') %}
+            <tr class="company-header {{ company.grouper|classify }}">
+                <td colspan=2>
+                    {{ company.grouper }}
+                </td>
+            </tr>
+                <tr class="header-labels">
+                    <th>
+                        <div class="header">{{ COPY.labels.hdr_state }}</div>
+                    </th>
+                    <th>
+                        <div class="header">{{ COPY.labels.hdr_value }}</div>
+                    </th>
+                </tr>
+            {% for row in company.list %}
+            <tr class="{{ company.grouper|classify }}">
+                <td data-title="{{ COPY.labels.hdr_usps }}">{{ row.commitment }}</td>
+                <td data-title="{{ COPY.labels.hdr_value }}">{{ row.achievements }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+
+        </table>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    {{ JS.push('js/lib/pym.js') }}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+
+{% endblock js %}

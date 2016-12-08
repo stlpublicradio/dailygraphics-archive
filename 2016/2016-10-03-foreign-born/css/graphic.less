@@ -1,0 +1,150 @@
+@import "base";
+
+h1 {
+    margin: 0px
+}
+
+.axis {
+    fill: #666;
+    font-weight: bold;
+    font-size: 12px;
+
+    path { display: none; }
+}
+
+.lines line {
+    stroke-width: 3px;
+    stroke: #ddd;
+    shape-rendering: auto;
+}
+
+.dots circle {
+    fill: #ddd;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+.value text {
+    font-size: 11px;
+    fill: #333;
+}
+
+.label text {
+    font-size: 11px;
+    fill: #333;
+}
+
+.value.start {
+    .san-diego {
+        transform: translate(0px,-10px);
+    }
+    .houston {
+        transform: translate(0px,-1px);
+    }
+    .washington-dc {
+        transform: translate(0px,4px);
+    }
+    .san-bernardino {
+        transform: translate(0px,6px);
+    }
+    .dallas-fort-worth {
+        transform: translate(0px, -14px);
+    }
+    .boston {
+        transform: translate(0px, -5px);
+    }
+    .chicago {
+        transform: translate(0px, 5px);
+    }
+    .seattle {
+        transform: translate(0px, 15px);
+    }
+    .minneapolis-st-paul {
+        transform: translate(0px, 3px);
+    }
+    .philadelphia {
+        transform: translate(0px, -3px);
+    }
+}
+
+.value.end {
+    .san-diego {
+        transform: translate(0px,-10px);
+    }
+    .houston {
+        transform: translate(0px,-1px);
+    }
+    .washington-dc {
+        transform: translate(0px,4px);
+    }
+    .san-bernardino {
+        transform: translate(0px,6px);
+    }
+    .dallas-fort-worth {
+        transform: translate(0px, 0px);
+    }
+    .boston {
+        transform: translate(0px, -14px);
+    }
+    .chicago {
+        transform: translate(0px, 5px);
+    }
+    .seattle {
+        transform: translate(0px, 15px);
+    }
+    .minneapolis-st-paul {
+        transform: translate(0px, -5px);
+    }
+    .philadelphia {
+        transform: translate(0px, 5px);
+    }
+}
+
+.label {
+    .san-diego {
+        transform: translate(0px,-10px);
+    }
+    .houston {
+        transform: translate(0px,-1px);
+    }
+    .washington-dc {
+        transform: translate(0px,4px);
+    }
+    .san-bernardino {
+        transform: translate(0px,6px);
+    }
+    .dallas-fort-worth {
+        transform: translate(0px, 0px);
+    }
+    .boston {
+        transform: translate(0px, -14px);
+    }
+    .chicago {
+        transform: translate(0px, 5px);
+    }
+    .seattle {
+        transform: translate(0px, 15px);
+    }
+    .minneapolis-st-paul {
+        transform: translate(0px, -5px);
+    }
+    .philadelphia {
+        transform: translate(0px, 5px);
+    }
+
+}
+
+.dots.start {
+    .boston {
+        transform: translate(0px, 3px)
+    }
+    .san-diego {
+        transform: translate(0px, -1px)
+    }
+}
+
+.dots.end {
+    .boston {
+        transform: translate(0px, -3px)
+    }
+}

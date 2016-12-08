@@ -1,0 +1,207 @@
+@import "base";
+
+@grade-1: #d7191c;
+@grade-2: #fdae61;
+@grade-3: #ffffbf;
+@grade-4: #a6d96a;
+@grade-5: #1a9641;
+
+.show-local, .show-charter {
+    float: left;
+    margin: 20px;
+    background-color: #efefef;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+
+    p {
+        margin: 0;
+    }
+}
+
+// Base table styles
+table {
+    border-collapse: collapse;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+
+    tr.shadedrow {
+        background-color: #f1f1f1;
+        color: #333;
+        font-weight: bold;
+    }
+
+    tr:hover {
+        font-weight: 700;
+    }
+
+    th {
+        border-bottom: 2px solid #eee;
+        font-size: .8em;
+        vertical-align: bottom;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0 5px 5px 5px;
+        padding-top: 0;
+        letter-spacing: 0.05em;
+        -webkit-font-smoothing: antialiased;
+
+        &.amt {
+            text-align: right;
+        }
+
+        &.district-header {
+            vertical-align: middle;
+        }
+
+        &.subject-header {
+            border-bottom: none;
+        }
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+    }
+
+    th,
+    td {
+        &.amt {
+            text-align: right;
+        }
+
+        &.pct-00, &.pct-10,&.pct-20,&.pct-30,&.pct-40 {
+            background-color: fade(@grade-1, 30%);
+        }
+        &.pct-50,&.pct-60 {
+            background-color: fade(@grade-3, 30%);
+        }
+        &.pct-70,&.pct-80, &.pct-90, &.pct-100 {
+            background-color: fade(@grade-5, 30%);
+        }
+    }
+}
+
+table {
+    &#state-table {
+        tr {
+            display:none;
+
+            &.show {
+                display: table-row;
+            }
+        }
+        thead tr {
+            display:table-row;
+        }
+    }
+}
+
+// Tablesorter styles
+table {
+    th {
+        &.sort-header {
+            cursor: pointer;
+
+            &::-moz-selection,
+            &::selection {
+                background: transparent;
+            }
+
+            .sorter {
+                border-top: 2px solid #404040;
+                visibility: hidden;
+
+                .icon {
+                    content: '';
+                    width: 1px;
+                    margin: 3px auto 7px auto;
+                    border-width: 0 4px 4px;
+                    border-style: solid;
+                    border-color: #404040 transparent;
+                }
+            }
+
+            &:hover .sorter {
+                visibility: visible;
+            }
+        }
+
+        &.sort-up .sorter,
+        &.sort-down .sorter,
+        &.sort-down:hover .sorter {
+            visibility: visible;
+            opacity: 0.4;
+        }
+
+        &.sort-up .sorter .icon {
+            border-bottom: none;
+            border-width: 4px 4px 0;
+        }
+    }
+}
+
+// Mobile styles
+@media screen and (max-width: 500px) {
+    tbody {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        thead { display: none; }
+
+        tr,
+        th,
+        th.amt,
+        td,
+        td.amt {
+            display: block;
+            padding: 0;
+            white-space: normal;
+        }
+
+        tr {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+
+            &:first-child { border-top: 1px solid #eee; }
+        }
+
+        td,
+        td.amt {
+            border: none;
+            margin-bottom: 6px;
+            text-align: left;
+
+            &:empty { display: none; }
+        }
+
+        th[data-title]:before,
+        td[data-title]:before {
+            content: attr(data-title) ":\00A0";
+            display: inline-block;
+            width: 70%;
+        }
+
+        tr td:first-child {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+
+            &:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+}

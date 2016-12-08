@@ -1,0 +1,82 @@
+@import "base";
+
+// Add custom styles here
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#graphic {
+    padding: 0px 20px;
+    text-align: center;
+
+    h1 {
+        font-weight: 400;
+        font-size: 1.25em;
+        line-height: 1.25em;
+        margin-bottom: 20px;
+
+        .quote {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #999;
+            line-height: 0em;
+            z-index: -99;
+
+        }
+
+        .bolded {
+            font-weight: 700;
+        }
+    }
+
+    h2 {
+        font-size: 1.5em;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .candidates {
+        width: 100%;
+        height: auto;
+
+        .candidate-contain {
+            float: left;
+            width: 25%;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &.selected {
+
+            .incorrect {
+
+                &.choice {
+                        p {
+                            color: @red;
+                            font-weight: 700;
+                        }
+                }
+
+                img {
+                    opacity: .25;
+                }
+            }
+
+            .correct {
+                p {
+                    color: @green;
+                    font-weight: 700;
+                }
+                img {
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
+}

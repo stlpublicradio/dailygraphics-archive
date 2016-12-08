@@ -1,0 +1,44 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+    {% if COPY.labels.chart1 %}<h2>{{ render(COPY.labels.chart1)|smarty }}</h2>{% endif %}
+    <div id="column-chart" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    {% if COPY.labels.chart2 %}<h2>{{ render(COPY.labels.chart2)|smarty }}</h2>{% endif %}
+    <div id="column-chart2" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    {% if COPY.labels.chart3 %}<h2>{{ render(COPY.labels.chart3)|smarty }}</h2>{% endif %}
+    {% if COPY.labels.subgroup %}<p>{{ render(COPY.labels.subgroup)|smarty }}</p>{% endif %}
+    <div id="column-chart3" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    {% if COPY.labels.chart4 %}<h2>{{ render(COPY.labels.chart4)|smarty }}</h2>{% endif %}
+    <div id="column-chart4" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4>Notes</h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+        var GL_MATH = {{ COPY.gl_math.json() }};
+        var GL_ENGLISH = {{ COPY.gl_english.json() }};
+        var SUBGROUP_MATH = {{ COPY.subgroup_math.json() }};
+        var SUBGROUP_ENGLISH = {{ COPY.subgroup_english.json() }};
+    </script>
+
+{% endblock content %}
