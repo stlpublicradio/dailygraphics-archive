@@ -1,0 +1,31 @@
+{% extends 'base_template.html' %} {% block content %}
+
+<div id="graphic" class="graphic container">
+    <div class="row">
+        <div id="main-content" class="col-md-12">
+            <img class="img-responsive" src="./assets/header.png" data-rjs="3">
+            <p class="lead">{{ COPY.labels.subhed }}</p>
+            {% for year in COPY.data | groupby('year') | reverse() %}
+            {% for month in year.list | groupby('month') | reverse() %}
+            {% for day in month.list | groupby('day') | reverse() %}
+            <h2>{{ month.grouper }}/{{ day.grouper }}/{{ year.grouper }}</h2>
+            {% for story in day.list %}
+            <div class="row">
+                <div class="image col-sm-1 col-xs-3">
+                    <img class="img-responsive" src="./assets/{{ story.topic }}.png" data-rjs="3">
+                </div>
+                <div class="hed col-sm-10 col-xs-9">
+                    <h1><a href="{{story.link}}">{{ story.hed }}</a></h1>
+                </div>
+            </div>
+
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

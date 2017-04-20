@@ -1,0 +1,93 @@
+@import "base";
+
+.bars line {
+    fill: none;
+    stroke-width: 3px;
+    stroke: #F5D1CA;
+}
+
+.dots circle {
+    stroke-width: 1px;
+    stroke: #fff;
+    fill: #D8472B;
+}
+
+.value text {
+    font-size: 11px;
+    fill: #999;
+}
+
+.shadow text {
+    font-size: 11px;
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5px;
+}
+
+.key {
+    margin-bottom: 30px;
+    line-height: 38px;
+
+
+    span {
+        margin: 5px;
+        padding: 5px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: .5px;
+    }
+}
+
+.statewide-general {
+    stroke: @dkblue;
+    fill: fade(@dkblue, 50%);
+
+    span& {
+        background-color: @dkblue;
+    }
+
+}
+
+.statewide-primary {
+    stroke: @ltblue;
+    fill: fade(@ltblue, 50%);
+
+    span& {
+        background-color: @ltblue;
+    }
+}
+
+.presidential-primary {
+    stroke: @blue;
+    fill: fade(@blue, 50%);
+
+    span& {
+        background-color: @blue;
+    }
+}
+
+.municipal-general {
+    stroke: @orange;
+    fill: fade(@orange, 50%);
+
+    span& {
+        background-color: @orange;
+    }
+}
+
+.municipal-primary {
+    stroke: @yellow;
+    fill: fade(@yellow, 50%);
+
+    span& {
+        background-color: @yellow;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    padding: 3px;
+    background: fade(#000, 10%);
+    border-radius: 10px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Graphic : STLPR</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="shortcut icon" href="https://s3.amazonaws.com/stlpr-assets/stlpr-favicon.ico" />
+    <base target="_blank">
+
+    
+    
+
+    <!-- Configuration -->
+
+
+    <!-- CSS + LESS -->
+    
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="css/graphic-header.css?1490972309" />
+</head>
+<body>
+    <div class="full">
+    <!-- Analytics -->
+    
+    <script type="text/javascript" src="js/graphic-header.js?1490972310"></script>
+
+    
+
+    <h1>Election turnout</h1>
+    <p>Turnout in elections (except special elections) between 2006 and 2017 ranged from 6.2 to 78.6 percent in four Missouri and two Illinois counties and St. Louis. Mouse over circles to see details.</p>
+
+    <div class="key">
+        <span class="statewide-general">Statewide General</span>
+        <span class="presidential-primary">Presidential Primary</span>
+        <span class="statewide-primary">Statewide Primary</span>
+        <span class="municipal-general">Municipal General</span>
+        <span class="municipal-primary">Municipal Primary</span>
+        </div>
+
+
+    <div id="dot-chart" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>Results for all elections were not available.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p>Source: Information compiled by Shula Neuman | St. Louis Public Radio</p>
+        <p>Credit: Brent Jones | St. Louis Public Radio</p>
+    </div>
+
+    <script type="text/javascript">
+        var DATA = [{"id": "1", "place": "St. Louis City", "type": "Municipal Primary", "year": "2017", "turnout": "28.6"}, {"id": "2", "place": "St. Louis City", "type": "Statewide General", "year": "2016", "turnout": "69.43"}, {"id": "3", "place": "St. Louis City", "type": "Statewide Primary", "year": "2016", "turnout": "28.26"}, {"id": "4", "place": "St. Louis City", "type": "Presidential Primary", "year": "2016", "turnout": "42.92"}, {"id": "5", "place": "St. Louis City", "type": "Municipal General", "year": "2016", "turnout": "26.84"}, {"id": "6", "place": "St. Louis City", "type": "Municipal General", "year": "2015", "turnout": "9.97"}, {"id": "7", "place": "St. Louis City", "type": "Municipal Primary", "year": "2015", "turnout": "9.15"}, {"id": "8", "place": "St. Louis City", "type": "Statewide General", "year": "2014", "turnout": "34.05"}, {"id": "9", "place": "St. Louis City", "type": "Statewide Primary", "year": "2014", "turnout": "20.29"}, {"id": "10", "place": "St. Louis City", "type": "Municipal General", "year": "2013", "turnout": "12.55"}, {"id": "11", "place": "St. Louis City", "type": "Municipal Primary", "year": "2013", "turnout": "22.08"}, {"id": "12", "place": "St. Louis City", "type": "Statewide General", "year": "2012", "turnout": "74.04"}, {"id": "13", "place": "St. Louis City", "type": "Statewide Primary", "year": "2012", "turnout": "26.77"}, {"id": "14", "place": "St. Louis City", "type": "Presidential Primary", "year": "2012", "turnout": "6.21"}, {"id": "15", "place": "St. Louis City", "type": "Municipal General", "year": "2011", "turnout": "20.28"}, {"id": "16", "place": "St. Louis City", "type": "Statewide General", "year": "2010", "turnout": "48.52"}, {"id": "17", "place": "St. Louis City", "type": "Statewide Primary", "year": "2010", "turnout": "18.58"}, {"id": "18", "place": "St. Louis City", "type": "Municipal General", "year": "2009", "turnout": "17.12"}, {"id": "19", "place": "St. Louis City", "type": "Municipal Primary", "year": "2009", "turnout": "14.5"}, {"id": "20", "place": "St. Louis City", "type": "Statewide General", "year": "2008", "turnout": "61.4"}, {"id": "21", "place": "St. Louis City", "type": "Statewide Primary", "year": "2008", "turnout": "18.2"}, {"id": "22", "place": "St. Louis City", "type": "Presidential Primary", "year": "2008", "turnout": "42.97"}, {"id": "23", "place": "St. Louis City", "type": "Municipal General", "year": "2007", "turnout": "6.86"}, {"id": "24", "place": "St. Louis City", "type": "Municipal Primary", "year": "2007", "turnout": "13.69"}, {"id": "25", "place": "St. Louis City", "type": "Statewide General", "year": "2006", "turnout": "46.41"}, {"id": "26", "place": "St. Louis City", "type": "Statewide Primary", "year": "2006", "turnout": "16.91"}, {"id": "27", "place": "St. Louis City", "type": "Municipal General", "year": "2006", "turnout": "12.53"}, {"id": "2", "place": "St. Louis County", "type": "Statewide General", "year": "2016", "turnout": "74.73"}, {"id": "3", "place": "St. Louis County", "type": "Statewide Primary", "year": "2016", "turnout": "26.36"}, {"id": "4", "place": "St. Louis County", "type": "Presidential Primary", "year": "2016", "turnout": "45.9"}, {"id": "5", "place": "St. Louis County", "type": "Municipal General", "year": "2016", "turnout": "19.39"}, {"id": "6", "place": "St. Louis County", "type": "Municipal General", "year": "2015", "turnout": "19.39"}, {"id": "8", "place": "St. Louis County", "type": "Statewide General", "year": "2014", "turnout": "44.47"}, {"id": "9", "place": "St. Louis County", "type": "Statewide Primary", "year": "2014", "turnout": "29.11"}, {"id": "28", "place": "St. Louis County", "type": "Municipal General", "year": "2014", "turnout": "12.37"}, {"id": "10", "place": "St. Louis County", "type": "Municipal General", "year": "2013", "turnout": "15.66"}, {"id": "12", "place": "St. Louis County", "type": "Statewide General", "year": "2012", "turnout": "76.22"}, {"id": "13", "place": "St. Louis County", "type": "Statewide Primary", "year": "2012", "turnout": "25.16"}, {"id": "29", "place": "St. Louis County", "type": "Municipal General", "year": "2012", "turnout": "13.91"}, {"id": "14", "place": "St. Louis County", "type": "Presidential Primary", "year": "2012", "turnout": "7.95"}, {"id": "15", "place": "St. Louis County", "type": "Municipal General", "year": "2011", "turnout": "17.01"}, {"id": "16", "place": "St. Louis County", "type": "Statewide General", "year": "2010", "turnout": "55.8"}, {"id": "17", "place": "St. Louis County", "type": "Statewide Primary", "year": "2010", "turnout": "23.56"}, {"id": "18", "place": "St. Louis County", "type": "Municipal General", "year": "2009", "turnout": "12.1"}, {"id": "20", "place": "St. Louis County", "type": "Statewide General", "year": "2008", "turnout": "78.62"}, {"id": "21", "place": "St. Louis County", "type": "Statewide Primary", "year": "2008", "turnout": "18.08"}, {"id": "22", "place": "St. Louis County", "type": "Presidential Primary", "year": "2008", "turnout": "42.96"}, {"id": "23", "place": "St. Louis County", "type": "Municipal General", "year": "2007", "turnout": "11.64"}, {"id": "25", "place": "St. Louis County", "type": "Statewide General", "year": "2006", "turnout": "63.43"}, {"id": "26", "place": "St. Louis County", "type": "Statewide Primary", "year": "2006", "turnout": "15.58"}, {"id": "27", "place": "St. Louis County", "type": "Municipal General", "year": "2006", "turnout": "15.76"}, {"id": "2", "place": "St. Charles County", "type": "Statewide General", "year": "2016", "turnout": "74.17"}, {"id": "3", "place": "St. Charles County", "type": "Statewide Primary", "year": "2016", "turnout": "26.9"}, {"id": "4", "place": "St. Charles County", "type": "Presidential Primary", "year": "2016", "turnout": "43.9"}, {"id": "5", "place": "St. Charles County", "type": "Municipal General", "year": "2016", "turnout": "19.05"}, {"id": "6", "place": "St. Charles County", "type": "Municipal General", "year": "2015", "turnout": "15.14"}, {"id": "8", "place": "St. Charles County", "type": "Statewide General", "year": "2014", "turnout": "39.04"}, {"id": "9", "place": "St. Charles County", "type": "Statewide Primary", "year": "2014", "turnout": "24.64"}, {"id": "28", "place": "St. Charles County", "type": "Municipal General", "year": "2014", "turnout": "13.67"}, {"id": "10", "place": "St. Charles County", "type": "Municipal General", "year": "2013", "turnout": "12.3"}, {"id": "12", "place": "St. Charles County", "type": "Statewide General", "year": "2012", "turnout": "72.74"}, {"id": "13", "place": "St. Charles County", "type": "Statewide Primary", "year": "2012", "turnout": "21.6"}, {"id": "29", "place": "St. Charles County", "type": "Municipal General", "year": "2012", "turnout": "8.95"}, {"id": "14", "place": "St. Charles County", "type": "Presidential Primary", "year": "2012", "turnout": "9.46"}, {"id": "15", "place": "St. Charles County", "type": "Municipal General", "year": "2011", "turnout": "17.6"}, {"id": "16", "place": "St. Charles County", "type": "Statewide General", "year": "2010", "turnout": "52.14"}, {"id": "17", "place": "St. Charles County", "type": "Statewide Primary", "year": "2010", "turnout": "22.93"}, {"id": "18", "place": "St. Charles County", "type": "Municipal General", "year": "2009", "turnout": "11.47"}, {"id": "20", "place": "St. Charles County", "type": "Statewide General", "year": "2008", "turnout": "77.82"}, {"id": "21", "place": "St. Charles County", "type": "Statewide Primary", "year": "2008", "turnout": "17.49"}, {"id": "22", "place": "St. Charles County", "type": "Presidential Primary", "year": "2008", "turnout": "39.81"}, {"id": "23", "place": "St. Charles County", "type": "Municipal General", "year": "2007", "turnout": "15.12"}, {"id": "25", "place": "St. Charles County", "type": "Statewide General", "year": "2006", "turnout": "59.47"}, {"id": "26", "place": "St. Charles County", "type": "Statewide Primary", "year": "2006", "turnout": "17.04"}, {"id": "27", "place": "St. Charles County", "type": "Municipal General", "year": "2006", "turnout": "20.67"}, {"id": "2", "place": "Jefferson County", "type": "Statewide General", "year": "2016", "turnout": "73.74"}, {"id": "3", "place": "Jefferson County", "type": "Statewide Primary", "year": "2016", "turnout": "26.02"}, {"id": "4", "place": "Jefferson County", "type": "Presidential Primary", "year": "2016", "turnout": "41.49"}, {"id": "5", "place": "Jefferson County", "type": "Municipal General", "year": "2016", "turnout": "14.58"}, {"id": "6", "place": "Jefferson County", "type": "Municipal General", "year": "2015", "turnout": "16.0"}, {"id": "8", "place": "Jefferson County", "type": "Statewide General", "year": "2014", "turnout": "39.92"}, {"id": "9", "place": "Jefferson County", "type": "Statewide Primary", "year": "2014", "turnout": "23.69"}, {"id": "28", "place": "Jefferson County", "type": "Municipal General", "year": "2014", "turnout": "11.26"}, {"id": "10", "place": "Jefferson County", "type": "Municipal General", "year": "2013", "turnout": "10.13"}, {"id": "12", "place": "Jefferson County", "type": "Statewide General", "year": "2012", "turnout": "66.49"}, {"id": "13", "place": "Jefferson County", "type": "Statewide Primary", "year": "2012", "turnout": "20.66"}, {"id": "29", "place": "Jefferson County", "type": "Municipal General", "year": "2012", "turnout": "8.35"}, {"id": "14", "place": "Jefferson County", "type": "Presidential Primary", "year": "2012", "turnout": "7.65"}, {"id": "15", "place": "Jefferson County", "type": "Municipal General", "year": "2011", "turnout": "12.08"}, {"id": "16", "place": "Jefferson County", "type": "Statewide General", "year": "2010", "turnout": "47.42"}, {"id": "17", "place": "Jefferson County", "type": "Statewide Primary", "year": "2010", "turnout": "21.37"}, {"id": "18", "place": "Jefferson County", "type": "Municipal General", "year": "2009", "turnout": "15.93"}, {"id": "20", "place": "Jefferson County", "type": "Statewide General", "year": "2008", "turnout": "72.72"}, {"id": "21", "place": "Jefferson County", "type": "Statewide Primary", "year": "2008", "turnout": "14.41"}, {"id": "22", "place": "Jefferson County", "type": "Presidential Primary", "year": "2008", "turnout": "37.34"}, {"id": "23", "place": "Jefferson County", "type": "Municipal General", "year": "2007", "turnout": "11.32"}, {"id": "25", "place": "Jefferson County", "type": "Statewide General", "year": "2006", "turnout": "52.67"}, {"id": "26", "place": "Jefferson County", "type": "Statewide Primary", "year": "2006", "turnout": "15.19"}, {"id": "27", "place": "Jefferson County", "type": "Municipal General", "year": "2006", "turnout": "13.38"}, {"id": "2", "place": "Washington County", "type": "Statewide General", "year": "2016", "turnout": "67.97"}, {"id": "4", "place": "Washington County", "type": "Presidential Primary", "year": "2016", "turnout": "33.62"}, {"id": "5", "place": "Washington County", "type": "Municipal General", "year": "2016", "turnout": "11.83"}, {"id": "6", "place": "Washington County", "type": "Municipal General", "year": "2015", "turnout": "9.16"}, {"id": "8", "place": "Washington County", "type": "Statewide General", "year": "2014", "turnout": "36.68"}, {"id": "9", "place": "Washington County", "type": "Statewide Primary", "year": "2014", "turnout": "22.71"}, {"id": "28", "place": "Washington County", "type": "Municipal General", "year": "2014", "turnout": "9.9"}, {"id": "2", "place": "Madison County (IL)", "type": "Statewide General", "year": "2016", "turnout": "72.14"}, {"id": "3", "place": "Madison County (IL)", "type": "Statewide Primary", "year": "2016", "turnout": "42.71"}, {"id": "2", "place": "St. Clair County (IL)", "type": "Statewide General", "year": "2016", "turnout": "66.48"}, {"id": "3", "place": "St. Clair County (IL)", "type": "Statewide Primary", "year": "2016", "turnout": "39.16"}, {"id": "6", "place": "Madison County (IL)", "type": "Municipal General", "year": "2015", "turnout": "15.36"}, {"id": "6", "place": "St. Clair County (IL)", "type": "Municipal General", "year": "2015", "turnout": "18.26"}, {"id": "8", "place": "Madison County (IL)", "type": "Statewide General", "year": "2014", "turnout": "44.84"}, {"id": "9", "place": "Madison County (IL)", "type": "Statewide Primary", "year": "2014", "turnout": "14.76"}, {"id": "8", "place": "St. Clair County (IL)", "type": "Statewide General", "year": "2014", "turnout": "44.57"}, {"id": "9", "place": "St. Clair County (IL)", "type": "Statewide Primary", "year": "2014", "turnout": "16.87"}, {"id": "28", "place": "Madison County (IL)", "type": "Municipal General", "year": "2014", "turnout": "18.97"}, {"id": "12", "place": "Madison County (IL)", "type": "Statewide General", "year": "2012", "turnout": "69.08"}, {"id": "14", "place": "Madison County (IL)", "type": "Presidential Primary", "year": "2012", "turnout": "15.94"}, {"id": "12", "place": "St. Clair County (IL)", "type": "Statewide General", "year": "2012", "turnout": "64.38"}, {"id": "14", "place": "St. Clair County (IL)", "type": "Presidential Primary", "year": "2012", "turnout": "19.06"}, {"id": "15", "place": "Madison County (IL)", "type": "Municipal General", "year": "2011", "turnout": "21.49"}, {"id": "16", "place": "Madison County (IL)", "type": "Statewide General", "year": "2010", "turnout": "46.91"}, {"id": "17", "place": "Madison County (IL)", "type": "Statewide Primary", "year": "2010", "turnout": "15.79"}, {"id": "16", "place": "St. Clair County (IL)", "type": "Statewide General", "year": "2010", "turnout": "42.29"}, {"id": "17", "place": "St. Clair County (IL)", "type": "Statewide Primary", "year": "2010", "turnout": "16.02"}, {"id": "18", "place": "Madison County (IL)", "type": "Municipal General", "year": "2009", "turnout": "21.51"}, {"id": "20", "place": "Madison County (IL)", "type": "Statewide General", "year": "2008", "turnout": "72.96"}, {"id": "22", "place": "Madison County (IL)", "type": "Presidential Primary", "year": "2008", "turnout": "36.92"}, {"id": "20", "place": "St. Clair County (IL)", "type": "Statewide General", "year": "2008", "turnout": "63.29"}, {"id": "22", "place": "St. Clair County (IL)", "type": "Presidential Primary", "year": "2008", "turnout": "30.27"}];
+    </script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+        
+        
+        
+        
+        
+        
+        
+        <script type="text/javascript" src="js/graphic-footer.js?1490972310"></script>
+    
+</div>
+</body>
+</html>
