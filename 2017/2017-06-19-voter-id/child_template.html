@@ -1,0 +1,49 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div id="graphic" class="graphic">
+        {% for question in COPY.data %}
+        <div class="question-container hide" id="{{question.id}}">
+          {{ question.question }}
+          <form>
+            <input disabled type="radio" name="{{question.id}}" value="1">{{ question.a1 }}</input>
+            <input disabled type="radio" name="{{question.id}}" value="0">{{ question.a2 }}</input>
+            {% if question.a3 %}<input disabled type="radio" name="{{question.id}}" value="unk">{{ question.a3 }}</input>{% endif %}
+          </form>
+        </div>
+        {% endfor %}
+        <div class="answers hide">
+            <h2>What you told us:</h2>
+        {% for answer in COPY.answers %}
+            <p class="answer-container hide" id="{{answer.id}}">
+                {{ answer.answer }}
+            </p>
+        {% endfor %}
+        </div>
+        <div class="to-do hide">
+            <h2>What you need to do:</h2>
+        {% for to_do in COPY.to_do %}
+            <p class="to-do-container hide" id="{{to_do.id}}">
+                {{ to_do.to_do }}
+            </p>
+        {% endfor %}
+        </div>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}

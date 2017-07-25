@@ -1,0 +1,47 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div id="timeline">
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+    //    var DATA = {{ COPY.data.json() }};
+
+       var timeline = new TikTok({
+           el: '#timeline',
+           title: 'Part 1: The first 120 years: From frontier town to transportation and industrial center',
+           dateFormat: 'YYYY-MM-DD',
+           groupByDisplay: 'YYYY',
+           dateDisplay: 'MMMM D, YYYY',
+           entries: [
+               {% for entry in COPY.data %}
+               {
+                 date: '{{ entry.date }}',
+                 title: '{{ entry.title }}',
+                 body: '{{ entry.body }}'{% if entry.dateDisplay %},
+                 dateDisplay: '{{ entry.dateDisplay }}'{% endif %}{% if entry.media %},
+                 media: '{{ entry.media }}',
+                 source: '{{ entry.source }}'{% endif %}
+               },
+               {% endfor %}
+           ]
+       })
+   </script>
+
+{% endblock content %}

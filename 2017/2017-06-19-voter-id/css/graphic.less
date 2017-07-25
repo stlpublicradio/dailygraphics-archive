@@ -1,0 +1,41 @@
+@import "base";
+
+// Add custom styles here
+.hide {
+  display: none;
+}
+
+.question-container {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    input {
+        margin-left: 20px;
+    }
+
+    input:first-child {
+        margin-left: 0px;
+    }
+}
+
+.answers, .to-do {
+    width: 80%;
+    margin: 30px auto;
+    padding: 5px 20px 10px 20px;
+}
+
+.answers {
+    background-color: lighten(@blue, 30%);
+}
+
+.to-do {
+    background: lighten(@orange, 30%);
+}
