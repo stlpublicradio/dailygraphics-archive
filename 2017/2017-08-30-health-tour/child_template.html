@@ -1,0 +1,52 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div id="map" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% for row in COPY.data %}
+        <h2> {{ row.label }} &mdash; {{ row.title }}</h2>
+        <div id="graphic-{{ row.label}}-age" class="zipgraphic graphic float">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+        <p>{{ row.description }}</p>
+
+        <div id="graphic-{{ row.label}}" class="zipgraphic graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+    {% endfor %}
+
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+
+        <script type="text/javascript">
+            var DATA_A = {{ COPY.data_a.json() }};
+            var DATA_A_AGE = {{ COPY.data_a_age.json() }};
+            var DATA_B = {{ COPY.data_b.json() }};
+            var DATA_B_AGE = {{ COPY.data_b_age.json() }}
+            var DATA_C = {{ COPY.data_c.json() }};
+            var DATA_C_AGE = {{ COPY.data_c_age.json() }};
+            var DATA_D = {{ COPY.data_d.json() }};
+            var DATA_D_AGE = {{ COPY.data_d_age.json() }};
+            var DATA_E = {{ COPY.data_e.json() }};
+            var DATA_E_AGE = {{ COPY.data_e_age.json() }};;
+            </script>
+
+{% endblock content %}

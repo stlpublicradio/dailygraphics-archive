@@ -1,0 +1,79 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div class="graphic">
+        <table id="state-table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_institution }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_county }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_date }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_cause }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_age }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_sex }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_length }}</div>
+                    </th>
+                </tr>
+            </thead>
+
+            {% for row in COPY.data %}
+            <tr class="county-{{ row.county|classify }} date-{{row.date|classify}}">
+                <td data-title="{{ COPY.labels.hdr_institution }}">{{ row.institution }}</td>
+                <td data-title="{{ COPY.labels.hdr_county }}">{{ row.county }}</td>
+                <td data-title="{{ COPY.labels.hdr_date }}">{{ row.date | ap_date() }}</td>
+                <td data-title="{{ COPY.labels.hdr_cause }}">{{ row.cause }}</td>
+                <td data-title="{{ COPY.labels.hdr_age }}">{{ row.age }}</td>
+                <td data-title="{{ COPY.labels.hdr_sex }}">{{ row.sex }}</td>
+                <td data-title="{{ COPY.labels.hdr_length }}">{{ row.length }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    {{ JS.push('js/lib/tablesort.js') }}
+    {{ JS.push('js/lib/tablesort.numeric.js') }}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+
+{% endblock js %}

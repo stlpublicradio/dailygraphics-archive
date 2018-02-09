@@ -1,0 +1,99 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #efefef;
+}
+.rivers path {
+    fill: none;
+    stroke: #a8d5ef;
+    stroke-width: 2px;
+}
+
+.highways path {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 2px;
+}
+
+.cities path {
+    fill: #bbb;
+    opacity: .5;
+
+    &.admin-0-capital { fill: #333; }
+}
+
+.schools circle {
+    fill: #cc203b;
+    opacity: .6;
+    r: 4;
+}
+
+.city-labels text {
+    fill: #bbb;
+    font-size: 70%;
+    text-anchor: start;
+    font-family: 'Titillium Web', Helvetica, Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    &.admin-0-capital {
+        fill: #555;
+        font-weight: bold;
+    }
+}
+
+.city-labels.shadow text {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 2px;
+    opacity: .7;
+}
+
+
+.scale-bar {
+    line {
+        stroke: #666;
+        stroke-width: 5px;
+    }
+    text {
+        font-family: Helvetica, Arial,sans-serif;
+        fill: #666;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+// responsive styles
+@media screen and (max-width: 500px) {
+    svg { font-size: 12px; }
+
+    .city-labels text {
+      letter-spacing: .5px;
+      font-size:100%;
+    }
+    .city-labels.shadow { display: none; }
+    .city-labels text,
+    .cities path {
+            display: none;
+    }
+
+    .city-labels text,
+    .cities path {
+            &.saint-louis-mo,
+            &.washington-mo,
+            &.perryville-mo,
+            &.chesterfield-mo,
+            &.arnold-mo,
+            &.eureka-mo,
+            &.de-soto-mo,
+            &.wentzville-mo,
+            &.troy-mo {
+            display: block;
+          }
+    }
+    .schools circle {
+        fill: #cc203b;
+        opacity: 1;
+        r: 2;
+    }
+}

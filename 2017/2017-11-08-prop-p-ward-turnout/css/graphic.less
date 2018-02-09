@@ -1,0 +1,43 @@
+@import "base";
+
+// Add custom styles here
+.ward {
+    circle {
+        fill: #358fb3;
+    }
+
+    &.ward-8,
+    &.ward-9,
+    &.ward-15,
+    &.ward-20 {
+        circle {
+            fill: #f1bb4f;
+        }
+    }
+
+    .ward-label {
+        font-size: 12px;
+        fill: #999;
+    }
+
+}
+
+.axis-label {
+    fill: #999;
+}
+
+@media screen and (max-width: 641px) {
+    .ward-label {
+        display:none;
+    }
+
+    .ward-8,
+    .ward-9,
+    .ward-15,
+    .ward-16,
+    .ward-20 {
+        .ward-label {
+            display:block;
+        }
+    }
+}
