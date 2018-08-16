@@ -1,0 +1,47 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    {% if COPY.labels.headline_sex %}<h2>{{ COPY.labels.headline_sex|smarty }}</h2>{% endif %}
+    {% if COPY.labels.subhed_sex %}<p>{{ render(COPY.labels.subhed_sex)|smarty }}</p>{% endif %}
+
+    <div id="bar-chart-sex" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.headline_race %}<h2>{{ COPY.labels.headline_race|smarty }}</h2>{% endif %}
+    {% if COPY.labels.subhed_race %}<p>{{ render(COPY.labels.subhed_race)|smarty }}</p>{% endif %}
+
+    <div id="bar-chart-race" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.headline_age %}<h2>{{ COPY.labels.headline_age|smarty }}</h2>{% endif %}
+    {% if COPY.labels.subhed_age %}<p>{{ render(COPY.labels.subhed_age)|smarty }}</p>{% endif %}
+
+    <div id="bar-chart-age" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+        var DATA = {{ COPY.data.json() }};
+        var DATA_RACE = {{ COPY.data_race.json() }};
+        var DATA_AGE = {{ COPY.data_age.json() }};
+    </script>
+
+{% endblock content %}

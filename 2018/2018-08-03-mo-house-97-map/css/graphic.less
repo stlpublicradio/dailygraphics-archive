@@ -1,0 +1,120 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #ddd;
+}
+
+.countries path {
+    fill: #ddd;
+    stroke: #ebebeb;
+    stroke-width: 2.5px;
+
+    &.primary {
+        fill: #fff;
+        stroke: #bababa;
+    }
+}
+
+path.landmass { fill: #ddd; }
+
+.park path {
+    fill: #31716e;
+    stroke: #a8d5ef;
+    stroke-width: 1px;
+    fill-opacity: .4;
+}
+
+.district path {
+    fill: #f1bb4f;
+    stroke:#666;
+    stroke-width: 1px;
+}
+
+.highways path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+
+.rivers path {
+    fill: #358fb3;
+    stroke: #55b7d9;
+    stroke-width: 1px;
+    stroke-opacity: .2;
+}
+
+
+.country-labels text {
+    fill: #333;
+    font-size: 100%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Titillium Web', Helvetica, Arial,sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+
+    &.primary {
+        fill: #555;
+        font-weight: 700;
+        font-size: 110%;
+    }
+}
+
+.text-labels text {
+    fill: #333;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Titillium Web', Helvetica, Arial,sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+.scale-bar {
+    line {
+        stroke: #666;
+        stroke-width: 5px;
+    }
+    text {
+        font-family: 'Titillium Web', Helvetica, Arial,sans-serif;
+        fill: #666;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+.key {
+    div.item {
+        float:left;
+        margin-right: 20px;
+
+        div {
+            width: 15px;
+            height: 15px;
+            float: left;
+            margin-top: 2px;
+            margin-right: 5px;
+
+            &.district {
+                background-color: #f1bb4f;
+            }
+
+            &.park {
+                background-color: #31716e;
+            }
+        }
+    }
+}
+
+// responsive styles
+@media screen and (max-width: 500px) {
+    svg { font-size: 12px; }
+    .countries path { stroke-width: 2px; }
+    .country-labels text {
+        letter-spacing: 2px;
+    }
+    .scale-bar text {
+        font-size: 100%
+    }
+}

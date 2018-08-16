@@ -4,6 +4,7 @@
     <title>production : 2016-01-12-zmd-attendance</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="https://media.npr.org/favicon.ico" />
     <style type="text/css">
         /* Basic styles */
         body {
@@ -23,6 +24,13 @@
             margin: 0 0 11px 0;
         }
 
+        p.homepage {
+            margin: -7px 0 11px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        p.homepage em { color: #999; }
+
         a, a:link,
         a:visited {
             color: #4774CC;
@@ -36,9 +44,8 @@
         a.btn {
             font-size: 12px;
             line-height: 28px;
-            margin: 0;
-            float: left;
-            padding: 0 11px;
+            margin: 30px 0;
+            padding: 9px 11px;
             border-radius: 4px;
             background-color: #f7f7f7;
             font-weight: bold;
@@ -56,21 +63,19 @@
 
         /* Header */
         .parent-header {
+            display: flex;
+            flex-wrap: wrap;
             background-color: #ebebeb;
-            position: fixed;
-            top: 0px;
             width: 100%;
-            height: 40px;
-            padding: 10px 5px 0 5px;
             overflow: hidden;
         }
         .parent-header:after { clear: both; }
 
         .parent-header .segment {
-            float: left;
             padding-left: 5px;
             padding-right: 5px;
             white-space: nowrap;
+            margin: 4px 0;
         }
 
         .parent-header .right {
@@ -102,7 +107,7 @@
 
         /* Content */
         .content {
-            margin: 60px 10px 10px 10px;
+            margin: 20px 10px 10px 10px;
         }
 
         #preview-wrapper {
@@ -116,182 +121,190 @@
 
         textarea {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
         }
+
+        .segment-group{
+          margin: 5px 0;
+        }
+
+        .type-segment{
+          padding: 0px 5px;
+        }
+
+        .button-segment{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          flex-grow: 2;
+        }
+
+        .resize-segment, .link-segment{
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0px 5px;
+        }
+
     </style>
 </head>
 <body>
 
     <header class="parent-header">
-        <div class="segment">
-            <h1 class="production">production</h1>
+
+        <div class="type-segment segment-group">
+          <div class="segment">
+              <h1 class="production">production</h1>
+          </div>
         </div>
 
-        <div class="segment">
-            <a id="resize-sidebar" class="btn" href="#">Sidebar (180px)</a>
+        <div class="button-segment">
+
+          <div class="resize-segment segment-group">
+            <div class="segment">
+                <a id="resize-sidebar" class="btn" href="#">Sidebar (180px)</a>
+            </div>
+
+            <div class="segment">
+                <a id="resize-mobile" class="btn" href="#">Mobile (331px)</a>
+            </div>
+
+            <div class="segment">
+                <a id="resize-desktop" class="btn" href="#">Desktop (663px)</a>
+            </div>
+
+            <div class="segment">
+                <a id="resize-full-width" class="btn" href="#">Full-Width (1010px)</a>
+            </div>
+
+            <div class="segment">
+                <a id="resize-fluid" class="btn" href="#">Fluid (100%)</a>
+            </div>
+          </div>
+
+          <div class="link-segment segment-group">
+
+              
+          </div>
+
         </div>
 
-        <div class="segment">
-            <a id="resize-mobile" class="btn" href="#">Mobile (300px)</a>
-        </div>
-
-        <div class="segment">
-            <a id="resize-desktop" class="btn" href="#">Desktop (730px)</a>
-        </div>
-
-        <div class="segment">
-            <a id="resize-fluid" class="btn" href="#">Fluid (100%)</a>
-        </div>
-
-        <div class="right">
-
-            
-        </div>
     </header>
 
     <div class="content">
 
         <div id="preview-wrapper">
-            <div id='preview'>
-            </div>
+            <p data-pym-loader data-child-src="child.html" id="preview">Loading...</p>
         </div>
 
-        <h2><span class="production">Production</span> embed code (for Seamus)</h2>
+
+        <h2><span class="production">This has been redeployed from a custom location. Check thoroughly before using in a new graphic.</span></h2>
+
+
+<h2>Main embed code (story-text width graphic)</h2>
 
 <!-- textarea contents -->
-    <textarea readonly="readonly" rows="10" cols="50">
-<div id="responsive-embed-2016-01-12-zmd-attendance"></div>
-<script type="text/javascript">
-    // Require.js is on the page (new Seamus)
-    if (typeof requirejs !== 'undefined') {
-        // Create a local require.js namespace
-        var require_2016_01_12_zmd_attendance = requirejs.config({
-            context: '2016-01-12-zmd-attendance',
-            paths: {
-                'pym': 'http://apps.npr.org/dailygraphics/graphics/2016-01-12-zmd-attendance/js/lib/pym'
-            },
-    		shim: {
-    			'pym': { exports: 'pym' }
-    		}
-        });
-
-        // Load pym into locale namespace
-        require_2016_01_12_zmd_attendance(['require', 'pym'], function (require, Pym) {
-            // Create pym parent
-            var pymParent = new Pym.Parent(
-                'responsive-embed-2016-01-12-zmd-attendance',
-                'http://apps.npr.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html',
-                {}
-            );
-
-            // Unbind events when the page changes
-            document.addEventListener('npr:pageUnload', function (e) {
-                // Unbind *this* event once its run once
-                e.target.removeEventListener(e.type, arguments.callee);
-
-                // Pym versions with "remove"
-                if (typeof pymParent.remove == 'function') {
-                    pymParent.remove();
-                // Pym version without "remove"
-                } else {
-                    // Unbind pym events
-                    window.removeEventListener('message', pymParent._processMessage);
-                    window.removeEventListener('resize', pymParent._onResize);
-                }
-
-                // Explicitly unload pym library
-                require_2016_01_12_zmd_attendance.undef('pym');
-                require_2016_01_12_zmd_attendance = null;
-            })
-        });
-    // Require.js is not on the page, but jQuery is (old Seamus)
-    } else if (typeof $ !== 'undefined' && typeof $.getScript === 'function') {
-        // Load pym
-        $.getScript('http://apps.npr.org/dailygraphics/graphics/2016-01-12-zmd-attendance/js/lib/pym.js').done(function () {
-            // Wait for page load
-            $(function () {
-                // Create pym parent
-                var pymParent = new pym.Parent(
-                    'responsive-embed-2016-01-12-zmd-attendance',
-                    'http://apps.npr.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html',
-                    {}
-                );
-            });
-        });
-    // Neither require.js nor jQuery are on the page
-    } else {
-        console.error('Could not load 2016-01-12-zmd-attendance! Neither require.js nor jQuery are on the page.');
-    }
-</script>
-    </textarea>
+<textarea readonly="readonly" rows="10" cols="50">
+<p data-pym-src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html">Loading...</p><script src="https://pym.nprapps.org/npr-pym-loader.v2.min.js" type="text/javascript"></script>
+</textarea>
 <!-- end textarea contents -->
 
-        <h2><span class="production">Production</span> autoinit embed code (<a href="http://blog.apps.npr.org/2014/12/19/pym-core-publisher.html">for member stations</a>)</h2>
+<h2>Main embed code (right; change "wysiwyg-asset-image-wrapper right" to "wysiwyg-asset-image-wrapper left" to shift graphic to left)</h2>
 
 <!-- textarea contents -->
-    <textarea readonly="readonly" rows="10" cols="50">
-<p data-pym-src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html">&amp;nbsp;</p><script src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/js/lib/pym.js" type="text/javascript"></script>
-    </textarea>
+<textarea readonly="readonly" rows="10" cols="50">
+<p class="wysiwyg-asset-image-wrapper right" data-pym-src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html">Loading...</p><script src="https://pym.nprapps.org/npr-pym-loader.v2.min.js" type="text/javascript"></script>
+</textarea>
 <!-- end textarea contents -->
+
+<h2>Main embed code (offset-right; change "offset-right" to "offset-left" to shift graphic to left)</h2>
+
+<!-- textarea contents -->
+<textarea readonly="readonly" rows="10" cols="50">
+<p class="wysiwyg-asset-image-wrapper offset-right" data-pym-src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html">Loading...</p><script src="https://pym.nprapps.org/npr-pym-loader.v2.min.js" type="text/javascript"></script>
+</textarea>
+<!-- end textarea contents -->
+
+<h2>Main embed code (full-width)</h2>
+
+<!-- textarea contents -->
+<textarea readonly="readonly" rows="10" cols="50">
+<p class="wysiwyg-asset-image-wrapper full-width" data-pym-src="http://apps.stlpublicradio.org/dailygraphics/graphics/2016-01-12-zmd-attendance/child.html">Loading...</p><script src="https://pym.nprapps.org/npr-pym-loader.v2.min.js" type="text/javascript"></script>
+</textarea>
 
     </div>
-
-    <script type="text/javascript" src="js/lib/pym.js"></script>
-
+    <script src="https://pym.nprapps.org/npr-pym-loader.v2.min.js" type="text/javascript"></script>
     <script type="text/javascript">
+        var homePageEl = document.querySelector('#homepage');
         var resizeSidebarEl = document.querySelector('#resize-sidebar');
         var resizeMobileEl = document.querySelector('#resize-mobile');
         var resizeDesktopEl = document.querySelector('#resize-desktop');
+        var resizeFullwidthEl = document.querySelector('#resize-full-width');
         var resizeFluidEl = document.querySelector('#resize-fluid');
         var previewWrapperEl = document.querySelector('#preview-wrapper');
-
         resizeSidebarEl.addEventListener('click', function(e) {
             e.preventDefault();
 
-            previewWrapperEl.style.width = '180px';
-            pymParent.sendWidth();
-
+            previewWrapperEl.style.width = '300px';
+            window.dispatchEvent(new Event('resize'));
             window.location.hash = 'sidebar';
         });
-
         resizeMobileEl.addEventListener('click', function(e) {
             e.preventDefault();
 
-            previewWrapperEl.style.width = '300px';
-            pymParent.sendWidth();
-
+            previewWrapperEl.style.width = '331px';
+            window.dispatchEvent(new Event('resize'));
             window.location.hash = 'mobile';
         });
-
         resizeDesktopEl.addEventListener('click', function(e) {
             e.preventDefault();
 
-            previewWrapperEl.style.width = '730px';
-            pymParent.sendWidth();
+            previewWrapperEl.style.width = '663px';
+            window.dispatchEvent(new Event('resize'));
+
+            window.location.hash = 'desktop';
+        });
+
+        resizeFullwidthEl.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            previewWrapperEl.style.width = '1010px';
+            window.dispatchEvent(new Event('resize'));
 
             window.location.hash = 'desktop';
         });
 
         resizeFluidEl.addEventListener('click', function(e) {
             e.preventDefault();
-
             previewWrapperEl.style.width = '100%';
-            pymParent.sendWidth();
-
+            window.dispatchEvent(new Event('resize'));
             window.location.hash = 'fluid';
+        });
+        homePageEl.addEventListener('change', function(e) {
+            var textarea = document.getElementById('embed-code');
+            var text = textarea.innerHTML
+            if (this.checked) {
+                text = text.replace('child.html"', 'child.html" data-carebot-skip');
+                textarea.innerHTML = text;
+            } else {
+                text = text.replace(' data-carebot-skip', '');
+                textarea.innerHTML = text;
+            }
         });
 
         if (window.location.hash == '#sidebar') {
-            previewWrapperEl.style.width = '180px';
-        } else if (window.location.hash == '#mobile') {
             previewWrapperEl.style.width = '300px';
+        } else if (window.location.hash == '#mobile') {
+            previewWrapperEl.style.width = '331px';
         } else if (window.location.hash == '#desktop') {
-            previewWrapperEl.style.width = '730px';
+            previewWrapperEl.style.width = '663px';
+        } else if (window.location.hash == '#full-width') {
+            previewWrapperEl.style.width = '1010px';
         } else if (window.location.hash == '#fluid') {
             previewWrapperEl.style.width = '100%';
         }
-
-        var pymParent = new pym.Parent('preview', 'child.html', {});
     </script>
 </body>
 </html>

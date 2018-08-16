@@ -1,0 +1,29 @@
+bbox: '-90.449432	38.50123	-90.055222	38.803288'
+layers:
+    countries:
+        type: 'json'
+        path: 'assets/counties.geojson'
+        id-property: 'NAME'
+        properties:
+            - 'country=NAME'
+    park:
+        type: 'json'
+        path: 'assets/forest_park.geojson'
+        id-property: 'name'
+            
+
+    district:
+        type: 'json'
+        path: 'assets/hd-73.geojson'
+        id-property: 'name'
+
+    rivers:
+        type: 'json'
+        path: 'assets/rivers.geojson'
+        id-property: 'name'
+
+
+    highways:
+        type: 'json'
+        path: 'assets/highways.geojson'
+        id-property: 'name'
