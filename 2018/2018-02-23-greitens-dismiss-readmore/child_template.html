@@ -1,0 +1,27 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    {% for row in COPY.links %}
+        <h2 class="link">
+            <a href="{{row.link}}" target="_blank">
+                {{row.link_text}}
+            </a>
+            {% if row.format %}
+                ({{row.format}})
+            {% endif %}
+        </h2>
+        {% if row.description %}
+            <p class="description">{{row.description}}</p>
+        {% endif %}
+        {% if row.source %}
+            <div class="footer">
+                <p>Source: {{ row.source | smarty }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock content %}

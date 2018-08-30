@@ -1,0 +1,47 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div class="stories">
+        
+        <p>
+            <h2>What happened:</h2>
+            <a href="http://news.stlpublicradio.org/post/greitens-admits-he-engaged-affair-he-entered-politics-has-no-plans-resign#stream/0">Greitens admits affair, has no plans to resign</a><br>
+            <a href="http://news.stlpublicradio.org/post/political-future-peril-greitens-holds-tax-plan-tour#stream/0">Greitens holds off on tax plan tour</a><br>
+            <a href="http://news.stlpublicradio.org/post/former-st-louis-judge-has-joined-governors-legal-team#stream/0">Former St. Louis judge joins governor's legal team</a>
+        </p>
+
+        
+        <p>
+            <h2>Political fallout:</h2>
+            <a href="http://news.stlpublicradio.org/post/greitens-railed-against-career-politicians-now-few-are-coming-his-rescue#stream/0">Few 'career politicians' politicians are coming to Greitens' rescue</a><br>
+            <a href="http://news.stlpublicradio.org/post/greitens-unveils-next-year-s-state-budget-media-focus-remains-his-personal-life#stream/0">Greitens unveils next year&rsquo;s state budget</a><br>
+            <a href="http://news.stlpublicradio.org/post/your-questions-about-greitens-indictment-answered">Your questions about the Greitens indictment, answered</a>
+        </p>
+
+        
+        <p>
+            <h2>Understanding the ethics:</h2>
+            <a href="http://news.stlpublicradio.org/post/why-did-kmov-air-gov-greitens-affair-story-tv-reporter-st-louis-public-radio-editor-discuss#stream/0">Why did KMOV air Gov. Greitens&rsquo; affair story?</a><br>
+            <a href="http://news.stlpublicradio.org/post/greitens-and-affair-untangling-legal-issues-wake-governors-admission#stream/0">Untangling the legal issues</a><br>
+            <a href="http://news.stlpublicradio.org/post/editors-note-scandals-may-be-fun-they-arent-always-journalism#stream/0">Editor's note: Scandals aren't always journalism</a><br>
+            <a href="http://news.stlpublicradio.org/post/behind-headlines-has-greitens-affair-affected-his-governance#stream/0">Has Greitens&rsquo; affair affected his governance?</a>
+        </p>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
