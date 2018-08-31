@@ -1,0 +1,14 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    {% for number in COPY.numbers %}
+
+        <h3>{{number.number}}</h3> {{number.text}} <br>
+
+    {% endfor %}
+
+{% endblock content %}
