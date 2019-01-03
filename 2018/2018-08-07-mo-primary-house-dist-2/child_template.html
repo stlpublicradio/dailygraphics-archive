@@ -1,0 +1,26 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    <h1>U.S. House District 2</h1>
+    <h2>Democratic candidates</h2>
+    
+    <div id="bar-chart-dem" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <h2>Republican candidates</h2>
+    <div id="bar-chart-rep" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <div class="footnotes">
+        Larry A. Kirk ran unopposed in the Libertarian Party. David Justus Arnold ran unopposed in the Green Party.
+    </div>
+
+    <div class="footer">
+        <p>Source: Missouri Secretary of State</p>
+    </div>
+
+
+{% endblock content %}

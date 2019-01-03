@@ -1,0 +1,30 @@
+bbox: '-91.238	38.3288	-89.907	39.089'
+layers:
+    countries:
+        type: 'json'
+        path: 'assets/counties.geojson'
+        id-property: 'NAME'
+        properties:
+            - 'country=NAME'
+    # park:
+    #     type: 'json'
+    #     path: 'assets/forest_park.geojson'
+    #     id-property: 'name'
+            
+    district:
+        type: 'json'
+        path: 'assets/mo-house-64.geojson'
+        id-property: 'name'
+
+
+    rivers:
+        type: 'json'
+        path: 'assets/rivers.geojson'
+        id-property: 'name'
+
+    highways:
+        type: 'json'
+        path: 'assets/highways.geojson'
+        id-property: 'name'
+
+    

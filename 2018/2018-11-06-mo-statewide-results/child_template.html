@@ -1,0 +1,21 @@
+{% extends 'base_template.html' %} {% block content %}
+{% for row in COPY.data %}
+<div class="race {{row.race}}">
+    {% if row.name %}<h1>{{row.name}}</h1>{% endif%}
+    <div id='{{row.race}}' class="graphic">
+    </div>
+    {% if row.footnotes %}
+    <div class="footnotes">
+        {{ row.footnotes }}
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
+
+
+<div class="footer">
+    <p>Source: Missouri Secretary of State</p>
+</div>
+
+
+{% endblock content %}

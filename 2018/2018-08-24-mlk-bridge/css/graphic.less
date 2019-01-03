@@ -1,0 +1,148 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #d3eaf7;
+}
+
+.countries path {
+    fill: #ddd;
+    stroke: #ebebeb;
+    stroke-width: 2.5px;
+
+    &.primary {
+        fill: #fff;
+        stroke: #bababa;
+    }
+}
+
+path.landmass { fill: #a8d5ef; }
+
+.highways path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1px;
+
+    &.type-i {
+        stroke: #999;
+        stroke-width: 3px;
+    }
+
+}
+
+.rivers path {
+    fill: #006c8e;
+    stroke: #a8d5ef;
+    stroke-width: 1px;
+}
+
+.park path {
+    fill: #449970;
+}
+
+.bridge path {
+    fill: none;
+    stroke: #cc203b;
+    stroke-width: 4px;
+}
+
+.cities path {
+    fill: #999;
+
+    &.admin-0-capital { fill: #333; }
+}
+
+.city-labels text {
+    fill: #787878;
+    font-size: 65%;
+    text-anchor: start;
+    font-family: 'Gotham SSm', Helvetica, Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    &.admin-0-capital {
+        fill: #555;
+        font-weight: bold;
+    }
+}
+
+.city-labels.shadow text {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 2px;
+    opacity: .7;
+}
+
+.country-labels text {
+    fill: #787878;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-anchor: middle;
+    font-family: 'Gotham SSm', Helvetica, Arial,sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+
+    &.primary {
+        fill: #555;
+        font-weight: 700;
+        font-size: 90%;
+    }
+    &.bhutan { display: none; }
+}
+
+.scale-bar {
+    line {
+        stroke: #efefef;
+        stroke-width: 5px;
+    }
+    text {
+        font-family: Helvetica, Arial,sans-serif;
+        fill: #efefef;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+.label.mississippi {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    // transform: translate(97px, 422px) rotate(-74deg);
+    font-weight: 200;
+    fill: #fff;
+    fill-opacity: .4;
+}
+
+.label.arch {
+    // transform: translate(88px, 328px) rotate(-74deg);
+
+}
+
+.label.mlk {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+// responsive styles
+@media screen and (max-width: 500px) {
+    svg { font-size: 12px; }
+    .countries path { stroke-width: 2px; }
+    .country-labels text {
+        &.bangladesh,
+        &.bhutan {
+            display: none;
+        }
+    }
+    .city-labels text { letter-spacing: .5px; }
+    .city-labels.shadow { display: none; }
+    .city-labels text,
+    .cities path {
+        &.scalerank-4,
+        &.scalerank-5,
+        &.scalerank-6,
+        &.scalerank-7,
+        &.scalerank-8 {
+            display: none;
+        }
+    }
+}

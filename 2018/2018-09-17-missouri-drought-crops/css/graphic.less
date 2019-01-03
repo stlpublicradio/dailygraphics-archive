@@ -1,0 +1,44 @@
+@import "base";
+
+// Add custom styles here
+#column-chart-corn {
+    .bars {
+        rect {
+            fill: #f1bb4f;
+
+            &.bar-2018 {
+                fill: lighten(#f1bb4f,20%)
+            }
+        }
+    }
+}
+
+#column-chart-soybean {
+    .bars {
+        rect {
+            fill: #449970;
+
+            &.bar-2018 {
+                fill: lighten(#449970,20%)
+            }
+
+        }
+    }
+}
+
+#column-chart-hay {
+    .bars {
+        rect {
+            fill: #f6883e;
+
+            &.bar-2018 {
+                fill: lighten(#f6883e,20%)
+            }
+
+        }
+    }
+}
+
+.value text {
+    font-weight: 700;
+}

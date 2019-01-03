@@ -1,0 +1,125 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #d3eaf7;
+}
+
+.countries path {
+    fill: #efefef;
+    stroke: #fff;
+    stroke-width: 4px;
+
+    &.primary {
+        fill: #fff;
+        stroke: #bababa;
+    }
+}
+
+path.landmass { fill: #a8d5ef; }
+
+.lakes path {
+    fill: #358fb3;
+    // stroke: #a8d5ef;
+    stroke-width: 1px;
+}
+
+.rivers path {
+    fill: #006c8e;
+    stroke: lighten(#006c8e,10);
+    stroke-width: 1px;
+}
+
+.highways path {
+    fill: none;
+    stroke: #aaa;
+    stroke-width: 1px;
+}
+
+.levees path {
+    fill: none;
+    stroke: #f6883e;
+    stroke-width: 4px;
+}
+
+.cities path {
+    fill: #999;
+
+    &.admin-0-capital { fill: #333; }
+}
+
+.city-labels text {
+    fill: #787878;
+    // font-size: 65%;
+    text-anchor: start;
+    -webkit-font-smoothing: antialiased;
+
+    &.admin-0-capital {
+        fill: #555;
+        font-weight: bold;
+    }
+}
+
+.city-labels.shadow text {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    fill: #000;
+    stroke: #000;
+    stroke-width: 2px;
+    // opacity: .7;
+    font-weight: 700;
+}
+
+.country-labels text {
+    fill: #787878;
+    font-size: 90%;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-anchor: middle;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+
+    &.primary {
+        fill: #555;
+        font-weight: 700;
+        font-size: 90%;
+    }
+    &.bhutan { display: none; }
+}
+
+.scale-bar {
+    line {
+        stroke: #666;
+        stroke-width: 5px;
+    }
+    text {
+        font-family: Helvetica, Arial,sans-serif;
+        fill: #666;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+// responsive styles
+@media screen and (max-width: 500px) {
+    svg { font-size: 12px; }
+    .countries path { stroke-width: 2px; }
+    .country-labels text {
+        &.bangladesh,
+        &.bhutan {
+            display: none;
+        }
+    }
+    .city-labels text { letter-spacing: .5px; }
+    .city-labels.shadow { display: none; }
+    .city-labels text,
+    .cities path {
+        &.scalerank-4,
+        &.scalerank-5,
+        &.scalerank-6,
+        &.scalerank-7,
+        &.scalerank-8 {
+            display: none;
+        }
+    }
+}
