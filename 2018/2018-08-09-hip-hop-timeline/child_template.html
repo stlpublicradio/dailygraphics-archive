@@ -1,0 +1,47 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div id="timeline">
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+    //    var DATA = {{ COPY.data.json() }};
+
+       var timeline = new TikTok({
+           el: '#timeline',
+           title: 'Hip-Hop in the 1970s and 1980s <p style="font-size:16px;padding-left:20px;padding-right:20px;">Hip-hop has become the most popular genre in the world, according to a report by Billboard. Many of the sounds and styles of today’s popular artists, such as Drake, Migos, Cardi B and Kendrick Lamar can be traced back to their predecessors from the 1980s.</p>',
+           dateFormat: 'YYYY-MM-DD',
+           groupByDisplay: 'YYYY',
+           dateDisplay: 'MMMM D, YYYY',
+           entries: [
+               {% for entry in COPY.data %}
+               {
+                 date: '{{ entry.date }}',
+                 title: '{{ entry.title }}',
+                 body: '{{ entry.body }}'{% if entry.dateDisplay %},
+                 dateDisplay: '{{ entry.dateDisplay }}'{% endif %}{% if entry.media %},
+                 media: '{{ entry.media }}',
+                 source: '{{ entry.source }}'{% endif %}
+               },
+               {% endfor %}
+           ]
+       })
+   </script>
+
+{% endblock content %}
