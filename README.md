@@ -3,6 +3,22 @@ dailygraphics-archive
 
 An archive of graphics and data-visualizations on stlpublicradio.org built using [NPR Visuals Team's Dailygraphics rig](http://blog.apps.npr.org/2014/05/27/dailygraphics.html)
 
+## 2019
+
+Code | Live link | Description
+-------|-----------|------------
+[2019-02-08-firearm-death-rate-chart](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-02-08-firearm-death-rate-chart)|[Missouri Gun Death Rate Among Highest In The Nation, CDC Says](https://news.stlpublicradio.org/post/missouri-gun-death-rate-among-highest-nation-cdc-says)|Line chart with d3.js
+[2019-02-04-dollar-houses](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-02-04-dollar-houses)|[St. Louis Is Selling More Than 500 Homes For $1 Each — Here's How To Get One](https://news.stlpublicradio.org/post/st-louis-selling-more-500-homes-1-each-heres-how-get-one)|Map with leaflet.js
+[2019-01-29-mo-life-expectancy-chart](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-29-mo-life-expectancy-chart)|[Drugs And Suicide Blamed For Unprecedented Decrease In Missouri Life Expectancy](https://news.stlpublicradio.org/post/drugs-and-suicide-blamed-unprecedented-decrease-missouri-life-expectancy)|Line graph with d3.js
+[2019-01-28-merger-graphic-sidebar](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-28-merger-graphic-sidebar)|[Better Together](https://news.stlpublicradio.org/term/better-together)|Illustration sidebar
+[2019-01-25-hpv-immunizations](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-25-hpv-immunizations)|[Low Vaccination Rates Among Missouri Teens, According To Report](https://news.stlpublicradio.org/post/low-vaccination-rates-among-missouri-teens-according-report)|Slopegraph with d3.js
+[2019-01-17-merger-link-sidebar](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-17-merger-link-sidebar)|[Better Together](https://news.stlpublicradio.org/term/better-together)|HTML link sidebar
+[2019-01-11-median-wealth-chart](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-11-median-wealth-chart)|[Rise Of The Super-Rich, Population Changes Drive Racial Wealth Gap, Report Says](https://news.stlpublicradio.org/post/rise-super-rich-population-changes-drive-racial-wealth-gap-report-says)|Stacked bar chart with d3.js
+[2019-01-09-grocery-stores-close-map](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-09-grocery-stores-close-map)|[Shop 'n Save's Exit From St. Louis Region Creates New Food Desert In North County](https://news.stlpublicradio.org/post/shop-n-saves-exit-st-louis-region-creates-new-food-desert-north-county)|Map with leaflet.js
+[2019-01-09-scooter-injuries-chart](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-01-09-scooter-injuries-chart)|[St. Louis Emergency Room Doctors Raise Concerns Over Rising Rate Of Scooter Injuries](https://news.stlpublicradio.org/post/st-louis-emergency-room-doctors-raise-concerns-over-rising-rate-scooter-injuries)|Bar chart with d3.js
+
+
+
 ## 2018
 
 Code | Live link | Description
