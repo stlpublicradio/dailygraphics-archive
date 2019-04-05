@@ -1,0 +1,34 @@
+bbox: '-96.06	35.71	-88.78	40.78'
+layers:
+    states:
+        type: 'shp'
+        path: 'assets/state.zip'
+        id-property: 'NAME'
+        properties:
+            - 'state=NAME'
+    counties:
+        type: 'shp'
+        path: 'assets/counties.zip'
+        id-property: 'NAMELSAD'
+        properties:
+            - 'county=NAME'
+
+    highways:
+        type: 'shp'
+        path: 'assets/primary_roads_clipped.zip'
+        id-property: 'LINEARID'
+        properties:
+            - 'type=RTTYP'
+
+    roads:
+        type: 'json'
+        path: 'assets/mo_roads.geojson'
+        id-property: 'LINEARID'
+        properties:
+            - 'type=RTTYP'
+
+    stations:
+        type: 'json'
+        path: 'assets/charging_stations.geojson'
+        properties:
+            - 'company=company'

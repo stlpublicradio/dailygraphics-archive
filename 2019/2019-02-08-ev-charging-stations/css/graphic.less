@@ -1,0 +1,163 @@
+@import "base";
+
+svg {
+    font-size: 20px;
+    background-color: #fff;
+}
+
+.states path {
+    fill: #ddd;
+    stroke: #efefef;
+    stroke-width: 2.5px;
+
+    &.primary {
+        fill: none;
+        stroke: ##efefef;
+    }
+}
+
+.counties path {
+    fill: none;
+    stroke: #efefef;
+    stroke-width: 1px;
+}
+
+.highways path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.roads path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+
+
+    &.type-u, &.type-m  {
+        stroke-width: 1px;
+    }
+}
+
+.stations {
+    fill: #666;
+}
+
+.stations .ameren {
+    fill: #cc203b;
+}
+
+path.landmass { fill: #fff; }
+
+#key {
+    margin-bottom: 50px;
+
+    div {
+        float: left;
+        margin-right: 30px;
+    }
+
+    div.circle {
+        background-color: #666;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        float: left;
+        margin-right: 5px;
+    }
+
+    .ameren .circle {
+        background-color: #cc203b;
+    }
+}
+
+// .lakes path {
+//     fill: #d3eaf7;
+//     stroke: #a8d5ef;
+//     stroke-width: 1px;
+// }
+
+// .rivers path {
+//     fill: none;
+//     stroke: #a8d5ef;
+//     stroke-width: 1px;
+// }
+
+// .cities path {
+//     fill: #999;
+
+//     &.admin-0-capital { fill: #333; }
+// }
+
+.city-labels text {
+    fill: #333;
+    font-weight: 700;
+    font-size: 85%;
+    text-anchor: start;
+    -webkit-font-smoothing: antialiased;
+
+    &.scalerank-8 {
+        font-size: 60%;
+        fill: #666;
+    }
+
+}
+
+.city-labels.shadow text {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 2px;
+    opacity: .7;
+}
+
+
+.scale-bar {
+    line {
+        stroke: #666;
+        stroke-width: 5px;
+    }
+    text {
+        font-family: Helvetica, Arial,sans-serif;
+        fill: #666;
+        font-size: 60%;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/*
+ * small-screen styles
+ */
+@media @screen-mobile {
+    svg { font-size: 12px; }
+
+    .states path { stroke-width: 2px; }
+
+    .highways path, .roads path {
+        stroke-width: 1px;
+    }
+
+    .counties {
+        display: none;
+    }
+
+    .country-labels text {
+        &.bangladesh,
+        &.bhutan {
+            display: none;
+        }
+    }
+
+    .city-labels text { letter-spacing: .5px; }
+
+    .city-labels.shadow,
+    .city-labels text,
+    .cities path {
+        &.scalerank-4,
+        &.scalerank-5,
+        &.scalerank-6,
+        &.scalerank-7,
+        &.scalerank-8 {
+            display: none;
+        }
+    }
+}
