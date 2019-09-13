@@ -6,7 +6,7 @@ An archive of graphics and data-visualizations on stlpublicradio.org built using
 ## 2019
 
 Code | Live link | Description | Developer
--------|-----------|------------|------------
+-------|-----------|---------|------------
 [2019-03-05-election-aldermen](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-03-05-election-aldermen)<br/>[2019-03-05-election-stl-boa-president](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-03-05-election-stl-boa-president)|[Reed Narrowly Wins 4th Term As St. Louis Aldermanic President](https://news.stlpublicradio.org/post/reed-narrowly-wins-4th-term-st-louis-aldermanic-president)|Bar charts with d3.js|Brent Jones
 [2019-02-26-coal-ash-testing](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-02-26-coal-ash-testing)|[9 Questions Answered About Missouri’s Toxic Coal Ash Ponds](https://news.stlpublicradio.org/post/9-questions-answered-about-missouri-s-toxic-coal-ash-ponds)|Diagram with AI2HTML|Brent Jones
 [2019-02-21-coal-ash-ponds](https://github.com/stlpublicradio/dailygraphics-archive/tree/master/2019/2019-02-21-coal-ash-ponds)|[Data Shows Massive Pits Of Coal Waste From Missouri Utilities Polluted Groundwater](https://news.stlpublicradio.org/post/data-shows-massive-pits-coal-waste-missouri-utilities-polluted-groundwater)|Responsive table with HTML/CSS|Brent Jones
