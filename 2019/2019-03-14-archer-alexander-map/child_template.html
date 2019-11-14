@@ -1,0 +1,66 @@
+{% extends 'base_template.html' %}
+
+
+{% block extra_css %}
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+<link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+{% endblock extra_css %}
+
+{% block content %}
+{% if COPY.labels.headline %}<h1>{{ COPY.labels.headline }}</h1>{% endif %}
+{% if COPY.labels.subhed %}<p>{{ COPY.labels.subhed }}</p>{% endif %}
+
+<div id="graphic">
+	<div id="map"></div>
+
+
+</div>
+
+<table id="location-table">
+	<thead>
+		<tr>
+			<th>
+				<div class="sorter"><div class="icon"></div></div>
+				<div class="header">{{ COPY.labels.hdr_where }}</div>
+			</th>
+			<th>
+				<div class="sorter"><div class="icon"></div></div>
+				<div class="header">{{ COPY.labels.hdr_what }}</div>
+			</th>
+			<th>
+				<div class="sorter"><div class="icon"></div></div>
+				<div class="header">{{ COPY.labels.hdr_why }}</div>
+			</th>
+		</tr>
+	</thead>
+
+	{% for row in COPY.data %}
+	<tr>
+		<td data-title="{{ COPY.labels.hdr_where }}"><strong>{{row.photo}}</strong></td>
+		<td data-title="{{ COPY.labels.hdr_what }}">{{ row.location }}</td>
+		<td data-title="{{ COPY.labels.hdr_why }}">{{ row.description }}</td>
+	</tr>
+	{% endfor %}
+
+</table>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+	<h3>Notes</h3>
+	<p>{{ COPY.labels.footnote }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+	{% if COPY.labels.source %}<p>Source: {{ COPY.labels.source }}</p>{% endif %}
+	{% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit }}</p>{% endif %}
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="js/lib/jquery.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<script src="js/leaflet.extra-markers.min.js"></script>
+{% endblock extra_js %}
