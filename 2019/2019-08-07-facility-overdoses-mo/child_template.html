@@ -1,0 +1,75 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <ul class="key">
+        <li class="key-item 2018">
+            <b style="background-color: #cc203b;"></b>
+            <label>2018</label>
+        </li>
+        <li class="key-item 2019">
+            <b style="background-color: #358fb3;"></b>
+            <label>2019</label>
+        </li>
+    </ul>
+
+    {% for row in COPY.facilities %}
+    
+    <div class="mini-wrapper">
+        
+        <h2 class="wrapping">{{row.facility}}</h2>
+        <h3 class="wrapping"> Capacity: {{row.capacity}}</h3>
+        
+            <div id="line-chart-{{row.number}}" class="graphic" role="img"
+            {% if COPY.labels.screenreader %}
+            aria-label="{{ COPY.labels.screenreader|forceescape }}"
+            {% endif %}
+            >
+                <img src="fallback.png" alt="" class="fallback" />
+            </div>
+
+    </div>
+
+    {% endfor %}
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+        var DATA_01 = {{ COPY.facility_1.json() }};
+        var DATA_02 = {{ COPY.facility_2.json() }};
+        var DATA_03 = {{ COPY.facility_3.json() }};
+        var DATA_04 = {{ COPY.facility_4.json() }};
+        var DATA_05 = {{ COPY.facility_5.json() }};
+        var DATA_06 = {{ COPY.facility_6.json() }};
+        var DATA_07 = {{ COPY.facility_7.json() }};
+        var DATA_08 = {{ COPY.facility_8.json() }};
+        var DATA_09 = {{ COPY.facility_9.json() }};
+        var DATA_10 = {{ COPY.facility_10.json() }};
+        var DATA_11 = {{ COPY.facility_11.json() }};
+        var DATA_12 = {{ COPY.facility_12.json() }};
+        var DATA_13 = {{ COPY.facility_13.json() }};
+        var DATA_14 = {{ COPY.facility_14.json() }};
+        var DATA_15 = {{ COPY.facility_15.json() }};
+        var DATA_16 = {{ COPY.facility_16.json() }};
+        var DATA_17 = {{ COPY.facility_17.json() }};
+        var DATA_18 = {{ COPY.facility_18.json() }};
+        var DATA_19 = {{ COPY.facility_19.json() }};
+        var DATA_20 = {{ COPY.facility_20.json() }};
+        var DATA_21 = {{ COPY.facility_21.json() }};
+        var DATA_22 = {{ COPY.facility_22.json() }};
+    </script>
+
+{% endblock content %}

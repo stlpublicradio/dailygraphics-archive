@@ -1,0 +1,108 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+    <div class="graphic">
+        <table class="desktop">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_thursday }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_friday }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_saturday }}</div>
+                    </th>
+                    <th>
+                        <div class="sorter"><div class="icon"></div></div>
+                        <div class="header">{{ COPY.labels.hdr_sunday }}</div>
+                    </th>
+                </tr>
+            </thead>
+
+            {% for row in COPY.data %}
+            <tr class="{{ loop.cycle('title','time','location','cost','description') }}">
+                <td data-title="{{ COPY.labels.hdr_thursday }}">{{ row.thursday }}</td>
+                <td data-title="{{ COPY.labels.hdr_friday }}">{{ row.friday }}</td>
+                <td data-title="{{ COPY.labels.hdr_saturday }}">{{ row.saturday }}</td>
+                <td data-title="{{ COPY.labels.hdr_sunday }}">{{ row.sunday }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <div class="mobile-list">
+            <h2 class="mobile-header">{{ COPY.labels.hdr_thursday }}</h2>
+
+            {% for row in COPY.data %}
+                <div class="control">
+                {% if row.thursday %}
+                    <div class="{{ loop.cycle('title','time','location','cost','description') }}">
+                        <h3>{{row.categories}}:</h3> {{ row.thursday }}
+                    </div>
+                {% endif %}
+                </div>
+            {% endfor %}
+
+            <h2 class="mobile-header">{{ COPY.labels.hdr_friday }}</h2>
+
+            {% for row in COPY.data %}
+            <div class="control">
+                <div class="{{ loop.cycle('title','time','location','cost','description') }}">
+                    <h3>{{row.categories}}:</h3> {{ row.friday }}
+                </div>
+            </div>
+            {% endfor %}
+
+            <h2 class="mobile-header">{{ COPY.labels.hdr_saturday }}</h2>
+
+            {% for row in COPY.data %}
+            <div class="control">
+                <div class="{{ loop.cycle('title','time','location','cost','description') }}">
+                    <h3>{{row.categories}}:</h3> {{ row.saturday }}
+                </div>
+            </div>
+            {% endfor %}
+
+            <h2 class="mobile-header">{{ COPY.labels.hdr_sunday }}</h2>
+
+            {% for row in COPY.data %}
+            <div class="control">
+                <div class="{{ loop.cycle('title','time','location','cost','description') }}">
+                    <h3>{{row.categories}}:</h3> {{ row.sunday }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    {{ JS.push('js/lib/tablesort.js') }}
+    {{ JS.push('js/lib/tablesort.number.js') }}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+
+{% endblock js %}

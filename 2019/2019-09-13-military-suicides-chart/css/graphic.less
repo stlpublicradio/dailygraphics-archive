@@ -1,0 +1,37 @@
+@import "base";
+
+.lines {
+    fill: none;
+    stroke-width: 3px;
+    stroke: #ccc;
+}
+
+.value text {
+    font-size: 12px;
+    font-weight: bold;
+    fill: #999;
+}
+
+.reserve {
+    stroke: #8e1629;
+    stroke-dasharray: 5, 5;
+}
+
+.active {
+    stroke: #cc203b;
+    stroke-dasharray: 5, 5;
+}
+
+/*
+ * larger-than-mobile-screen styles
+ */
+@media @screen-mobile-above {
+    .key { display: none; }
+}
+
+/*
+ * small-screen styles
+ */
+@media @screen-mobile {
+    .value text { font-size: 10px; }
+}

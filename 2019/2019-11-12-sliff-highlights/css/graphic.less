@@ -1,0 +1,211 @@
+@import "base";
+/*
+* Row styles
+*/
+
+@media @screen-mobile-above {
+    .title {
+        font-weight: bold;
+    }
+
+    .mobile-list {
+     display: none;   
+    }
+}
+
+
+
+/*
+ * Base table styles
+ */
+table {
+    border-collapse: collapse;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+
+    tr.shadedrow {
+        background-color: #f1f1f1;
+        color: #333;
+        font-weight: bold;
+    }
+
+    th {
+        border-bottom: 2px solid #eee;
+        vertical-align: bottom;
+        font-weight: heavy;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0 10px 10px 10px;
+        padding-top: 0;
+        line-height: 1.2;
+        text-align: left;
+        vertical-align: bottom;
+    }
+
+    th:not(:last-child) {
+        border-right: 4px solid #999;
+    }
+
+    td { vertical-align: top; }
+
+    .description {
+        border-bottom: 2px solid #eee;
+    }
+}
+
+/*
+ * Tablesorter styles
+ */
+table {
+    th {
+        &.sort-header {
+            cursor: pointer;
+
+            &::-moz-selection,
+            &::selection {
+                background: transparent;
+            }
+
+            .sorter {
+                border-top: 2px solid #404040;
+                visibility: hidden;
+
+                .icon {
+                    content: '';
+                    width: 1px;
+                    margin: 3px auto 7px auto;
+                    border-width: 0 4px 4px;
+                    border-style: solid;
+                    border-color: #404040 transparent;
+                }
+            }
+
+            &:hover .sorter {
+                visibility: visible;
+            }
+        }
+
+        &.sort-up .sorter,
+        &.sort-down .sorter,
+        &.sort-down:hover .sorter {
+            visibility: visible;
+            opacity: 0.4;
+        }
+
+        &.sort-up .sorter .icon {
+            border-bottom: none;
+            border-width: 4px 4px 0;
+        }
+    }
+}
+
+/*
+ * larger-than-small-screen styles
+ * ~ defining some desktop-only styles here to avoid
+ * ~ writing extra mobile styles to undo them.
+ */
+@media @screen-mobile-above {
+    table {
+        th, td {
+            padding: 10px;
+
+            // comment these two out if you want to highlight particular rows
+            &:first-child { padding-left: 0; }
+            &:last-child { padding-right: 0; }
+
+            &.amt { text-align: right; }
+        }
+
+        th:not(:last-child) {
+            border-right: 4px solid #999;
+            padding-top: 0;
+        }
+
+        td:not(:last-child) { border-right: 4px solid #999; }
+
+    }
+}
+
+/*
+ * small-screen styles
+ */
+// @media @screen-mobile {
+//     tbody {
+//         display: block;
+//         width: 100%;
+//     }
+
+//     table {
+//         thead { display: none; }
+
+//         tr, th, td {
+//             display: block;
+//             padding: 0;
+//             white-space: normal;
+//         }
+
+//         tr {
+//             border-bottom: 1px solid #eee;
+//             padding: 10px 0;
+
+//             &:first-child { border-top: 1px solid #eee; }
+//         }
+
+//         td {
+//             margin-bottom: 6px;
+
+//             &:empty { display: none; }
+//         }
+
+//         tr td:first-child {
+//             color: #333;
+//             font-size: 14px;
+//             margin-bottom: 6px;
+
+//             &:before {
+//                 content: '';
+//                 display: none;
+//             }
+//         }
+
+//         th[data-title]:before,
+//         td[data-title]:before {
+//             content: attr(data-title) ":\00A0";
+//             display: inline-block;
+//             margin-right: 10px;
+//             width: 70%;
+//         }
+//     }
+// }
+
+@media @screen-mobile {
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile-header {
+        text-transform: uppercase;
+    }
+
+    h2,h3 {
+        margin: 0;
+    }
+
+    h2 {
+        padding-top: 20px;
+        color: @red;
+    }
+
+    .title {
+        padding-top: 15px;
+    }
+
+    .title h3 {
+        display: none;
+    }
+	
+}
