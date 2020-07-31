@@ -1,0 +1,48 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
+    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
+
+
+    <h2>Who was accused?</h2>
+    <p>Tenant(s) were accused of wrongdoing in the majority of the crime-free housing violations requiring an eviction, but some renters also faced eviction because of allegations against guest(s).    </p>
+
+    <div id="bar-chart-1" class="graphic" role="img"
+    {% if COPY.labels.screenreader %}
+    aria-label="{{ COPY.labels.screenreader|forceescape }}"
+    {% endif %}
+    >
+        <img src="fallback.png" alt="" class="fallback" />
+    </div>
+
+    <h2>Who was convicted?</h2>
+    <p>Many of the people accused of wrongdoing were never convicted of a crime.</p>
+
+    <div id="bar-chart-2" class="graphic" role="img"
+    {% if COPY.labels.screenreader %}
+    aria-label="{{ COPY.labels.screenreader|forceescape }}"
+    {% endif %}
+    >
+        <img src="fallback.png" alt="" class="fallback" />
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h3>Notes</h3>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p>Source: {{ COPY.labels.source|smarty }}</p>{% endif %}
+        {% if COPY.labels.credit %}<p>Credit: {{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+    <script type="text/javascript">
+        var DATA_01 = {{ COPY.data.json() }};
+        var DATA_02 = {{ COPY.data_2.json() }};
+    </script>
+
+{% endblock content %}
