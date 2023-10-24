@@ -19,3 +19,6 @@
 [submodule "dailygraphics-archive-2020"]
 	path = dailygraphics-archive-2020
 	url = https://github.com/stlpublicradio/dailygraphics-archive-2020
+[submodule "dailygraphics-archive-2021"]
+	path = dailygraphics-archive-2021
+	url = https://github.com/stlpublicradio/dailygraphics-archive-2021
