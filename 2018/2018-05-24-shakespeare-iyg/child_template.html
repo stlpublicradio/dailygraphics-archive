@@ -1,8 +1,0 @@
-{% extends 'base_template.html' %}
-
-{% block content %}
-
-    {% if COPY.labels.headline %}<h1>{{ COPY.labels.headline|smarty }}</h1>{% endif %}
-    {% if COPY.labels.subhed %}<p>{{ render(COPY.labels.subhed)|smarty }}</p>{% endif %}
-
-{% endblock content %}

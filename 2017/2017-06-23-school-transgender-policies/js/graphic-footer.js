@@ -1,1 +1,0 @@
-var onWindowLoaded=function(){pymChild=new pym.Child({});};window.onload=onWindowLoaded;
